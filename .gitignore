@@ -1,5 +1,73 @@
+# ==============================
+# SEGURIDAD — nunca subir
+# ==============================
+.env
+.env.*
+.env.local
+.env.production
+secrets.json
+config.json
+credentials.json
+apikeys.txt
+*.key
+*.pem
+*.p12
+*.pfx
+
+# ==============================
+# NODE / NPM
+# ==============================
 node_modules/
-*.pdf
+npm-debug.log*
+package-lock.json
+
+# ==============================
+# PYTHON
+# ==============================
 *.py
+__pycache__/
+*.pyc
+
+# ==============================
+# ARCHIVOS DE TRABAJO TEMPORALES
+# ==============================
 export_pdf.js
+blur_faces.py
+*.tmp
+*.bak
+*.log
+
+# ==============================
+# PDFs (se generan desde HTML)
+# ==============================
+*.pdf
+
+# ==============================
+# FOTOS ORIGINALES / PRIVADAS
+# ==============================
+*_orig.jpg
+*_orig.jpeg
+alumno 2 santiago dos fotos en 1.jpeg
+santiago foto definitiva 1.jpeg
+santiago foto denitiva 2.jpeg
+
+# ==============================
+# SISTEMA OPERATIVO
+# ==============================
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ==============================
+# EDITORES
+# ==============================
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# CLAUDE CODE (interno)
+# ==============================
 .claude/
