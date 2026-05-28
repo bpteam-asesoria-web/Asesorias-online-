@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe: Contenido de Venta Fitness 2026</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Arial,sans-serif; background:#f5f6fa; color:#1a1a2e; font-size:13px; }
+  .page { max-width:920px; margin:0 auto; background:white; }
+
+  /* PORTADA */
+  .cover {
+    background: linear-gradient(140deg,#0d0d1a 0%,#1a1a2e 40%,#12294a 100%);
+    color:white; padding:70px 60px 60px; min-height:100vh;
+    display:flex; flex-direction:column; justify-content:center;
+    position:relative; overflow:hidden; page-break-after:always;
+  }
+  .cover::before {
+    content:''; position:absolute; top:-80px; right:-80px;
+    width:380px; height:380px;
+    background:radial-gradient(circle,rgba(229,57,53,.35) 0%,transparent 70%);
+    border-radius:50%;
+  }
+  .cover::after {
+    content:''; position:absolute; bottom:-60px; left:40px;
+    width:260px; height:260px;
+    background:radial-gradient(circle,rgba(255,152,0,.2) 0%,transparent 70%);
+    border-radius:50%;
+  }
+  .badge {
+    display:inline-block; background:rgba(229,57,53,.9);
+    color:white; padding:6px 18px; border-radius:20px;
+    font-size:10px; font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; margin-bottom:28px; width:fit-content;
+  }
+  .cover h1 { font-size:44px; font-weight:800; line-height:1.15; margin-bottom:18px; }
+  .cover h1 span { color:#ff7043; }
+  .cover .sub { font-size:15px; opacity:.8; line-height:1.7; margin-bottom:40px; max-width:540px; }
+  .divider { width:56px; height:4px; background:#e53935; border-radius:2px; margin:24px 0; }
+  .cover-stats { display:flex; gap:44px; margin-top:10px; }
+  .cs .num { font-size:34px; font-weight:800; color:#ff7043; display:block; }
+  .cs .lbl { font-size:11px; opacity:.65; text-transform:uppercase; letter-spacing:1px; }
+  .cover-foot {
+    position:absolute; bottom:36px; left:60px; right:60px;
+    display:flex; justify-content:space-between; font-size:11px; opacity:.45;
+  }
+
+  /* LAYOUT */
+  .body { padding:50px 60px 60px; }
+
+  /* SECTION */
+  .sec { margin-bottom:50px; }
+  .sec-hdr {
+    display:flex; align-items:center; gap:14px;
+    margin-bottom:22px; padding-bottom:12px;
+    border-bottom:2px solid #f0f0f0;
+  }
+  .sec-num {
+    background:#e53935; color:white; width:38px; height:38px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:15px; flex-shrink:0;
+  }
+  .sec-lbl { font-size:10px; color:#aaa; text-transform:uppercase; letter-spacing:1px; }
+  .sec-title { font-size:19px; font-weight:700; color:#1a1a2e; }
+
+  /* INTRO BOX */
+  .intro { background:linear-gradient(135deg,#1a1a2e,#0f3460); color:white; padding:26px 30px; border-radius:12px; margin-bottom:26px; }
+  .intro p { font-size:13px; line-height:1.8; opacity:.92; }
+  .intro strong { color:#ff7043; }
+
+  /* STAT ROW */
+  .stat-row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:26px; }
+  .stat-card {
+    background:white; border:1px solid #e8e8e8; border-radius:10px;
+    padding:18px 16px; text-align:center; border-top:4px solid #e53935;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .stat-card .n { font-size:26px; font-weight:800; color:#e53935; }
+  .stat-card .t { font-size:11px; color:#777; margin-top:4px; line-height:1.4; }
+
+  /* FORMAT CARDS */
+  .fmt-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .fmt-card {
+    border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.07);
+    border:1px solid #e8e8e8;
+  }
+  .fmt-head {
+    display:flex; align-items:center; gap:12px;
+    padding:14px 18px; font-weight:700; font-size:13px; color:white;
+  }
+  .fmt-head.red { background:#c62828; }
+  .fmt-head.orange { background:#e65100; }
+  .fmt-head.navy { background:#1a237e; }
+  .fmt-head.teal { background:#00695c; }
+  .fmt-head.purple { background:#6a1b9a; }
+  .fmt-head.dark { background:#212121; }
+  .fmt-icon { font-size:20px; }
+  .fmt-body { padding:16px 18px; background:#fff; }
+  .fmt-body p { font-size:12px; color:#555; line-height:1.65; margin-bottom:8px; }
+  .fmt-body .eng {
+    display:inline-block; background:rgba(229,57,53,.1); color:#c62828;
+    padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700;
+  }
+  .fmt-body ul { padding-left:14px; margin-top:6px; }
+  .fmt-body ul li { font-size:12px; color:#555; line-height:1.7; }
+
+  /* HOOKS TABLE */
+  .hook-table { width:100%; border-collapse:collapse; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.07); }
+  .hook-table thead { background:#1a1a2e; color:white; }
+  .hook-table th { padding:12px 16px; text-align:left; font-size:11px; font-weight:700; letter-spacing:.5px; }
+  .hook-table tbody tr:nth-child(even) { background:#f8f9fa; }
+  .hook-table td { padding:11px 16px; font-size:12px; color:#444; border-bottom:1px solid #eee; vertical-align:top; }
+  .hook-table .tag-red { color:#c62828; font-weight:700; }
+  .hook-table .tag-green { color:#2e7d32; font-weight:700; }
+
+  /* MIX CHART */
+  .mix-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:20px; }
+  .mix-card {
+    border-radius:10px; padding:20px; text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .mix-card.edu { background:linear-gradient(135deg,rgba(21,101,192,.08),rgba(21,101,192,.02)); border:1px solid rgba(21,101,192,.2); }
+  .mix-card.ins { background:linear-gradient(135deg,rgba(229,57,53,.08),rgba(229,57,53,.02)); border:1px solid rgba(229,57,53,.2); }
+  .mix-card.com { background:linear-gradient(135deg,rgba(46,125,50,.08),rgba(46,125,50,.02)); border:1px solid rgba(46,125,50,.2); }
+  .mix-card .pct { font-size:40px; font-weight:800; }
+  .mix-card.edu .pct { color:#1565c0; }
+  .mix-card.ins .pct { color:#c62828; }
+  .mix-card.com .pct { color:#2e7d32; }
+  .mix-card h4 { font-size:13px; font-weight:700; margin:6px 0 8px; }
+  .mix-card p { font-size:11px; color:#666; line-height:1.5; }
+
+  /* CONTENT IDEAS */
+  .ideas-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .idea {
+    display:flex; gap:12px; align-items:flex-start;
+    background:#fafafa; border-radius:10px; padding:16px;
+    border-left:4px solid #e53935;
+  }
+  .idea-num {
+    background:#1a1a2e; color:white; width:26px; height:26px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:800; flex-shrink:0;
+  }
+  .idea h4 { font-size:12px; font-weight:700; color:#1a1a2e; margin-bottom:4px; }
+  .idea p { font-size:11px; color:#666; line-height:1.55; }
+
+  /* COPY EXAMPLES */
+  .copy-card {
+    background:white; border:1px solid #e8e8e8; border-radius:10px;
+    margin-bottom:14px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.05);
+  }
+  .copy-head {
+    background:#1a1a2e; color:white; padding:10px 18px;
+    font-size:11px; font-weight:700; display:flex; align-items:center; gap:10px;
+  }
+  .copy-body { padding:16px 18px; }
+  .copy-body .hook-line {
+    font-size:15px; font-weight:700; color:#c62828;
+    margin-bottom:10px; line-height:1.4;
+  }
+  .copy-body p { font-size:12px; color:#555; line-height:1.7; }
+  .copy-body .cta {
+    margin-top:10px; background:rgba(229,57,53,.08);
+    border-radius:6px; padding:8px 12px; font-size:11px;
+    color:#c62828; font-weight:600;
+  }
+  .copy-body .tags { margin-top:8px; font-size:11px; color:#1565c0; }
+
+  /* ALGORITHM BOX */
+  .algo-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .algo-card {
+    border-radius:10px; padding:18px 20px;
+    background:white; border:1px solid #e8e8e8;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+  }
+  .algo-card h4 { font-size:13px; font-weight:700; color:#1a1a2e; margin-bottom:10px; padding-bottom:8px; border-bottom:2px solid #e53935; }
+  .algo-card ul { padding-left:14px; }
+  .algo-card ul li { font-size:12px; color:#555; line-height:1.8; }
+
+  /* CALENDAR */
+  .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-bottom:20px; }
+  .cal-day {
+    border-radius:8px; padding:10px 8px; text-align:center;
+    font-size:10px; line-height:1.4; border:1px solid #e8e8e8;
+  }
+  .cal-day .day-name { font-weight:700; font-size:9px; text-transform:uppercase; color:#aaa; margin-bottom:4px; }
+  .cal-day .type { font-weight:700; font-size:11px; }
+  .cal-day.red { background:rgba(229,57,53,.08); border-color:rgba(229,57,53,.3); }
+  .cal-day.red .type { color:#c62828; }
+  .cal-day.blue { background:rgba(21,101,192,.07); border-color:rgba(21,101,192,.25); }
+  .cal-day.blue .type { color:#1565c0; }
+  .cal-day.green { background:rgba(46,125,50,.07); border-color:rgba(46,125,50,.25); }
+  .cal-day.green .type { color:#2e7d32; }
+  .cal-day.grey { background:#f8f8f8; }
+  .cal-day.grey .type { color:#999; }
+
+  /* PLATFORM COMPARE */
+  .plat-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .plat-card {
+    border-radius:12px; overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+  }
+  .plat-head { padding:16px 20px; color:white; font-weight:700; font-size:14px; }
+  .plat-head.ig { background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); }
+  .plat-head.fb { background:linear-gradient(135deg,#1877f2,#0d47a1); }
+  .plat-body { padding:16px 20px; background:white; border:1px solid #e8e8e8; border-top:none; }
+  .plat-body ul { padding-left:14px; }
+  .plat-body ul li { font-size:12px; color:#555; line-height:1.9; }
+  .plat-body .plat-stat { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #f0f0f0; font-size:12px; }
+  .plat-body .plat-stat .val { font-weight:700; color:#1a1a2e; }
+
+  /* HIGHLIGHT */
+  .hl {
+    background:linear-gradient(135deg,rgba(229,57,53,.07),rgba(255,152,0,.07));
+    border:2px solid rgba(229,57,53,.18); border-radius:12px;
+    padding:22px 26px; margin:20px 0;
+  }
+  .hl h3 { color:#c62828; font-size:14px; margin-bottom:10px; }
+  .hl p { font-size:13px; color:#444; line-height:1.75; }
+
+  /* PAGE BREAK */
+  .pb { page-break-before:always; padding-top:50px; }
+
+  /* FOOTER */
+  .foot {
+    background:#1a1a2e; color:rgba(255,255,255,.55);
+    padding:28px 60px; font-size:11px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .foot strong { color:white; }
+
+  @media print { body { background:white; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="badge">Informe Estratégico · Mayo 2026</div>
+  <h1>Contenido de <span>Alta Conversión</span><br>para Vender Asesorías<br>Fitness Online</h1>
+  <div class="divider"></div>
+  <p class="sub">Análisis de los formatos, hooks y estrategias de contenido con mayor engagement e impacto en ventas para mentorías y programas de transformación física en Instagram y Facebook.</p>
+  <div class="cover-stats">
+    <div class="cs"><span class="num">10%</span><span class="lbl">Engagement<br>Carousels 2026</span></div>
+    <div class="cs"><span class="num">30s</span><span class="lbl">Reel ideal<br>para fitness</span></div>
+    <div class="cs"><span class="num">3s</span><span class="lbl">Hook inicial<br>crítico</span></div>
+    <div class="cs"><span class="num">30/30/30</span><span class="lbl">Mix de<br>contenido</span></div>
+  </div>
+  <div class="cover-foot">
+    <span>BPteam Asesoría — Uso Interno</span>
+    <span>Basado en datos reales 2025–2026</span>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body">
+
+  <!-- 1. DATOS CLAVE -->
+  <div class="sec">
+    <div class="sec-hdr">
+      <div class="sec-num">1</div>
+      <div><div class="sec-lbl">Estado actual del mercado</div><div class="sec-title">Datos Clave del Fitness en Redes 2026</div></div>
+    </div>
+    <div class="intro">
+      <p>El mercado de asesorías fitness online sigue en crecimiento acelerado. Instagram y Facebook siguen siendo las plataformas dominantes para coaches de 20–35 años. <strong>El algoritmo de Instagram ya no mide likes: mide VISTAS y GUARDADOS.</strong> Quien entienda esto lleva ventaja enorme sobre su competencia.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat-card"><div class="n">3B</div><div class="t">Usuarios activos<br>mensuales Facebook</div></div>
+      <div class="stat-card"><div class="n">9%</div><div class="t">Engagement promedio<br>TikTok/Reels fitness</div></div>
+      <div class="stat-card"><div class="n">10%</div><div class="t">Engagement promedio<br>Carousels Instagram</div></div>
+      <div class="stat-card"><div class="n">3 seg</div><div class="t">Tiempo para captar<br>atención en video</div></div>
+    </div>
+    <div class="hl">
+      <h3>Cambio más importante de 2026 en Instagram</h3>
+      <p>Instagram migró oficialmente su métrica principal de "me gusta" a <strong>VISTAS</strong>. Todos los formatos (Reels, Carousels, Stories) compiten en la misma categoría. Esto significa que el contenido con más vistas y más guardados es el que el algoritmo distribuye masivamente — incluso a personas que no te siguen.</p>
+    </div>
+  </div>
+
+  <!-- 2. FORMATOS -->
+  <div class="sec">
+    <div class="sec-hdr">
+      <div class="sec-num">2</div>
+      <div><div class="sec-lbl">Análisis de plataformas</div><div class="sec-title">Formatos con Mayor Engagement e Impacto en Ventas</div></div>
+    </div>
+    <div class="fmt-grid">
+
+      <div class="fmt-card">
+        <div class="fmt-head red"><span class="fmt-icon">🎠</span> Carousel / Carrusel</div>
+        <div class="fmt-body">
+          <p><strong>El formato #1 en engagement</strong> en Instagram 2026. El algoritmo premia la "profundidad de deslizamiento": cuantas más slides recorre el usuario, mayor distribución recibe tu post.</p>
+          <span class="eng">Engagement promedio: 10%</span>
+          <ul>
+            <li>Ideal: 6–10 slides, slide 1 = HOOK visual impactante</li>
+            <li>Genera GUARDADOS masivos (señal más fuerte del algoritmo)</li>
+            <li>Perfecto para: errores comunes, tips de nutrición, resultados</li>
+            <li>CTA en la última slide siempre</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fmt-card">
+        <div class="fmt-head orange"><span class="fmt-icon">🎬</span> Reels (30–60 seg)</div>
+        <div class="fmt-body">
+          <p><strong>Mejor formato para alcance y nuevos seguidores.</strong> Los Reels llegan a personas que NO te siguen. Son el motor de descubrimiento más poderoso en Instagram hoy.</p>
+          <span class="eng">Alcance orgánico: hasta 5x más que posts</span>
+          <ul>
+            <li>Hook en los primeros 3 segundos — sin introducción</li>
+            <li>Subtítulos siempre (60–80% ve sin sonido)</li>
+            <li>Formatos ganadores: "Esto vs. Esto", transformación, tip rápido</li>
+            <li>Duración ideal: 30–45 segundos para fitness</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fmt-card">
+        <div class="fmt-head navy"><span class="fmt-icon">📱</span> Stories</div>
+        <div class="fmt-body">
+          <p><strong>Construyen confianza y generan ventas directas.</strong> Las stories son el canal más íntimo. Tus seguidores fieles las ven todos los días — son quienes compran.</p>
+          <span class="eng">Conversión directa más alta de todos los formatos</span>
+          <ul>
+            <li>Muestra el día a día real de tu programa</li>
+            <li>Clientes haciendo check-in / progreso semanal</li>
+            <li>Encuestas, preguntas, "¿quieres saber más?"</li>
+            <li>Link directo a WhatsApp o formulario de inscripción</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fmt-card">
+        <div class="fmt-head teal"><span class="fmt-icon">🔴</span> Lives / Videos Largos</div>
+        <div class="fmt-body">
+          <p><strong>Autoridad y conversión de alto valor.</strong> Un live de 20–30 minutos donde respondes dudas de nutrición y entrenamiento posiciona tu expertise mejor que 30 posts.</p>
+          <span class="eng">Conversión post-live: hasta 3x mayor</span>
+          <ul>
+            <li>Frecuencia recomendada: 1 por semana o cada 2 semanas</li>
+            <li>Tema: responder preguntas frecuentes de tu nicho</li>
+            <li>Al final: CTA para tu asesoría ("si quieres esto personalizado...")</li>
+            <li>Guarda el live como Reel para reutilizar el contenido</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fmt-card">
+        <div class="fmt-head purple"><span class="fmt-icon">⭐</span> Testimonios / Antes-Después</div>
+        <div class="fmt-body">
+          <p><strong>El contenido que más ventas cierra directamente.</strong> Ver que otra persona logró el resultado que el prospecto quiere es la prueba social más poderosa del mercado.</p>
+          <span class="eng">Tasa de consultas: +180% vs. post normal</span>
+          <ul>
+            <li>Incluye siempre la historia, no solo la foto</li>
+            <li>Menciona tiempo (X semanas), qué cambió y cómo se siente</li>
+            <li>Video de 30–60 seg del cliente hablando = máximo impacto</li>
+            <li>Pide permiso y destácalo en tus Highlights</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fmt-card">
+        <div class="fmt-head dark"><span class="fmt-icon">📘</span> Grupos de Facebook</div>
+        <div class="fmt-body">
+          <p><strong>Comunidad privada = ventas recurrentes y referidos.</strong> Facebook Groups es donde tu audiencia más comprometida vive. Un grupo privado de tu programa genera retención y referidos orgánicos.</p>
+          <span class="eng">Retención de clientes: +60% con grupo activo</span>
+          <ul>
+            <li>Crea un grupo para alumnos activos de tu asesoría</li>
+            <li>Publica desafíos semanales, tips exclusivos, check-ins</li>
+            <li>Los miembros del grupo son tus mejores vendedores</li>
+            <li>Facebook Ads dirigidos a quienes interactúan con el grupo</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. MIX DE CONTENIDO -->
+  <div class="sec pb">
+    <div class="sec-hdr">
+      <div class="sec-num">3</div>
+      <div><div class="sec-lbl">Estructura probada</div><div class="sec-title">El Mix de Contenido que Convierte (Regla 30/30/30)</div></div>
+    </div>
+    <div class="mix-grid">
+      <div class="mix-card edu">
+        <div class="pct">30%</div>
+        <h4>Contenido Educativo</h4>
+        <p>Tips de nutrición, errores de entrenamiento, mitos vs. realidad, cómo funciona la pérdida de grasa. Genera GUARDADOS y posiciona tu autoridad.</p>
+      </div>
+      <div class="mix-card ins">
+        <div class="pct">30%</div>
+        <h4>Contenido Inspiracional</h4>
+        <p>Transformaciones de clientes, tu propio proceso, frases motivadoras con contexto real, "día en la vida de alguien en mi programa". Genera COMPARTIDOS.</p>
+      </div>
+      <div class="mix-card com">
+        <div class="pct">30%</div>
+        <h4>Contenido de Comunidad</h4>
+        <p>Preguntas, encuestas, challenges, Q&A, "cuéntame tu historia". Genera COMENTARIOS y conversaciones que el algoritmo premia.</p>
+      </div>
+    </div>
+    <div class="hl">
+      <h3>¿Y el 10% restante?</h3>
+      <p>Es <strong>contenido de venta directo</strong>: apertura de cupos, precio, qué incluye tu asesoría, CTA claro. No publiques solo venta, pero tampoco evites publicar. <strong>1 de cada 10 posts puede vender directamente.</strong></p>
+    </div>
+  </div>
+
+  <!-- 4. HOOKS -->
+  <div class="sec">
+    <div class="sec-hdr">
+      <div class="sec-num">4</div>
+      <div><div class="sec-lbl">Las primeras 3 palabras importan más que todo</div><div class="sec-title">Hooks de Alto Impacto para Fitness y Asesorías</div></div>
+    </div>
+    <div class="intro">
+      <p>El <strong>hook</strong> es la primera línea de tu caption o los primeros 3 segundos de tu video. Si no captura la atención inmediatamente, el usuario desliza. Un buen hook puede multiplicar el alcance de tu contenido por 5x.</p>
+    </div>
+    <table class="hook-table">
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Hook (usa este texto)</th>
+          <th>Por qué funciona</th>
+          <th>Formato ideal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tag-red">Promesa específica</td>
+          <td>"Perdí 8 kg en 10 semanas sin dejar de comer lo que me gusta"</td>
+          <td>Resultado concreto + solución al dolor principal</td>
+          <td>Reel / Carousel</td>
+        </tr>
+        <tr>
+          <td class="tag-red">Mito vs. Realidad</td>
+          <td>"El cardio no adelgaza. Aquí te explico por qué."</td>
+          <td>Genera polémica y curiosidad, impulsa comentarios</td>
+          <td>Carousel / Reel</td>
+        </tr>
+        <tr>
+          <td class="tag-red">Error común</td>
+          <td>"El error que comete el 90% de las personas que quieren bajar de peso"</td>
+          <td>El usuario se identifica y quiere saber si lo está cometiendo</td>
+          <td>Carousel / Story</td>
+        </tr>
+        <tr>
+          <td class="tag-red">Número en lista</td>
+          <td>"5 señales de que tu metabolismo está lento (y cómo reactivarlo)"</td>
+          <td>Estructura clara, fácil de guardar y compartir</td>
+          <td>Carousel</td>
+        </tr>
+        <tr>
+          <td class="tag-red">Historia personal</td>
+          <td>"Hace 1 año no podía subir una escalera sin quedarme sin aire. Hoy..."</td>
+          <td>Narrativa emocional = máximo engagement y shares</td>
+          <td>Reel / Post largo</td>
+        </tr>
+        <tr>
+          <td class="tag-red">Pregunta directa</td>
+          <td>"¿Llevas meses entrenando y no ves resultados? Aquí está el problema."</td>
+          <td>El prospecto se identifica → sigue leyendo o mirando</td>
+          <td>Todos los formatos</td>
+        </tr>
+        <tr>
+          <td class="tag-red">POV / Rol</td>
+          <td>"POV: Llevas 3 meses en mi programa y así luce tu semana"</td>
+          <td>Genera curiosidad sobre qué es el programa, leads naturales</td>
+          <td>Reel</td>
+        </tr>
+        <tr>
+          <td class="tag-red">Testimonio gancho</td>
+          <td>"Mi cliente [nombre] me escribió esto después de 6 semanas..."</td>
+          <td>Prueba social inmediata, genera confianza antes de vender</td>
+          <td>Story / Carousel</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. IDEAS DE CONTENIDO -->
+  <div class="sec pb">
+    <div class="sec-hdr">
+      <div class="sec-num">5</div>
+      <div><div class="sec-lbl">Banco de ideas probadas</div><div class="sec-title">20 Ideas de Contenido con Alto Rendimiento</div></div>
+    </div>
+    <div class="ideas-grid">
+      <div class="idea"><div class="idea-num">1</div><div><h4>Antes y Después con Historia</h4><p>Foto + texto de qué cambió en la vida del cliente. No solo el físico: energía, confianza, hábitos.</p></div></div>
+      <div class="idea"><div class="idea-num">2</div><div><h4>"Un día en mi programa"</h4><p>Muestra el proceso real: app, plan de alimentación, entrenamiento, seguimiento. Genera curiosidad.</p></div></div>
+      <div class="idea"><div class="idea-num">3</div><div><h4>3 Alimentos que sabotean tu progreso</h4><p>Contenido educativo controversial que genera guardados y comentarios.</p></div></div>
+      <div class="idea"><div class="idea-num">4</div><div><h4>Lo que nadie te dice sobre bajar de peso</h4><p>Hook de misterio. Revela algo contraintuitivo real.</p></div></div>
+      <div class="idea"><div class="idea-num">5</div><div><h4>Plan de comidas de un lunes</h4><p>Muestra qué come alguien en tu programa. Deja ver que no es restrictivo.</p></div></div>
+      <div class="idea"><div class="idea-num">6</div><div><h4>Video de cliente haciendo su rutina</h4><p>Con su permiso. Humaniza el programa y muestra resultados reales.</p></div></div>
+      <div class="idea"><div class="idea-num">7</div><div><h4>Mito: "sin carbohidratos se baja más rápido"</h4><p>Derriba mitos con ciencia simple. Posiciona tu autoridad.</p></div></div>
+      <div class="idea"><div class="idea-num">8</div><div><h4>¿Qué pasa en tu cuerpo sin dormir 7 horas?</h4><p>Contenido de educación en salud que conecta con tu programa.</p></div></div>
+      <div class="idea"><div class="idea-num">9</div><div><h4>Encuesta: "¿Cuánto tiempo llevas queriendo cambiar tu cuerpo?"</h4><p>Story interactiva que activa conversación y detecta prospectos.</p></div></div>
+      <div class="idea"><div class="idea-num">10</div><div><h4>Apertura de cupos con cuenta regresiva</h4><p>Post + story con contador: "Quedan 3 lugares para mi programa de 3 meses".</p></div></div>
+      <div class="idea"><div class="idea-num">11</div><div><h4>Reacción a pregunta frecuente</h4><p>"Me preguntan todo el tiempo si pueden comer X mientras entrenan..." → tu respuesta.</p></div></div>
+      <div class="idea"><div class="idea-num">12</div><div><h4>Comparativa: gimnasio solo vs. con asesoría</h4><p>Carrusel visual mostrando diferencia de resultados y enfoque.</p></div></div>
+      <div class="idea"><div class="idea-num">13</div><div><h4>5 señales de que tu cuerpo está en déficit calórico</h4><p>Lista educativa que el usuario guarda para releer.</p></div></div>
+      <div class="idea"><div class="idea-num">14</div><div><h4>"Me escribió a medianoche para decirme..."</h4><p>Captura de conversación real con cliente (con permiso). Altamente compartido.</p></div></div>
+      <div class="idea"><div class="idea-num">15</div><div><h4>Mi rutina de lunes explicada paso a paso</h4><p>Reel con subtítulos mostrando ejercicios y porqué cada uno.</p></div></div>
+      <div class="idea"><div class="idea-num">16</div><div><h4>Semana 1 vs. Semana 12 de mi programa</h4><p>Infografía o video comparativo del proceso de un cliente.</p></div></div>
+      <div class="idea"><div class="idea-num">17</div><div><h4>¿Qué incluye exactamente mi asesoría?</h4><p>Post transparente y detallado sobre tu servicio. Directo para cerrar ventas.</p></div></div>
+      <div class="idea"><div class="idea-num">18</div><div><h4>Q&A: "Preguntenme sobre nutrición"</h4><p>Story de preguntas + respuestas en Reels. Contenido reciclado fácil.</p></div></div>
+      <div class="idea"><div class="idea-num">19</div><div><h4>Challenge de 7 días gratuito</h4><p>Lanza un mini reto gratuito → captura emails o leads → ofrece tu programa al final.</p></div></div>
+      <div class="idea"><div class="idea-num">20</div><div><h4>Testimonial en video (30–60 seg)</h4><p>Tu cliente habla a cámara de su experiencia. Formato de mayor conversión en ventas.</p></div></div>
+    </div>
+  </div>
+
+  <!-- 6. COPYS EJEMPLO -->
+  <div class="sec">
+    <div class="sec-hdr">
+      <div class="sec-num">6</div>
+      <div><div class="sec-lbl">Plantillas listas para usar</div><div class="sec-title">Copys de Ejemplo para Publicaciones de Venta</div></div>
+    </div>
+
+    <div class="copy-card">
+      <div class="copy-head">📸 Post de Lanzamiento / Apertura de Cupos — Instagram & Facebook</div>
+      <div class="copy-body">
+        <div class="hook-line">¿Llevas meses entrenando y el espejo sigue igual? 😤</div>
+        <p>El problema no eres tú. Es que nadie te está guiando con un plan real para TU cuerpo.<br><br>
+        Por eso abro <strong>5 cupos para mi Asesoría Online de 3 Meses</strong>, donde vas a tener:<br><br>
+        ✅ Plan de alimentación 100% personalizado<br>
+        ✅ Rutina adaptada a tu nivel y equipamiento<br>
+        ✅ Seguimiento semanal por la app<br>
+        ✅ Acceso directo a mí para dudas y ajustes<br>
+        ✅ Sin dietas restrictivas. Sin horarios imposibles.<br><br>
+        En 3 meses mis clientes lograron [resultado específico]. Y el próximo podrías ser vos.<br><br>
+        <strong>¿Cómo entrar?</strong> Escribime "QUIERO" por DM o al WhatsApp en mi bio y te cuento todo.</p>
+        <div class="cta">CTA: "Escribime QUIERO" — genera acción inmediata y filtra interesados reales</div>
+        <div class="tags">#transformacionfisica #asesoriafitness #perderpeso #cambiofisico #nutriciondeportiva #entrenamiento #fitnessonline</div>
+      </div>
+    </div>
+
+    <div class="copy-card">
+      <div class="copy-head">🎠 Carrusel — "5 Errores que te Impiden Bajar de Peso" (slide 1 caption)</div>
+      <div class="copy-body">
+        <div class="hook-line">Hacés todo "bien" y aún así no bajás de peso. Aquí el por qué. 👇</div>
+        <p>Deslizá para ver los 5 errores más comunes que veo en mis clientes cuando llegan a mí.<br><br>
+        (Spoiler: la mayoría está cometiendo el #3 sin saberlo)<br><br>
+        Guardalo 🔖 para no olvidar y compartíselo a alguien que lo necesite.</p>
+        <div class="cta">CTA en última slide: "¿Cometés alguno de estos? Contame en comentarios" → dispara interacción</div>
+        <div class="tags">#nutricion #fitness #bajardepeso #habitossaludables #transformacion</div>
+      </div>
+    </div>
+
+    <div class="copy-card">
+      <div class="copy-head">🎬 Reel — Testimonio de Cliente (descripción / caption)</div>
+      <div class="copy-body">
+        <div class="hook-line">Esto me escribió [Nombre] después de 8 semanas en mi programa. 🙌</div>
+        <p>Cuando llegó a mí llevaba 2 años yendo al gimnasio sin ver resultados. No era falta de esfuerzo: era falta de dirección.<br><br>
+        En 8 semanas: perdió 6 kg, mejoró su relación con la comida y ahora sabe exactamente qué hacer.<br><br>
+        Esto es lo que pasa cuando tenés un plan hecho para VOS.<br><br>
+        Si querés tu transformación, <strong>abrí mis cupos el próximo lunes</strong>. Mandame un DM y te explico cómo entrar.</p>
+        <div class="cta">Urgencia + escasez: "cupos el próximo lunes" → genera acción antes de que se vayan</div>
+        <div class="tags">#resultados #asesoriafitnessonline #transformacionreal #cuerposano #coaching</div>
+      </div>
+    </div>
+
+    <div class="copy-card">
+      <div class="copy-head">📱 Story de Venta Directa — Secuencia de 3 Stories</div>
+      <div class="copy-body">
+        <div class="hook-line">Story 1 → Story 2 → Story 3: La secuencia que cierra ventas</div>
+        <p><strong>Story 1 — El dolor:</strong> "¿Cuántas veces empezaste una dieta y la dejaste antes del mes? 🙋" (encuesta Sí / No)<br><br>
+        <strong>Story 2 — La solución:</strong> "El problema es que las dietas genéricas no funcionan. Lo que funciona es un plan armado para vos, con seguimiento real. Eso es exactamente lo que hago en mi asesoría."<br><br>
+        <strong>Story 3 — CTA:</strong> "Quedan 3 lugares para mi programa de 3 meses. Si respondiste Sí antes → mandame un mensaje ahora 👇" [Link a WhatsApp]</p>
+        <div class="cta">Secuencia: activa emoción → ofrece solución → pide acción. Tasa de conversión muy alta en calientes</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 7. ALGORITMO -->
+  <div class="sec pb">
+    <div class="sec-hdr">
+      <div class="sec-num">7</div>
+      <div><div class="sec-lbl">Cómo ganarle al sistema</div><div class="sec-title">Estrategia por Plataforma: Instagram vs. Facebook</div></div>
+    </div>
+    <div class="plat-grid">
+      <div class="plat-card">
+        <div class="plat-head ig">📸 Instagram — Estrategia 2026</div>
+        <div class="plat-body">
+          <div class="plat-stat"><span>Métrica principal</span><span class="val">Vistas + Guardados</span></div>
+          <div class="plat-stat"><span>Formato #1 alcance</span><span class="val">Reels 30–45 seg</span></div>
+          <div class="plat-stat"><span>Formato #1 engagement</span><span class="val">Carousels 6–10 slides</span></div>
+          <div class="plat-stat"><span>Frecuencia ideal</span><span class="val">4–5 posts/semana</span></div>
+          <div class="plat-stat"><span>Mejor horario</span><span class="val">7–9am / 12–2pm / 7–9pm</span></div>
+          <ul style="margin-top:14px;">
+            <li>Usa palabras clave en captions y subtítulos de video (SEO)</li>
+            <li>Diseña Highlights: Resultados / Cómo funciona / FAQ / Testimonio</li>
+            <li>Responde todos los comentarios en las primeras 2 horas</li>
+            <li>DM a quienes dieron like o guardaron tu post</li>
+            <li>Stories diarias para mantener presencia activa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head fb">👥 Facebook — Estrategia 2026</div>
+        <div class="plat-body">
+          <div class="plat-stat"><span>Mejor uso actual</span><span class="val">Grupos privados + Ads</span></div>
+          <div class="plat-stat"><span>Audiencia principal</span><span class="val">25–44 años (tu target)</span></div>
+          <div class="plat-stat"><span>Formato orgánico #1</span><span class="val">Video nativo + Lives</span></div>
+          <div class="plat-stat"><span>Frecuencia ideal</span><span class="val">3–4 posts/semana</span></div>
+          <div class="plat-stat"><span>Herramienta clave</span><span class="val">Facebook Ads Manager</span></div>
+          <ul style="margin-top:14px;">
+            <li>Crea un Grupo privado para alumnos activos</li>
+            <li>Usa una Página de negocio para publicidad pagada</li>
+            <li>Comparte en grupos de fitness de tu ciudad/país</li>
+            <li>Publica en Marketplace tu asesoría como servicio</li>
+            <li>Anuncia con $5–10/día dirigido a 20–35 años interesados en fitness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CALENDARIO SEMANAL -->
+    <div style="margin-top:30px;">
+      <h3 style="font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;">Calendario Semanal de Publicaciones Recomendado</h3>
+      <div class="cal-grid">
+        <div class="cal-day red"><div class="day-name">Lunes</div><div class="type">Educativo</div><span style="font-size:10px;color:#888;">Carousel de tips</span></div>
+        <div class="cal-day blue"><div class="day-name">Martes</div><div class="type">Transformación</div><span style="font-size:10px;color:#888;">Antes/después</span></div>
+        <div class="cal-day red"><div class="day-name">Miércoles</div><div class="type">Reel</div><span style="font-size:10px;color:#888;">Error común / tip</span></div>
+        <div class="cal-day green"><div class="day-name">Jueves</div><div class="type">Comunidad</div><span style="font-size:10px;color:#888;">Q&A / encuesta</span></div>
+        <div class="cal-day red"><div class="day-name">Viernes</div><div class="type">Testimonio</div><span style="font-size:10px;color:#888;">Resultado cliente</span></div>
+        <div class="cal-day blue"><div class="day-name">Sábado</div><div class="type">Reel alcance</div><span style="font-size:10px;color:#888;">Viral / hook</span></div>
+        <div class="cal-day grey"><div class="day-name">Domingo</div><div class="type">Descanso / Story</div><span style="font-size:10px;color:#888;">Solo stories</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. ALGORITMO TIPS -->
+  <div class="sec">
+    <div class="sec-hdr">
+      <div class="sec-num">8</div>
+      <div><div class="sec-lbl">Reglas no escritas</div><div class="sec-title">Claves del Algoritmo que Pocos Aplican</div></div>
+    </div>
+    <div class="algo-grid">
+      <div class="algo-card">
+        <h4>Lo que el algoritmo premia</h4>
+        <ul>
+          <li>GUARDADOS (señal más fuerte)</li>
+          <li>COMPARTIDOS en stories o DMs</li>
+          <li>Tiempo de visualización del video</li>
+          <li>Profundidad de swipe en carousels</li>
+          <li>Respuestas a tus stories (DMs directos)</li>
+          <li>Comentarios con más de 4 palabras</li>
+        </ul>
+      </div>
+      <div class="algo-card">
+        <h4>Lo que el algoritmo penaliza</h4>
+        <ul>
+          <li>Eliminar posts (baja confianza del perfil)</li>
+          <li>Publicar y no responder comentarios</li>
+          <li>Seguir/dejar de seguir masivamente</li>
+          <li>Usar más de 5–7 hashtags irrelevantes</li>
+          <li>Inactividad prolongada (más de 7 días sin post)</li>
+          <li>Contenido que no retiene (views de 1–2 seg)</li>
+        </ul>
+      </div>
+      <div class="algo-card">
+        <h4>Estrategia de Hashtags (Instagram)</h4>
+        <ul>
+          <li>Usa 5–10 hashtags máximo por post</li>
+          <li>Mezcla: 2 grandes (+1M) + 3 medianos (100k–500k) + 2 nicho</li>
+          <li>Ejemplo: #fitness + #transformacionfisica + #asesoriafitnessonline</li>
+          <li>Ponlos al final del caption (no en comentarios)</li>
+          <li>Incluye palabras clave en el texto del video</li>
+        </ul>
+      </div>
+      <div class="algo-card">
+        <h4>Regla de Oro: Las primeras 2 horas</h4>
+        <ul>
+          <li>Publica y quédate 30 min respondiendo comentarios</li>
+          <li>El algoritmo evalúa el rendimiento inicial del post</li>
+          <li>Más interacción temprana = mayor distribución</li>
+          <li>Comparte tu nuevo post en tus stories el mismo día</li>
+          <li>Pide a 2–3 personas de confianza que comenten rápido</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hl" style="margin-top:26px;">
+      <h3>La Conclusión más Importante de este Informe</h3>
+      <p>No existe un solo video viral que construya un negocio. Lo que construye clientes y ventas constantes es la <strong>consistencia + prueba social + llamado a la acción claro</strong>. Publica 4–5 veces por semana durante 60 días consecutivos con este mix de contenido y vas a ver resultados reales en tu cantidad de consultas e inscripciones.</p>
+    </div>
+  </div>
+
+</div><!-- fin body -->
+
+<div class="foot">
+  <div><strong>BPteam Asesoría</strong> — Informe Estratégico de Contenido 2026</div>
+  <div>Fuentes: FitBudd Academy · Trainerize Blog · ContentStudio · Accio Fitness Trends</div>
+</div>
+
+</div><!-- fin page -->
+</body>
+</html>

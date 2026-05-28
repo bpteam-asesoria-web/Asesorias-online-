@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan de Trabajo: Vender Asesoría de 12 Semanas</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      font-size: 13px;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+    }
+
+    /* PORTADA */
+    .cover {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: white;
+      padding: 80px 60px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(229,57,53,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(255,152,0,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cover-badge {
+      background: rgba(229,57,53,0.9);
+      color: white;
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      width: fit-content;
+    }
+
+    .cover h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .cover h1 span { color: #e53935; }
+
+    .cover .subtitle {
+      font-size: 18px;
+      opacity: 0.8;
+      margin-bottom: 50px;
+      line-height: 1.6;
+    }
+
+    .cover-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .cover-stat {
+      text-align: center;
+    }
+
+    .cover-stat .num {
+      font-size: 36px;
+      font-weight: 800;
+      color: #e53935;
+      display: block;
+    }
+
+    .cover-stat .label {
+      font-size: 12px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cover-divider {
+      width: 60px;
+      height: 4px;
+      background: #e53935;
+      margin: 30px 0;
+      border-radius: 2px;
+    }
+
+    .cover-footer {
+      position: absolute;
+      bottom: 40px;
+      left: 60px;
+      right: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0.5;
+      font-size: 11px;
+    }
+
+    /* CONTENIDO */
+    .content {
+      padding: 0 60px 60px;
+    }
+
+    /* SECCIÓN */
+    .section {
+      margin-bottom: 50px;
+      page-break-inside: avoid;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .section-number {
+      background: #e53935;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .section-subtitle {
+      font-size: 12px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* INTRO BLOCK */
+    .intro-block {
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    .intro-block p {
+      font-size: 14px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 20px;
+      border-top: 4px solid #e53935;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .card-icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* STEPS */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 18px;
+      border-left: 4px solid #e53935;
+    }
+
+    .step-num {
+      background: #1a1a2e;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .step-content .tip {
+      margin-top: 8px;
+      background: rgba(229,57,53,0.08);
+      border: 1px solid rgba(229,57,53,0.2);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 11px;
+      color: #c62828;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: #e8e8e8;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      padding: 0 0 24px 0;
+      position: relative;
+    }
+
+    .timeline-dot {
+      width: 32px;
+      height: 32px;
+      background: #e53935;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 12px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-body {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 16px 20px;
+      flex: 1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .timeline-body .day {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #e53935;
+      margin-bottom: 4px;
+    }
+
+    .timeline-body h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+    }
+
+    .timeline-body p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .timeline-body ul {
+      margin-top: 8px;
+      padding-left: 16px;
+    }
+
+    .timeline-body ul li {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* CHECKLIST */
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #fafafa;
+      border-radius: 8px;
+    }
+
+    .check-box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #e53935;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .check-item p {
+      font-size: 12px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* PRICE TABLE */
+    .price-table {
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .price-table thead {
+      background: #1a1a2e;
+      color: white;
+    }
+
+    .price-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .price-table tbody tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .price-table tbody tr:hover {
+      background: rgba(229,57,53,0.05);
+    }
+
+    .price-table td {
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #444;
+      border-bottom: 1px solid #eee;
+    }
+
+    .price-table .price {
+      font-weight: 700;
+      color: #e53935;
+      font-size: 14px;
+    }
+
+    .price-table .highlight-row {
+      background: rgba(229,57,53,0.08) !important;
+    }
+
+    .price-table .highlight-row td {
+      font-weight: 600;
+      color: #c62828;
+    }
+
+    /* OBJECTIONS */
+    .objection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .objection-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .objection-q {
+      background: #1a1a2e;
+      color: white;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .objection-a {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-top: none;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(229,57,53,0.08), rgba(255,152,0,0.08));
+      border: 2px solid rgba(229,57,53,0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+
+    .highlight-box h3 {
+      color: #c62828;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box p {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* TWO COLS */
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .col-block {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .col-block h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e53935;
+    }
+
+    .col-block ul {
+      padding-left: 16px;
+    }
+
+    .col-block ul li {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* PAGE BREAK */
+    .page-break {
+      page-break-before: always;
+      padding-top: 60px;
+    }
+
+    /* SECTION INTRO */
+    .section-intro {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    .doc-footer {
+      background: #1a1a2e;
+      color: rgba(255,255,255,0.6);
+      padding: 30px 60px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .doc-footer strong {
+      color: white;
+    }
+
+    /* TAG */
+    .tag {
+      display: inline-block;
+      background: rgba(229,57,53,0.1);
+      color: #c62828;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin: 2px;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { max-width: 100%; }
+      .cover { min-height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- PORTADA -->
+  <div class="cover">
+    <div class="cover-badge">Plan de Ventas Profesional</div>
+    <h1>Cómo Vender tu<br>Asesoría de <span>12 Semanas</span><br>de Cambio Físico</h1>
+    <div class="cover-divider"></div>
+    <p class="subtitle">Guía paso a paso para atraer, convencer y cerrar<br>clientes para tu programa de transformación física.</p>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <span class="num">12</span>
+        <span class="label">Semanas</span>
+      </div>
+      <div class="cover-stat">
+        <span class="num">7</span>
+        <span class="label">Etapas clave</span>
+      </div>
+      <div class="cover-stat">
+        <span class="num">100%</span>
+        <span class="label">Accionable</span>
+      </div>
+    </div>
+    <div class="cover-footer">
+      <span>BPteam Asesoría &mdash; 2026</span>
+      <span>Plan de Trabajo Estratégico</span>
+    </div>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+
+    <!-- SECCIÓN 1: FUNDAMENTOS -->
+    <div class="section section-intro">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div>
+          <div class="section-subtitle">Punto de partida</div>
+          <div class="section-title">Define Tu Oferta con Claridad</div>
+        </div>
+      </div>
+
+      <div class="intro-block">
+        <p>Antes de vender, necesitas saber exactamente <strong>qué ofreces, a quién se lo ofreces y qué resultado concreto prometes</strong>. Una oferta vaga genera desconfianza. Una oferta específica genera deseo. Este primer paso es el más importante de todo el proceso.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">🎯</span>
+          <h4>Cliente Ideal</h4>
+          <p>Define quién ES tu cliente: edad, género, situación actual (sobrepeso, sin músculo, con hábitos malos), motivación principal.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">📦</span>
+          <h4>Qué Incluye</h4>
+          <p>Plan de alimentación, rutina personalizada, seguimiento semanal, acceso directo a ti, ajustes progresivos, comunidad.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">✅</span>
+          <h4>Resultado Prometido</h4>
+          <p>Sé específico: "Perder 6-10 kg en 12 semanas" o "Ganar masa muscular visible y crear hábitos que duran".</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Tu Propuesta de Valor en 1 Oración</h3>
+        <p>Completa esta frase: <em>"Ayudo a [CLIENTE IDEAL] a lograr [RESULTADO] en 12 semanas, incluso si [OBJECIÓN PRINCIPAL], a través de [TU MÉTODO]."</em><br><br>
+        Ejemplo: "Ayudo a mujeres de 25-40 años a perder grasa y ganar confianza en 12 semanas, incluso si nunca han seguido una dieta, a través de un plan de alimentación flexible y entrenamiento progresivo."</p>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 2: PRECIO -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div>
+          <div class="section-subtitle">Estrategia financiera</div>
+          <div class="section-title">Define Tu Precio y Estructura de Pago</div>
+        </div>
+      </div>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Modalidad</th>
+            <th>Precio Sugerido</th>
+            <th>Qué Incluye</th>
+            <th>Público</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Básico</strong></td>
+            <td class="price">$150 - $200 USD</td>
+            <td>Plan alimentación + rutina + 1 revisión mensual</td>
+            <td>Clientes nuevos, bajo presupuesto</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Estándar (Recomendado)</strong></td>
+            <td class="price">$250 - $350 USD</td>
+            <td>Todo lo anterior + seguimiento semanal + chat directo</td>
+            <td>La mayoría de tus clientes</td>
+          </tr>
+          <tr>
+            <td><strong>Premium / VIP</strong></td>
+            <td class="price">$400 - $600 USD</td>
+            <td>Todo lo anterior + videollamadas + acceso prioritario</td>
+            <td>Clientes que quieren máxima atención</td>
+          </tr>
+          <tr>
+            <td><strong>Pago en Cuotas</strong></td>
+            <td class="price">+15% al precio base</td>
+            <td>Divide en 2 o 3 pagos (mes 1, mes 2, mes 3)</td>
+            <td>Clientes con flujo de caja limitado</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="two-cols" style="margin-top:16px;">
+        <div class="col-block">
+          <h4>Reglas de Precio</h4>
+          <ul>
+            <li>Nunca negocies hacia abajo sin dar valor extra</li>
+            <li>Cobra el 50% o 100% por adelantado</li>
+            <li>Incrementa precio con cada testimonio nuevo</li>
+            <li>El precio bajo comunica baja calidad</li>
+          </ul>
+        </div>
+        <div class="col-block">
+          <h4>Ancla de Precio</h4>
+          <ul>
+            <li>Presenta primero el plan Premium</li>
+            <li>El Estándar parecerá más accesible</li>
+            <li>Usa el costo por día: "$10/día por transformar tu cuerpo"</li>
+            <li>Compara con lo que gasta sin resultados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 3: VISIBILIDAD -->
+    <div class="section page-break">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div>
+          <div class="section-subtitle">Generar demanda</div>
+          <div class="section-title">Crea Visibilidad y Atrae Prospectos</div>
+        </div>
+      </div>
+
+      <div class="intro-block">
+        <p>Si nadie sabe que existes, no puedes vender. El contenido es tu vendedor 24/7. No necesitas miles de seguidores, necesitas la <strong>audiencia correcta</strong> que confíe en ti.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">A</div>
+          <div class="step-content">
+            <h4>Optimiza tu Perfil de Instagram/TikTok</h4>
+            <p>Foto de perfil profesional. Bio clara que diga exactamente a quién ayudas y cómo. Link a un formulario de contacto o WhatsApp Business. Destacados con: Testimonios / Resultados / Cómo funciona / FAQ.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">B</div>
+          <div class="step-content">
+            <h4>Publica Contenido de Valor (3-5x por semana)</h4>
+            <p>Mezcla los tipos de contenido para educar, generar confianza y llamar a la acción.</p>
+            <div class="tip">Tipos: Tip de nutrición · Mito vs realidad · Transformación de cliente · "Un día en mi programa" · Tu propia rutina · Error común que comete la gente</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">C</div>
+          <div class="step-content">
+            <h4>Usa Stories para Cercanía Diaria</h4>
+            <p>Las stories generan confianza y urgencia. Muestra tu día, tus clientes trabajando, encuestas, preguntas y respuestas, contadores regresivos cuando abres cupos.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">D</div>
+          <div class="step-content">
+            <h4>Reels / TikTok para Alcance Orgánico</h4>
+            <p>Un buen reel puede traerte cientos de prospectos sin pagar. Temas que funcionan: antes y después (con permiso), "qué como en un día", "los 3 errores que te impiden bajar de peso".</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">E</div>
+          <div class="step-content">
+            <h4>Lista de WhatsApp / Canal de Difusión</h4>
+            <p>Mueve a tus prospectos a WhatsApp. Comparte contenido exclusivo, abre cupos allí primero, genera una comunidad de personas interesadas antes de que compren.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 4: PROSPECCIÓN -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div>
+          <div class="section-subtitle">Contacto activo</div>
+          <div class="section-title">Identifica y Contacta Prospectos</div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-body">
+            <div class="day">Acción Diaria · 15-20 min</div>
+            <h4>Responde Comentarios y Mensajes</h4>
+            <p>Responde TODOS los comentarios en tus posts. Cada comentario es un prospecto potencial. Convierte conversaciones en DMs privados donde puedas profundizar.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-body">
+            <div class="day">Acción Proactiva</div>
+            <h4>DM a Personas que Interactúan con tu Contenido</h4>
+            <p>Si alguien le da like a tu post sobre pérdida de grasa, envíale un DM: "¡Gracias por el like! ¿Estás buscando bajar de peso? Tengo algo que puede ayudarte."</p>
+            <ul>
+              <li>No empieces vendiendo, empieza con una pregunta</li>
+              <li>Máximo 5-10 DMs nuevos por día para no ser marcado como spam</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-body">
+            <div class="day">Red de Contactos</div>
+            <h4>Activa tu Red Personal</h4>
+            <p>Dile a amigos, familia y conocidos lo que haces. Pide referidos: "Si conoces a alguien que quiera cambiar su cuerpo, me puedes recomendar. Si cierra, te regalo [beneficio]."</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-body">
+            <div class="day">Grupos y Comunidades</div>
+            <h4>Participa en Grupos de Facebook / Foros</h4>
+            <p>Únete a grupos de fitness, nutrición o pérdida de peso. Ayuda genuinamente, no spamees. Cuando alguien haga una pregunta que tú puedes resolver, responde con valor y menciona que tienes un programa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 5: CONVERSACIÓN DE VENTA -->
+    <div class="section page-break">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div>
+          <div class="section-subtitle">El momento clave</div>
+          <div class="section-title">La Conversación de Venta (Cierre)</div>
+        </div>
+      </div>
+
+      <div class="intro-block">
+        <p>La venta se gana antes de hablar de precios. Primero entiende a fondo el problema del prospecto, luego posiciona tu asesoría como la solución exacta que necesita. Nunca cotices antes de entender su situación.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>La Llamada / Videollamada de Diagnóstico (15-30 min)</h4>
+            <p>No vayas directo al precio. Primero agenda una llamada gratuita de "evaluación" o "diagnóstico". Esto filtra a clientes serios y te permite personalizar tu propuesta.</p>
+            <div class="tip">Script de invitación: "Antes de darte información, me gustaría conocer tu situación para ver si eres candidato/a para mi programa. ¿Tienes 20 minutos esta semana?"</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Preguntas de Diagnóstico (Fase de Escucha)</h4>
+            <p>Haz estas preguntas y escucha más de lo que hablas:</p>
+            <div class="tip">
+              ¿Cuál es tu objetivo principal ahora mismo? · ¿Hace cuánto tiempo llevas intentándolo? · ¿Qué has probado antes y por qué no funcionó? · ¿Qué impacto tiene esto en tu vida diaria? · ¿Qué pasaría si en 12 semanas logras ese objetivo?
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Presenta la Solución (Personalizada)</h4>
+            <p>Conecta lo que dijeron con tu programa: "Basándome en lo que me dijiste, exactamente lo que necesitas es [específico]. En mi programa de 12 semanas vamos a [acción concreta] para que logres [su objetivo]."</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Presenta el Precio con Confianza</h4>
+            <p>Di el precio sin disculparte, sin vacilar. Silencio después. Deja que el cliente procese. El primero que habla después del precio suele ceder.</p>
+            <div class="tip">Ejemplo: "La inversión para las 12 semanas completas es de $300. ¿Tienes alguna pregunta sobre lo que incluye?"</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>El Cierre: Pide la Decisión</h4>
+            <p>No esperes a que el cliente decida solo. Pregunta: "¿Estás listo/a para empezar?" o "¿Cuándo quieres arrancar, esta semana o la próxima?"</p>
+            <div class="tip">Urgencia real: "Abro máximo 5 cupos por mes para dar la atención que mereces. Ahora mismo tengo [X] disponibles."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 6: OBJECIONES -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div>
+          <div class="section-subtitle">Manejo de resistencia</div>
+          <div class="section-title">Responde Objeciones Comunes</div>
+        </div>
+      </div>
+
+      <div class="objection-grid">
+        <div class="objection-card">
+          <div class="objection-q">"Es muy caro / No tengo dinero"</div>
+          <div class="objection-a">"Entiendo. Déjame preguntarte: ¿cuánto llevas gastando en gimnasio, suplementos o dietas que no funcionan? Este programa son $10 al día durante 12 semanas. ¿Puedo ofrecerte un plan de pago en cuotas?"</div>
+        </div>
+        <div class="objection-card">
+          <div class="objection-q">"Lo pienso y te aviso"</div>
+          <div class="objection-a">"Por supuesto. ¿Qué es específicamente lo que necesitas pensar? A veces hay una duda que podemos resolver ahora mismo." — Identifica la objeción real detrás de la duda.</div>
+        </div>
+        <div class="objection-card">
+          <div class="objection-q">"No sé si tendré tiempo"</div>
+          <div class="objection-a">"El programa está diseñado para personas ocupadas. Las rutinas son de 45-60 min, 3-4 veces por semana. El plan de comidas se adapta a tu ritmo de vida. ¿Cuánto tiempo tienes disponible actualmente?"</div>
+        </div>
+        <div class="objection-card">
+          <div class="objection-q">"¿Y si no funciona para mí?"</div>
+          <div class="objection-a">"Entiendo la preocupación. Por eso hacemos seguimiento semanal: si algo no está funcionando, ajustamos inmediatamente. Además, tengo [X] clientes que han logrado [resultado]. Puedo conectarte con uno si quieres."</div>
+        </div>
+        <div class="objection-card">
+          <div class="objection-q">"Primero quiero ver resultados gratis"</div>
+          <div class="objection-a">"Mi contenido gratuito te da una base, pero la transformación real viene con el plan personalizado y el seguimiento. ¿Qué te parece empezar con la primera semana y evaluar juntos?"</div>
+        </div>
+        <div class="objection-card">
+          <div class="objection-q">"¿Por qué tú y no otro?"</div>
+          <div class="objection-a">"Buena pregunta. La diferencia es [tu método específico]. Además, trabajo con máximo [X] clientes al mes para garantizar atención personalizada. Aquí no eres un número."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 7: SEGUIMIENTO Y ESCALA -->
+    <div class="section page-break">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <div>
+          <div class="section-subtitle">Crecer el negocio</div>
+          <div class="section-title">Seguimiento, Testimonios y Escala</div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot">A</div>
+          <div class="timeline-body">
+            <div class="day">Durante las 12 Semanas</div>
+            <h4>Entrega una Experiencia Extraordinaria</h4>
+            <p>Responde rápido. Celebra cada pequeño avance del cliente. Ajusta el plan si es necesario. Sorprende con un contenido extra o un check-in adicional. Un cliente feliz es tu mejor vendedor.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">B</div>
+          <div class="timeline-body">
+            <div class="day">Semana 10-11</div>
+            <h4>Pide el Testimonio en el Momento Correcto</h4>
+            <p>Cuando el cliente esté emocionado con sus resultados, pide el testimonio: foto de antes/después, video de 1 minuto, o mensaje de texto. Usa una pregunta guía: "¿Cómo eras antes del programa? ¿Qué cambió? ¿A quién se lo recomendarías?"</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">C</div>
+          <div class="timeline-body">
+            <div class="day">Semana 11-12</div>
+            <h4>Ofrece la Continuación o un Nuevo Programa</h4>
+            <p>Es más fácil venderle a alguien que ya confía en ti. Antes de terminar ofrece: "¿Quieres seguir para la siguiente fase? Tengo un programa de mantenimiento / masa muscular / avanzado."</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">D</div>
+          <div class="timeline-body">
+            <div class="day">Sistema de Referidos</div>
+            <h4>Activa el Boca a Boca</h4>
+            <p>Pide activamente referidos a tus clientes satisfechos: "Si me recomiendas a alguien que se inscriba, te regalo [descuento en próximo programa / sesión extra / suplemento]."</p>
+            <ul>
+              <li>Un cliente satisfecho puede traerte 2-3 nuevos clientes</li>
+              <li>Los referidos cierran más fácil porque ya llegan con confianza</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">E</div>
+          <div class="timeline-body">
+            <div class="day">Escala Gradual</div>
+            <h4>De 3 a 10 Clientes Simultáneos</h4>
+            <p>Crea plantillas de planes, automatiza el onboarding con formularios, usa herramientas como Trainerize o Google Drive para gestionar clientes. Cuando tengas 5+ clientes, considera subir precios un 20-30%.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHECKLIST FINAL -->
+      <div class="section-header" style="margin-top:40px;">
+        <div style="width:40px;height:40px;background:#1a1a2e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:18px;flex-shrink:0;">✓</div>
+        <div>
+          <div class="section-subtitle">Resumen ejecutivo</div>
+          <div class="section-title">Checklist de Acción Semanal</div>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <div class="check-item"><div class="check-box"></div><p><strong>Lunes:</strong> Planifica el contenido de la semana (3-5 posts). Revisa métricas de la semana anterior.</p></div>
+        <div class="check-item"><div class="check-box"></div><p><strong>Martes / Jueves:</strong> Publica contenido de valor. Responde todos los comentarios y DMs del día.</p></div>
+        <div class="check-item"><div class="check-box"></div><p><strong>Miércoles:</strong> Envía 5-10 DMs proactivos a personas que interactuaron con tu contenido esta semana.</p></div>
+        <div class="check-item"><div class="check-box"></div><p><strong>Viernes:</strong> Realiza llamadas o DMs de seguimiento a prospectos que no han respondido.</p></div>
+        <div class="check-item"><div class="check-box"></div><p><strong>Sábado:</strong> Publica contenido de alta interacción (antes/después, encuestas, preguntas). Stories de tu proceso.</p></div>
+        <div class="check-item"><div class="check-box"></div><p><strong>Diario:</strong> 20 minutos de engagement: responde, comenta en cuentas de tu nicho, muéstrate activo/a.</p></div>
+        <div class="check-item"><div class="check-box"></div><p><strong>Mensual:</strong> Revisa cuántos prospectos contactaste, cuántas llamadas hiciste, cuántos cerraste. Ajusta lo que no funciona.</p></div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:30px;">
+        <h3>La Regla de Oro de las Ventas en Fitness</h3>
+        <p>La gente no compra entrenamientos ni dietas. <strong>Compra la versión de sí mismos que quieren ser.</strong> Vende la transformación, la confianza, la energía, el orgullo de verse al espejo. Tu programa es el vehículo. El resultado emocional es lo que cierra la venta.</p>
+      </div>
+
+      <div style="margin-top:20px;">
+        <p style="font-size:12px;color:#888;margin-bottom:10px;">Herramientas Recomendadas:</p>
+        <span class="tag">Instagram / TikTok</span>
+        <span class="tag">WhatsApp Business</span>
+        <span class="tag">Google Forms (onboarding)</span>
+        <span class="tag">Canva (contenido)</span>
+        <span class="tag">Trainerize</span>
+        <span class="tag">Calendly (agendar llamadas)</span>
+        <span class="tag">PayPal / Stripe / Binance</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div><strong>BPteam Asesoría</strong> &mdash; Plan de Trabajo Estratégico 2026</div>
+    <div>Confidencial &bull; Uso interno</div>
+  </div>
+
+</div>
+</body>
+</html>
