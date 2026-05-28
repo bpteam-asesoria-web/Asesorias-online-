@@ -1,0 +1,2363 @@
+﻿?<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPteam Asesoría | Transformación Física Real — Programas Online Personalizados</title>
+<meta name="description" content="Asesoría personalizada 1 a 1 de 3 meses y membresía mensual con programas de entrenamiento y nutrición. Resultados reales, método probado.">
+<meta property="og:title" content="BPteam Asesoría | Transformación Física Real">
+<meta property="og:description" content="Programa de 3 meses 1 a 1 o membresía mensual. Entrenamiento + Nutrición + Acompañamiento.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  /* Colores — sistema estricto */
+  --ink:       #0a0e1a;   /* texto principal / fondos oscuros */
+  --ink-2:     #111827;   /* fondo oscuro secundario */
+  --ink-3:     #1f2937;   /* bordes en fondos oscuros */
+  --white:     #ffffff;
+  --surface:   #f7f8fa;   /* fondo de secciones claras */
+  --border:    #e5e7eb;   /* bordes sutiles */
+  --text:      #374151;   /* texto normal */
+  --muted:     #6b7280;   /* texto secundario */
+  --faint:     #9ca3af;   /* texto muy suave */
+  --blue:      #1d4ed8;   /* acento único — azul profesional */
+  --blue-hi:   #2563eb;   /* hover del azul */
+  --blue-glow: rgba(29,78,216,.18);
+  --green:     #16a34a;   /* solo para checks */
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
+  background:var(--white);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ===== BARRA URGENCIA ===== */
+.urgency-bar{
+  background:var(--blue);color:#fff;
+  text-align:center;padding:9px 20px;
+  font-size:12px;font-weight:500;letter-spacing:.3px;
+  position:sticky;top:0;z-index:100;
+}
+
+/* ===== NAV ===== */
+nav{
+  background:rgba(10,14,26,.97);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  padding:0 48px;height:60px;
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:36px;z-index:99;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.logo{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.5px;}
+.logo span{color:var(--blue-hi);}
+.nav-cta{
+  background:var(--blue);color:#fff;
+  padding:8px 20px;border-radius:7px;
+  font-weight:600;font-size:13px;
+  transition:background .15s;
+}
+.nav-cta:hover{background:var(--blue-hi);}
+
+/* ===== HERO ===== */
+.hero{
+  background:var(--ink);color:#fff;
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;padding:100px 48px;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:0;right:0;width:50%;height:100%;
+  background:url('foto_brian.jpg') center top/cover no-repeat;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,var(--ink) 46%,rgba(10,14,26,.7) 65%,rgba(10,14,26,.15) 100%);
+}
+.hero-content{position:relative;z-index:2;max-width:580px;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(29,78,216,.18);border:1px solid rgba(37,99,235,.3);
+  color:#93b4ff;padding:6px 14px;border-radius:6px;
+  font-size:11px;font-weight:600;letter-spacing:1.2px;
+  text-transform:uppercase;margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(34px,5vw,62px);font-weight:900;
+  line-height:1.06;margin-bottom:22px;letter-spacing:-1.5px;
+}
+.hero h1 .accent{color:var(--blue-hi);}
+.hero h1 .strike{text-decoration:line-through;color:rgba(255,255,255,.25);font-size:.68em;}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:36px;max-width:480px;}
+.hero-sub strong{color:#fff;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--blue);color:#fff;
+  padding:14px 28px;border-radius:8px;
+  font-weight:700;font-size:14px;letter-spacing:.3px;
+  transition:background .15s,box-shadow .15s;display:inline-block;
+  text-transform:uppercase;
+}
+.btn-primary:hover{background:var(--blue-hi);box-shadow:0 6px 24px var(--blue-glow);}
+.btn-secondary{
+  background:transparent;color:rgba(255,255,255,.8);
+  padding:14px 28px;border-radius:8px;
+  font-weight:500;font-size:14px;
+  border:1px solid rgba(255,255,255,.2);
+  transition:border-color .15s,color .15s;display:inline-block;
+}
+.btn-secondary:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+.hero-stats{
+  display:flex;gap:40px;margin-top:52px;
+  padding-top:36px;border-top:1px solid rgba(255,255,255,.08);
+}
+.hs .n{font-size:30px;font-weight:800;color:#fff;display:block;letter-spacing:-.5px;}
+.hs .l{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;margin-top:2px;}
+.scroll-hint{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.2);font-size:11px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  animation:bounce 2s infinite;
+}
+.scroll-hint::after{content:'↓';font-size:18px;}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(5px);}}
+
+/* ===== SECCIÓN BASE ===== */
+section{padding:96px 48px;}
+.container{max-width:1080px;margin:0 auto;}
+.section-tag{
+  display:inline-block;font-size:11px;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--blue);margin-bottom:12px;
+}
+h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.75px;line-height:1.14;margin-bottom:16px;}
+h2 .gold{color:var(--blue);}
+h2 .orange{color:var(--blue-hi);}
+.lead{font-size:17px;color:var(--muted);line-height:1.8;max-width:600px;}
+
+/* ===== CASOS DE ÉXITO ===== */
+.cases{background:var(--ink-2);padding:96px 48px;}
+.cases-intro{text-align:center;margin-bottom:60px;}
+.cases-intro .section-tag{margin:0 auto 12px;display:block;}
+.cases-intro h2{color:#fff;}
+.cases-intro .lead{color:rgba(255,255,255,.45);margin:0 auto;}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.case-card{
+  background:var(--ink-3);border-radius:14px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.06);
+  transition:transform .25s,box-shadow .25s;
+}
+.case-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.5);}
+.case-imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;}
+.case-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;}
+.case-label{
+  position:absolute;bottom:8px;
+  font-size:10px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;padding:3px 9px;border-radius:4px;
+}
+.case-label.before{left:8px;background:rgba(0,0,0,.7);color:rgba(255,255,255,.7);}
+.case-label.after{right:8px;background:var(--blue);color:#fff;}
+.case-divider{
+  position:absolute;top:0;bottom:0;left:50%;width:2px;
+  background:var(--blue);transform:translateX(-50%);z-index:2;
+}
+.case-divider::before{
+  content:'↔';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  background:var(--blue);color:#fff;
+  width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:900;
+}
+.case-info{padding:18px 20px 22px;}
+.case-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;}
+.case-result{display:flex;align-items:center;gap:6px;margin-bottom:8px;}
+.case-badge{
+  background:rgba(29,78,216,.2);border:1px solid rgba(37,99,235,.25);
+  color:#93b4ff;font-size:11px;font-weight:600;
+  padding:2px 9px;border-radius:4px;
+}
+.case-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;}
+.case-weeks{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-top:10px;font-size:11px;color:rgba(255,255,255,.3);
+  text-transform:uppercase;letter-spacing:.8px;
+}
+.case-weeks span{color:#93b4ff;font-weight:600;}
+.case-img-placeholder{
+  width:100%;aspect-ratio:3/4;background:var(--ink);
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:8px;
+  color:rgba(255,255,255,.15);font-size:11px;
+}
+.case-img-placeholder .ph-icon{font-size:28px;}
+.case-single{display:block;position:relative;}
+.case-img-full{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;}
+
+/* ===== ATLETAS ===== */
+.atletas{background:var(--ink);padding:96px 48px;}
+.atletas-intro{text-align:center;margin-bottom:56px;}
+.atletas-intro .section-tag{display:block;margin:0 auto 12px;}
+.atletas-intro h2{color:#fff;}
+.atletas-intro .lead{color:rgba(255,255,255,.4);margin:0 auto;}
+.atletas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.atleta-card{
+  background:var(--ink-2);border-radius:14px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.07);
+  transition:transform .25s,box-shadow .25s;
+}
+.atleta-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.6);}
+.atleta-card.featured-atleta{border:1px solid rgba(29,78,216,.4);grid-column:span 2;}
+.atleta-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;}
+.atleta-card.featured-atleta .atleta-img{aspect-ratio:3/4;}
+.atleta-info{padding:18px 20px 22px;}
+.atleta-flag{display:inline-flex;align-items:center;gap:5px;background:rgba(29,78,216,.15);border:1px solid rgba(29,78,216,.25);color:#93b4ff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 9px;border-radius:4px;margin-bottom:10px;}
+.atleta-name{font-size:15px;font-weight:800;color:#fff;margin-bottom:3px;}
+.atleta-deporte{font-size:12px;color:var(--blue-hi);font-weight:600;margin-bottom:8px;}
+.atleta-logro{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;}
+.atleta-logro strong{color:rgba(255,255,255,.85);}
+
+/* ===== PROBLEMAS ===== */
+.problems{background:var(--surface);}
+.prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:52px;}
+.prob-card{
+  background:#fff;border-radius:12px;overflow:hidden;
+  border:1px solid var(--border);
+  transition:box-shadow .2s,transform .2s;
+}
+.prob-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.09);transform:translateY(-3px);}
+.prob-img-wrap{width:100%;height:240px;overflow:hidden;position:relative;}
+.prob-img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s,filter .4s;
+  filter:brightness(.98);
+}
+.prob-card:hover .prob-img{transform:scale(1.05);filter:brightness(1.04);}
+.prob-text{padding:20px 22px;}
+.prob-card h3{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.prob-card p{font-size:13px;color:var(--muted);line-height:1.7;}
+
+/* ===== SOLUCIÓN ===== */
+.solution{background:var(--ink);color:#fff;}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:52px;}
+.sol-list{display:flex;flex-direction:column;gap:24px;}
+.sol-item{display:flex;gap:16px;align-items:flex-start;}
+.sol-num{
+  background:var(--blue);color:#fff;
+  width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;flex-shrink:0;
+}
+.sol-item h4{font-size:15px;font-weight:700;margin-bottom:4px;}
+.sol-item p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;}
+.sol-visual{
+  background:rgba(255,255,255,.04);border-radius:14px;
+  padding:36px;border:1px solid rgba(255,255,255,.08);
+}
+.sol-visual .big-stat{
+  text-align:center;padding:24px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:24px;
+}
+.sol-visual .big-stat .val{
+  font-size:68px;font-weight:900;color:#fff;
+  letter-spacing:-3px;line-height:1;display:block;
+}
+.sol-visual .big-stat .desc{font-size:13px;color:rgba(255,255,255,.4);margin-top:8px;}
+.sol-checklist{display:flex;flex-direction:column;gap:11px;}
+.sc-item{display:flex;gap:12px;align-items:center;font-size:13px;color:rgba(255,255,255,.7);}
+.sc-item::before{
+  content:'✓';background:var(--green);color:#fff;
+  width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;flex-shrink:0;
+}
+
+/* ===== PRODUCTOS ===== */
+.products{background:#fff;}
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px;align-items:start;}
+.prod-card{
+  border-radius:14px;overflow:hidden;
+  border:1px solid var(--border);
+  transition:box-shadow .2s,transform .2s;
+}
+.prod-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px);}
+.prod-card.featured{border:2px solid var(--blue);transform:scale(1.02);}
+.prod-card.featured:hover{transform:scale(1.02) translateY(-4px);}
+.prod-head{padding:32px 28px 24px;}
+.prod-head.dark-head{background:var(--ink);color:#fff;}
+.prod-head.light-head{background:var(--surface);color:var(--ink);}
+.prod-badge{
+  display:inline-block;padding:3px 10px;border-radius:4px;
+  font-size:10px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:14px;
+}
+.badge-gold{background:var(--blue);color:#fff;}
+.badge-dark{background:rgba(255,255,255,.1);color:rgba(255,255,255,.5);}
+.badge-cyan{background:rgba(29,78,216,.12);color:var(--blue);}
+.prod-head h3{font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px;}
+.prod-head .tagline{font-size:13px;opacity:.6;line-height:1.5;}
+.prod-price-block{margin-top:20px;}
+.price-label{font-size:11px;opacity:.45;text-transform:uppercase;letter-spacing:.8px;}
+.price-main{font-size:46px;font-weight:900;letter-spacing:-1.5px;line-height:1;margin:4px 0;}
+.price-main.gold-price{color:var(--blue-hi);}
+.price-main.white-price{color:#fff;}
+.price-per{font-size:12px;opacity:.45;}
+.prod-body{padding:28px;}
+.feat-list{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+.feat-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text);line-height:1.5;}
+.feat-check{
+  width:18px;height:18px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px;
+}
+.check-gold{background:var(--blue);color:#fff;}
+.check-cyan{background:var(--muted);color:#fff;}
+.prod-cta{
+  display:block;width:100%;text-align:center;
+  padding:14px;border-radius:8px;font-weight:700;font-size:14px;
+  letter-spacing:.3px;transition:all .15s;text-transform:uppercase;
+}
+.cta-gold{background:var(--blue);color:#fff;}
+.cta-gold:hover{background:var(--blue-hi);box-shadow:0 4px 18px var(--blue-glow);}
+.cta-dark{background:var(--ink);color:#fff;}
+.cta-dark:hover{background:var(--ink-2);}
+.prod-note{text-align:center;font-size:12px;color:var(--faint);margin-top:10px;}
+.memb-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;}
+.memb-cat{border-radius:8px;overflow:hidden;transition:transform .2s;cursor:pointer;border:1px solid var(--border);}
+.memb-cat:hover{transform:translateY(-2px);}
+.memb-cat-img{width:100%;height:150px;object-fit:cover;display:block;transition:transform .3s;}
+.memb-cat:hover .memb-cat-img{transform:scale(1.04);}
+.memb-cat-info{background:var(--ink);padding:9px 10px;text-align:center;border-top:2px solid var(--blue);}
+.memb-cat h5{font-size:12px;font-weight:700;color:#fff;margin-bottom:1px;}
+.memb-cat p{font-size:10px;color:rgba(255,255,255,.45);}
+
+/* ===== COMO FUNCIONA ===== */
+.how{background:var(--ink);}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative;}
+.steps-grid::before{
+  content:'';position:absolute;top:24px;left:10%;right:10%;height:1px;
+  background:rgba(255,255,255,.1);z-index:0;
+}
+.step-item{text-align:center;position:relative;z-index:1;padding:0 16px;}
+.step-circle{
+  width:48px;height:48px;border-radius:12px;
+  background:var(--blue);color:#fff;
+  font-size:17px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 18px;
+}
+.step-item h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
+.step-item p{font-size:12px;color:rgba(255,255,255,.45);line-height:1.6;}
+
+/* ===== DIFERENCIADORES ===== */
+.diff{background:var(--surface);}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px;}
+.diff-card{
+  background:#fff;border-radius:12px;overflow:hidden;
+  border:1px solid var(--border);
+  transition:box-shadow .2s,transform .2s;
+}
+.diff-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.09);transform:translateY(-3px);}
+.diff-card:hover .diff-img{transform:scale(1.05);}
+.diff-img-wrap{width:100%;height:180px;overflow:hidden;}
+.diff-img{width:100%;height:100%;object-fit:cover;transition:transform .45s;}
+.diff-body{padding:20px 22px;}
+.diff-label{
+  display:inline-block;font-size:10px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--blue);margin-bottom:8px;
+}
+.dl-gold,.dl-cyan,.dl-orange{color:var(--blue);}
+.diff-card h3{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.diff-card p{font-size:12px;color:var(--muted);line-height:1.7;}
+
+/* CONTACT BAR */
+.contact-bar{
+  margin-top:52px;background:var(--ink);border-radius:14px;
+  padding:32px 40px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+.contact-bar-text h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:4px;}
+.contact-bar-text p{font-size:13px;color:rgba(255,255,255,.45);}
+.contact-bar-btns{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;}
+.cb-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 20px;border-radius:8px;
+  font-weight:600;font-size:13px;transition:opacity .15s,transform .15s;white-space:nowrap;
+}
+.cb-btn:hover{opacity:.88;transform:translateY(-1px);}
+.cb-wa{background:#25d366;color:#fff;}
+.cb-mp{background:#009ee3;color:#fff;}
+.cb-ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;}
+
+/* ===== TESTIMONIOS ===== */
+.testimonials{background:#fff;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px;}
+.testi-card{
+  background:var(--surface);border-radius:12px;padding:24px;
+  border:1px solid var(--border);position:relative;
+}
+.testi-card::before{
+  content:'"';font-size:72px;font-weight:900;line-height:1;
+  color:var(--blue);opacity:.1;
+  position:absolute;top:12px;left:16px;
+}
+.stars{color:#f59e0b;font-size:13px;letter-spacing:2px;margin-bottom:14px;}
+.testi-card p{font-size:13px;color:var(--text);line-height:1.75;margin-bottom:18px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:14px;flex-shrink:0;
+}
+.testi-name{font-weight:700;font-size:13px;color:var(--ink);}
+.testi-result{font-size:11px;color:var(--blue);font-weight:600;margin-top:2px;}
+
+/* ===== SOBRE MÍ ===== */
+.about{background:var(--ink);color:#fff;}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;margin-top:52px;}
+.about-photo{
+  border-radius:14px;aspect-ratio:4/5;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;background:var(--ink-2);
+}
+.about-photo .gold-border{
+  position:absolute;bottom:0;left:0;right:0;height:35%;
+  background:linear-gradient(to top,rgba(29,78,216,.25),transparent);
+}
+.about-content h2{margin-bottom:16px;color:#fff;}
+.about-content .about-lead{font-size:16px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:24px;}
+.about-content .about-lead strong{color:#fff;}
+.about-creds{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.cred{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:rgba(255,255,255,.55);}
+.cred::before{content:'—';color:var(--blue);font-weight:700;margin-top:1px;flex-shrink:0;}
+.about-numbers{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,.07);
+}
+.an .n{font-size:28px;font-weight:800;color:#fff;display:block;letter-spacing:-.5px;}
+.an .l{font-size:11px;color:rgba(255,255,255,.35);margin-top:2px;}
+
+/* ===== PRICING ===== */
+.pricing{background:var(--surface);}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px;align-items:start;}
+.price-card{
+  background:#fff;border-radius:14px;overflow:hidden;
+  border:1px solid var(--border);
+}
+.price-card.featured-price{border:2px solid var(--blue);}
+.price-card-head{background:var(--ink);color:#fff;padding:28px;}
+.price-card-head.gold-head{background:linear-gradient(150deg,#0f1d3e,var(--blue));color:#fff;}
+.price-rec{
+  display:inline-block;background:var(--blue-hi);color:#fff;
+  padding:3px 12px;border-radius:4px;
+  font-size:10px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:14px;
+}
+.price-card-head h3{font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:6px;}
+.price-card-head .desc{font-size:13px;opacity:.6;line-height:1.5;}
+.price-amount{margin-top:20px;}
+.price-from{font-size:11px;opacity:.4;text-transform:uppercase;letter-spacing:.8px;}
+.price-num{font-size:52px;font-weight:900;letter-spacing:-2px;line-height:1;color:#fff;}
+.price-period{font-size:12px;opacity:.5;}
+.price-card-body{padding:28px;}
+.price-includes{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+.pi-item{display:flex;gap:10px;font-size:13px;color:var(--text);align-items:flex-start;}
+.pi-check{color:var(--green);font-weight:700;font-size:15px;flex-shrink:0;}
+.price-cta{
+  display:block;width:100%;text-align:center;
+  padding:15px;border-radius:8px;border:none;cursor:pointer;
+  font-weight:700;font-size:14px;letter-spacing:.3px;
+  text-transform:uppercase;transition:all .15s;
+}
+.cta-gold-full{background:var(--blue);color:#fff;}
+.cta-gold-full:hover{background:var(--blue-hi);box-shadow:0 4px 16px var(--blue-glow);}
+.cta-black-full{background:var(--ink);color:#fff;}
+.cta-black-full:hover{background:var(--ink-2);}
+.price-note{text-align:center;font-size:11px;color:var(--faint);margin-top:10px;}
+.price-guarantee{
+  display:flex;gap:10px;align-items:center;
+  background:var(--surface);border-radius:8px;
+  padding:12px 14px;margin-top:14px;
+}
+.price-guarantee .gi{font-size:22px;}
+.price-guarantee p{font-size:12px;color:var(--muted);line-height:1.5;}
+.price-guarantee strong{color:var(--ink);}
+
+/* ===== PROGRAMAS ===== */
+.programas{background:var(--ink-2);}
+.programas .section-tag{display:block;margin-bottom:12px;}
+.programas h2{color:#fff;}
+.programas .lead{color:rgba(255,255,255,.45);}
+.prog-tabs-wrap{display:flex;flex-direction:column;gap:32px;margin-top:52px;}
+.prog-card{background:var(--ink-3);border-radius:16px;border:1px solid rgba(255,255,255,.07);overflow:hidden;}
+.prog-header{display:grid;grid-template-columns:260px 1fr;}
+.prog-cover{position:relative;overflow:hidden;min-height:200px;}
+.prog-cover img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.75);}
+.prog-cover-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--ink-3));pointer-events:none;}
+.prog-meta{padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px;}
+.prog-badge{display:inline-flex;align-items:center;background:rgba(29,78,216,.15);border:1px solid rgba(29,78,216,.3);color:#93b4ff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:4px;width:fit-content;}
+.prog-title{font-size:21px;font-weight:800;color:#fff;line-height:1.3;}
+.prog-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;max-width:520px;}
+.prog-stats{display:flex;gap:20px;flex-wrap:wrap;}
+.prog-stat{font-size:12px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:5px;}
+.prog-stat strong{color:rgba(255,255,255,.75);font-size:13px;}
+.freq-toggle{display:flex;gap:0;background:var(--ink);border-radius:8px;padding:4px;width:fit-content;margin:24px 32px 0;}
+.freq-btn{padding:8px 22px;border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,.4);cursor:pointer;border:none;background:transparent;transition:all .2s;}
+.freq-btn.active{background:var(--blue);color:#fff;}
+.prog-body{padding:24px 32px 32px;}
+.prog-schedule{display:none;}
+.prog-schedule.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;}
+.day-card{background:var(--ink);border-radius:10px;padding:16px 18px;border:1px solid rgba(255,255,255,.06);}
+.day-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--blue);margin-bottom:6px;}
+.day-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;}
+.day-exercises{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px;}
+.day-exercises li{font-size:11px;color:rgba(255,255,255,.5);padding-left:12px;position:relative;line-height:1.5;}
+.day-exercises li::before{content:'·';position:absolute;left:0;color:var(--blue);}
+.day-exercises li strong{color:rgba(255,255,255,.8);}
+.day-rest{display:flex;align-items:center;justify-content:center;min-height:70px;font-size:12px;color:rgba(255,255,255,.2);font-style:italic;}
+.prog-notes{margin-top:20px;background:rgba(29,78,216,.07);border:1px solid rgba(29,78,216,.15);border-radius:10px;padding:16px 20px;}
+.prog-notes-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#93b4ff;margin-bottom:8px;}
+.prog-notes ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;}
+.prog-notes ul li{font-size:12px;color:rgba(255,255,255,.45);padding-left:14px;position:relative;}
+.prog-notes ul li::before{content:'→';position:absolute;left:0;color:#93b4ff;}
+.prog-cta-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);}
+.prog-cta-row p{font-size:12px;color:rgba(255,255,255,.3);}
+
+/* ===== NUTRICIÓN ===== */
+.nutricion{background:#fff;}
+.nutri-intro{max-width:620px;}
+.nutri-hero{
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;
+  border-radius:16px;overflow:hidden;margin:48px 0 56px;
+  height:320px;
+}
+.nutri-hero-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.nutri-hero-text{
+  background:var(--ink);padding:36px 32px;
+  display:flex;flex-direction:column;justify-content:center;gap:16px;
+}
+.nutri-hero-text h3{font-size:20px;font-weight:700;color:#fff;line-height:1.4;}
+.nutri-hero-text p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;}
+.nutri-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:56px;}
+.nutri-pillar{
+  background:var(--surface);border-radius:12px;
+  border:1px solid var(--border);overflow:hidden;
+}
+.nutri-pillar-img{width:100%;height:160px;object-fit:cover;object-position:center;display:block;}
+.nutri-pillar-body{padding:18px 20px;}
+.nutri-pillar-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--blue);margin-bottom:6px;}
+.nutri-pillar-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.nutri-pillar-text{font-size:13px;color:var(--muted);line-height:1.6;}
+.nutri-plates{margin-bottom:0;}
+.nutri-plates-title{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:28px;}
+.plates-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.plate-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;}
+.plate-img{width:100%;height:150px;object-fit:cover;object-position:center;display:block;}
+.plate-info{padding:14px 16px;}
+.plate-name{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.plate-macro{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;}
+.macro-tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;}
+.macro-p{background:rgba(22,163,74,.1);color:#16a34a;}
+.macro-c{background:rgba(234,179,8,.1);color:#a16207;}
+.macro-f{background:rgba(239,68,68,.1);color:#dc2626;}
+.plate-desc{font-size:12px;color:var(--muted);line-height:1.5;}
+.nutri-cta-box{
+  background:var(--ink);border-radius:14px;
+  padding:40px 48px;margin-top:48px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.nutri-cta-box h3{font-size:20px;font-weight:700;color:#fff;max-width:480px;line-height:1.4;}
+.nutri-cta-box p{font-size:14px;color:rgba(255,255,255,.45);margin-top:6px;}
+
+/* ===== BLOG ===== */
+.blog{background:var(--surface);}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:52px;}
+.blog-card{
+  background:#fff;border-radius:14px;overflow:hidden;
+  border:1px solid var(--border);
+  transition:transform .25s,box-shadow .25s;
+  display:flex;flex-direction:column;
+}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.09);}
+.blog-img{width:100%;height:200px;object-fit:cover;object-position:center;display:block;}
+.blog-body{padding:24px;display:flex;flex-direction:column;flex:1;}
+.blog-tag{
+  display:inline-block;background:rgba(29,78,216,.08);
+  color:var(--blue);font-size:11px;font-weight:700;
+  letter-spacing:.8px;text-transform:uppercase;
+  padding:3px 10px;border-radius:4px;margin-bottom:14px;
+}
+.blog-title{font-size:17px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:10px;}
+.blog-excerpt{font-size:14px;color:var(--muted);line-height:1.7;flex:1;}
+.blog-read{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:18px;font-size:13px;font-weight:600;color:var(--blue);
+  text-decoration:none;
+}
+.blog-read::after{content:'→';}
+
+/* ===== FAQ ===== */
+.faq{background:#fff;}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:52px;}
+.faq-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.faq-q{
+  padding:18px 20px;font-weight:600;font-size:14px;
+  background:var(--surface);color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;cursor:pointer;
+}
+.faq-q::after{content:'+';font-size:18px;color:var(--blue);font-weight:400;}
+.faq-a{padding:18px 20px;font-size:13px;color:var(--muted);line-height:1.75;border-top:1px solid var(--border);}
+
+/* ===== CTA FINAL ===== */
+.final-cta{
+  background:var(--ink);color:#fff;
+  text-align:center;padding:112px 48px;position:relative;overflow:hidden;
+}
+.final-cta::before{
+  content:'';position:absolute;
+  top:-120px;left:50%;transform:translateX(-50%);
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(29,78,216,.14) 0%,transparent 70%);
+  border-radius:50%;
+}
+.final-cta h2{font-size:clamp(30px,5vw,52px);margin-bottom:16px;position:relative;color:#fff;}
+.final-cta p{font-size:17px;color:rgba(255,255,255,.55);margin-bottom:44px;max-width:520px;margin-left:auto;margin-right:auto;position:relative;}
+.final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;}
+.countdown-box{
+  display:inline-flex;gap:4px;align-items:center;
+  background:rgba(29,78,216,.14);border:1px solid rgba(29,78,216,.2);
+  border-radius:8px;padding:10px 24px;margin-bottom:36px;
+  font-size:13px;color:rgba(255,255,255,.6);position:relative;
+}
+#countdown{font-weight:800;font-size:18px;letter-spacing:2px;margin-left:8px;color:#fff;}
+
+/* ===== WHATSAPP BTN ===== */
+.wa-btn{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  background:#25d366;color:#fff;
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  box-shadow:0 4px 18px rgba(37,211,102,.45);
+  transition:transform .2s,box-shadow .2s;
+}
+.wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,.6);}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--ink-2);color:rgba(255,255,255,.35);
+  padding:32px 48px;display:flex;
+  justify-content:space-between;align-items:center;
+  font-size:12px;flex-wrap:wrap;gap:14px;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+footer .fl{color:#fff;font-weight:700;font-size:15px;letter-spacing:-.3px;}
+footer .fl span{color:var(--blue-hi);}
+footer .links{display:flex;gap:20px;}
+footer .links a:hover{color:rgba(255,255,255,.7);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  section,.cases{padding:72px 24px;}
+  .sol-grid,.prod-grid,.pricing-grid,.about-grid{grid-template-columns:1fr;}
+  .prod-card.featured{transform:none;}
+  .steps-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-grid::before{display:none;}
+  .diff-grid,.testi-grid,.faq-grid{grid-template-columns:1fr;}
+  .atleta-card.featured-atleta{grid-column:span 1;}
+  .nutri-hero{grid-template-columns:1fr;height:auto;}
+  .nutri-pillars{grid-template-columns:1fr;}
+  .nutri-cta-box{flex-direction:column;padding:28px 24px;}
+  .contact-bar{flex-direction:column;text-align:center;padding:28px 24px;}
+  .contact-bar-btns{justify-content:center;}
+  .cases-grid{grid-template-columns:1fr 1fr;}
+  .hero-stats{gap:20px;}
+  footer{flex-direction:column;text-align:center;}
+}
+@media(max-width:600px){
+  .cases-grid{grid-template-columns:1fr;}
+  .hero{padding:72px 24px 80px;}
+  .hero::before{width:100%;opacity:.2;top:auto;bottom:0;height:55%;}
+  .hero::after{background:linear-gradient(to bottom,var(--ink) 40%,rgba(10,14,26,.85) 100%);}
+  .hero-stats{flex-wrap:wrap;}
+  .about-numbers{grid-template-columns:1fr 1fr;}
+  .memb-cats{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- BARRA URGENCIA -->
+<div class="urgency-bar">
+  ⚡ <span>Solo quedan 4 lugares disponibles para Junio</span> — <strong>Cupos limitados por programa 1 a 1</strong> <span>⚡</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">BP<span>team</span></div>
+  <a href="#productos" class="nav-cta">VER PROGRAMAS</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-tag">🏆 Método de Transformación Probado</div>
+    <h1>
+      Dejá de<br>
+      <span class="strike">intentarlo solo.</span><br>
+      Transformá tu<br>
+      cuerpo con un<br>
+      <span class="accent">plan real.</span>
+    </h1>
+    <p class="hero-sub">
+      Programa personalizado <strong>1 a 1</strong> de 3 meses o membresía mensual con programas de entrenamiento, nutrición y acompañamiento. <strong>Sin excusas. Sin vueltas. Con resultados.</strong>
+    </p>
+    <div class="hero-btns">
+      <a href="#productos" class="btn-primary">QUIERO EMPEZAR</a>
+      <a href="#como-funciona" class="btn-secondary">¿Cómo funciona?</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><span class="n">+200</span><span class="l">Personas transformadas</span></div>
+      <div class="hs"><span class="n">3M</span><span class="l">Programa premium</span></div>
+      <div class="hs"><span class="n">100%</span><span class="l">Personalizado</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- CASOS DE ÉXITO -->
+<section class="cases" id="resultados">
+  <div class="container">
+    <div class="cases-intro">
+      <div class="section-tag">Resultados reales</div>
+      <h2>Transformaciones que <span style="color:var(--gold)">hablan solas</span></h2>
+      <p class="lead">Personas reales, con vidas reales. Sin filtros ni Photoshop.<br>Solo trabajo, método y acompañamiento constante.</p>
+    </div>
+    <div class="cases-grid">
+
+      <!-- CASO 1 — LEÓN -->
+      <div class="case-card">
+        <div class="case-imgs case-single">
+          <img src="alumno_1_leon.jpg" alt="Transformación León — antes y después" class="case-img-full">
+          <span class="case-label before">Antes</span>
+          <span class="case-label after">Después</span>
+        </div>
+        <div class="case-info">
+          <div class="case-name">León — Atleta Avanzado</div>
+          <div class="case-result">
+            <span class="case-badge">+10 kg músculo</span>
+            <span class="case-badge">Programa 3 meses</span>
+          </div>
+          <p class="case-desc">"Atleta con años de experiencia que no lograba ganar masa muscular. Con orden en la dieta, el entrenamiento y el descanso adecuado, logró +10 kg de masa muscular real."</p>
+          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
+        </div>
+      </div>
+
+      <!-- CASO 2 — SANTIAGO -->
+      <div class="case-card">
+        <div class="case-imgs">
+          <img src="alumno_2_santiago_antes.jpg" alt="Santiago antes" class="case-img">
+          <img src="alumno_2_santiago_despues.jpg" alt="Santiago después" class="case-img">
+          <div class="case-divider"></div>
+          <span class="case-label before">Antes</span>
+          <span class="case-label after">Después</span>
+        </div>
+        <div class="case-info">
+          <div class="case-name">Santiago — Dueño de Restaurante</div>
+          <div class="case-result">
+            <span class="case-badge">Recomposición corporal</span>
+            <span class="case-badge">3 sesiones/semana</span>
+          </div>
+          <p class="case-desc">"Con extensas jornadas de trabajo y poco tiempo libre, logramos una recomposición corporal completa con 3 sesiones semanales y orden en la alimentación."</p>
+          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
+        </div>
+      </div>
+
+      <!-- CASO 3 -->
+      <div class="case-card">
+        <div class="case-imgs">
+          <div class="case-img-placeholder">
+            <span class="ph-icon">📷</span>
+            <span>Foto Antes</span>
+            <span style="font-size:10px;opacity:.6;">alumno_3_antes.jpg</span>
+          </div>
+          <div class="case-img-placeholder">
+            <span class="ph-icon">📷</span>
+            <span>Foto Después</span>
+            <span style="font-size:10px;opacity:.6;">alumno_3_despues.jpg</span>
+          </div>
+          <div class="case-divider"></div>
+          <span class="case-label before">Antes</span>
+          <span class="case-label after">Después</span>
+        </div>
+        <div class="case-info">
+          <div class="case-name">Alumno 3 — Nombre Real</div>
+          <div class="case-result">
+            <span class="case-badge">−X kg</span>
+            <span class="case-badge">+X kg músculo</span>
+          </div>
+          <p class="case-desc">"Descripción breve del proceso y cómo se sintió el alumno con el programa."</p>
+          <div class="case-weeks">Programa · <span>X semanas</span></div>
+        </div>
+      </div>
+
+      <!-- CASO 4 -->
+      <div class="case-card">
+        <div class="case-imgs">
+          <div class="case-img-placeholder">
+            <span class="ph-icon">📷</span>
+            <span>Foto Antes</span>
+            <span style="font-size:10px;opacity:.6;">alumno_4_antes.jpg</span>
+          </div>
+          <div class="case-img-placeholder">
+            <span class="ph-icon">📷</span>
+            <span>Foto Después</span>
+            <span style="font-size:10px;opacity:.6;">alumno_4_despues.jpg</span>
+          </div>
+          <div class="case-divider"></div>
+          <span class="case-label before">Antes</span>
+          <span class="case-label after">Después</span>
+        </div>
+        <div class="case-info">
+          <div class="case-name">Alumno 4 — Nombre Real</div>
+          <div class="case-result">
+            <span class="case-badge">−X kg</span>
+            <span class="case-badge">+X kg músculo</span>
+          </div>
+          <p class="case-desc">"Descripción breve del proceso y cómo se sintió el alumno con el programa."</p>
+          <div class="case-weeks">Programa · <span>X semanas</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ATLETAS DE ALTO RENDIMIENTO -->
+<section class="atletas" id="atletas">
+  <div class="container">
+    <div class="atletas-intro">
+      <div class="section-tag">Alto rendimiento</div>
+      <h2>Atletas que <span style="color:var(--blue)">confían en el método</span></h2>
+      <p class="lead">Seleccionados nacionales y campeones internacionales que trabajan con BPteam para llevar su rendimiento al siguiente nivel.</p>
+    </div>
+
+    <div class="atletas-grid">
+
+      <!-- ATLETA 4 — LUCAS PARALÍMPICO (featured, primero) -->
+      <div class="atleta-card featured-atleta">
+        <img src="atleta_4_lucas_paralimpico.jpg" alt="Lucas Poggi — Finalista Paralímpico Tokio 2020" class="atleta-img" loading="lazy">
+        <div class="atleta-info">
+          <div class="atleta-flag">🇦🇷 Selección Argentina</div>
+          <div class="atleta-name">Lucas Poggi</div>
+          <div class="atleta-deporte">Remo — Paralímpico</div>
+          <p class="atleta-logro"><strong>Finalista Paralímpico en Tokio 2020.</strong> Campeón Sudamericano de Remo. Un ejemplo de que con el entrenamiento correcto los límites se redefinen.</p>
+        </div>
+      </div>
+
+      <!-- ATLETA 1 — MILA LUTTERAL -->
+      <div class="atleta-card">
+        <img src="atleta_1_mila.jpg" alt="Mila Lutteral — Selección Argentina Hockey" class="atleta-img" loading="lazy">
+        <div class="atleta-info">
+          <div class="atleta-flag">🇦🇷 Selección Argentina</div>
+          <div class="atleta-name">Mila Lutteral</div>
+          <div class="atleta-deporte">Hockey sobre Hielo y Patines</div>
+          <p class="atleta-logro">Integrante de la <strong>Selección Argentina de Hockey sobre Hielo y Patines.</strong> Entrenamiento físico orientado a potencia, agilidad y rendimiento en cancha.</p>
+        </div>
+      </div>
+
+      <!-- ATLETA 2 — FRANCISCO GROSMAN -->
+      <div class="atleta-card">
+        <img src="atleta_2_francisco.jpg" alt="Francisco Grosman — Selección Argentina Kho Kho" class="atleta-img" loading="lazy">
+        <div class="atleta-info">
+          <div class="atleta-flag">🇦🇷 Selección Argentina</div>
+          <div class="atleta-name">Francisco Grosman</div>
+          <div class="atleta-deporte">Kho Kho</div>
+          <p class="atleta-logro">Integrante de la <strong>Selección Argentina de Kho Kho.</strong> Trabajo específico en velocidad de reacción, potencia explosiva y capacidad aeróbica.</p>
+        </div>
+      </div>
+
+      <!-- ATLETA 3 — LUCAS POGGI REMO -->
+      <div class="atleta-card">
+        <img src="atleta_3_lucas_remo.jpg" alt="Lucas Poggi — Campeón Sudamericano de Remo" class="atleta-img" loading="lazy">
+        <div class="atleta-info">
+          <div class="atleta-flag">🇦🇷 Selección Argentina</div>
+          <div class="atleta-name">Lucas Poggi</div>
+          <div class="atleta-deporte">Remo</div>
+          <p class="atleta-logro"><strong>Campeón Sudamericano de Remo.</strong> Preparación física enfocada en fuerza de tracción, resistencia específica y potencia de palada.</p>
+        </div>
+      </div>
+
+      <!-- ATLETA 5 — ORNELLA CARUSO + MILA LUTTERAL -->
+      <div class="atleta-card">
+        <img src="atleta_5_ornella_mila.jpg" alt="Ornella Caruso y Mila Lutteral — Selección Hockey" class="atleta-img" loading="lazy">
+        <div class="atleta-info">
+          <div class="atleta-flag">🇦🇷 Selección Argentina</div>
+          <div class="atleta-name">Ornella Caruso & Mila Lutteral</div>
+          <div class="atleta-deporte">Hockey sobre Hielo</div>
+          <p class="atleta-logro">Dupla de la <strong>Selección Argentina de Hockey sobre Hielo.</strong> Trabajo en equipo para desarrollar potencia, explosividad y resistencia específica del deporte.</p>
+        </div>
+      </div>
+
+      <!-- ATLETA 6 — LEA VILLAGRA -->
+      <div class="atleta-card">
+        <img src="atleta_6_lea.jpg" alt="Lea Villagra — Selección Argentina sobre Patines" class="atleta-img" loading="lazy">
+        <div class="atleta-info">
+          <div class="atleta-flag">🇦🇷 Selección Argentina</div>
+          <div class="atleta-name">Lea Villagra</div>
+          <div class="atleta-deporte">Hockey sobre Patines</div>
+          <p class="atleta-logro">Integrante de la <strong>Selección Argentina de Hockey sobre Patines.</strong> Preparación física orientada a velocidad, agilidad y potencia sobre ruedas.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMAS -->
+<section class="problems">
+  <div class="container">
+    <div class="section-tag light">¿Te identificás?</div>
+    <h2>¿Por qué no estás viendo <span class="gold">resultados</span>?</h2>
+    <p class="lead">No es falta de esfuerzo. Es falta de dirección. Estos son los problemas más comunes que veo en mis clientes antes de empezar.</p>
+    <div class="prob-grid">
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&q=95&fit=crop&crop=center" alt="Entrenando sin plan">
+        </div>
+        <div class="prob-text">
+          <h3>Entrenás sin un plan real</h3>
+          <p>Vas al gimnasio, hacés algo, sudás... pero sin una progresión estructurada, el cuerpo no tiene razón para cambiar. El esfuerzo existe, el método falta.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&q=95&fit=crop&crop=center" alt="Comida saludable">
+        </div>
+        <div class="prob-text">
+          <h3>No sabés qué comer</h3>
+          <p>Un día dietás, el otro "te portás mal". Las dietas genéricas de internet no se adaptan a tu vida, tus gustos ni tu cuerpo. Terminás abandonando en semanas.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=95&fit=crop&crop=top" alt="Progreso fitness">
+        </div>
+        <div class="prob-text">
+          <h3>Empezás y volvés a cero</h3>
+          <p>Empezás con toda la motivación, los primeros días van bien... y después la vida pasa. Sin alguien que te sostenga, volvés al punto de partida.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&q=95&fit=crop&crop=center" alt="Gastás sin resultados">
+        </div>
+        <div class="prob-text">
+          <h3>Gastás plata sin resultados</h3>
+          <p>Planes de nutrición, suplementos milagrosos, membresías de gimnasio que no usás. Mucha inversión, cero transformación real.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=95&fit=crop&crop=center" alt="Perdido sin dirección">
+        </div>
+        <div class="prob-text">
+          <h3>Te sentís perdido/a</h3>
+          <p>Hay demasiada información contradictoria. Cada influencer dice algo distinto. No sabés qué creerle a quién y terminás sin hacer nada o haciéndolo todo mal.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=95&fit=crop&crop=center" alt="Sin tiempo para entrenar">
+        </div>
+        <div class="prob-text">
+          <h3>"No tengo tiempo"</h3>
+          <p>Trabajo, compromisos, familia. La vida no para y el fitness queda siempre para después. Sin un plan que se adapte a tu rutina, nunca va a ser el momento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCIÓN -->
+<section class="solution">
+  <div class="container">
+    <div class="section-tag">La solución</div>
+    <h2>Un sistema completo <span style="color:var(--gold)">que funciona</span></h2>
+    <p class="lead" style="color:rgba(255,255,255,.65)">No otro plan genérico. Un método real, adaptado a vos, con acompañamiento continuo que garantiza que llegués hasta el final.</p>
+    <div class="sol-grid">
+      <div class="sol-list">
+        <div class="sol-item">
+          <div class="sol-num">1</div>
+          <div>
+            <h4>Diagnóstico inicial completo</h4>
+            <p>Analizamos tu punto de partida, tu objetivo, tu historial, tus horarios y tus preferencias. El plan empieza desde vos, no desde una plantilla.</p>
+          </div>
+        </div>
+        <div class="sol-item">
+          <div class="sol-num">2</div>
+          <div>
+            <h4>Plan de alimentación a medida</h4>
+            <p>Sin restricciones extremas. Comida real, adaptada a tus gustos, tu metabolismo y tu día a día. Que puedas seguirlo de verdad.</p>
+          </div>
+        </div>
+        <div class="sol-item">
+          <div class="sol-num">3</div>
+          <div>
+            <h4>Entrenamiento personalizado en la app</h4>
+            <p>Tu rutina, tu progresión y tus ejercicios en la palma de tu mano. Todo organizado, explicado y ajustado semana a semana.</p>
+          </div>
+        </div>
+        <div class="sol-item">
+          <div class="sol-num">4</div>
+          <div>
+            <h4>Acompañamiento y ajustes continuos</h4>
+            <p>Revisiones semanales, acceso directo a mí, ajustes cuando algo no funciona. No estás solo/a en el proceso.</p>
+          </div>
+        </div>
+        <div class="sol-item">
+          <div class="sol-num">5</div>
+          <div>
+            <h4>Resultados que se mantienen</h4>
+            <p>No perdés peso para volver a recuperarlo. Construís hábitos sólidos que te acompañan para siempre.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sol-visual">
+        <div class="big-stat">
+          <span class="val">12</span>
+          <p class="desc">semanas promedio para ver una transformación real y sostenida</p>
+        </div>
+        <div class="sol-checklist">
+          <div class="sc-item">Acceso a la app desde el día 1</div>
+          <div class="sc-item">Plan de alimentación en las primeras 48hs</div>
+          <div class="sc-item">Respuesta garantizada en menos de 24hs</div>
+          <div class="sc-item">Ajustes semanales según tu progreso</div>
+          <div class="sc-item">Soporte hasta el último día del programa</div>
+          <div class="sc-item">Sin contratos ni compromisos extra</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="products" id="productos">
+  <div class="container">
+    <div class="section-tag">Elegí tu camino</div>
+    <h2>Dos programas. <span class="gold">Un solo objetivo.</span></h2>
+    <p class="lead">Ya sea que quieras atención 1 a 1 completamente personalizada o acceso a programas probados por tu cuenta, tengo la opción correcta para vos.</p>
+
+    <div class="prod-grid">
+
+      <!-- PROGRAMA 3 MESES -->
+      <div class="prod-card featured">
+        <div class="prod-head dark-head">
+          <div class="prod-badge badge-gold">⭐ MÁS POPULAR</div>
+          <h3>Programa 3 Meses<br>1 a 1 Personalizado</h3>
+          <p class="tagline">Atención exclusiva, plan a medida y acompañamiento total durante 90 días. Para quien quiere resultados garantizados.</p>
+          <div class="prod-price-block">
+            <div class="price-label">Inversión total</div>
+            <div class="price-main gold-price">$300 USD</div>
+            <div class="price-per">pago único o en 3 cuotas</div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="feat-list">
+            <div class="feat-item"><div class="feat-check check-gold">✓</div><span><strong>Plan de alimentación 100% personalizado</strong> — armado para tu cuerpo, tus gustos y tu objetivo</span></div>
+            <div class="feat-item"><div class="feat-check check-gold">✓</div><span><strong>Rutina de entrenamiento progresiva</strong> — adaptada a tu nivel, equipamiento disponible y tiempo</span></div>
+            <div class="feat-item"><div class="feat-check check-gold">✓</div><span><strong>Acceso completo a la app</strong> — seguí tus rutinas, progreso y métricas desde el celular</span></div>
+            <div class="feat-item"><div class="feat-check check-gold">✓</div><span><strong>Seguimiento semanal</strong> — revisión de resultados y ajuste del plan cada 7 días</span></div>
+            <div class="feat-item"><div class="feat-check check-gold">✓</div><span><strong>Acceso directo por WhatsApp</strong> — respondido en menos de 24 horas de lunes a viernes</span></div>
+            <div class="feat-item"><div class="feat-check check-gold">✓</div><span><strong>Ajustes ilimitados</strong> — si algo no funciona, lo cambiamos sin costo adicional</span></div>
+            <div class="feat-item"><div class="feat-check check-gold">✓</div><span><strong>Videollamada de diagnóstico inicial</strong> — para arrancar con claridad total</span></div>
+            <div class="feat-item"><div class="feat-check check-gold">✓</div><span><strong>Acceso a contenido exclusivo</strong> — tips, recetas y recursos del programa</span></div>
+          </div>
+          <a href="https://wa.me/543446630998?text=Hola!%20Quiero%20info%20sobre%20el%20programa%20de%203%20meses" class="prod-cta cta-gold" target="_blank">
+            QUIERO ESTE PROGRAMA →
+          </a>
+          <p class="prod-note">🔒 Solo 5 cupos disponibles por mes</p>
+        </div>
+      </div>
+
+      <!-- MEMBRESÍA -->
+      <div class="prod-card">
+        <div class="prod-head light-head">
+          <div class="prod-badge badge-cyan">🌐 MEMBRESÍA MENSUAL</div>
+          <h3 style="color:var(--black)">Acceso Total —<br>Membresía Fitness</h3>
+          <p class="tagline" style="color:var(--grey)">Biblioteca de programas pre-armados, contenido fitness y tips de nutrición. Para quien quiere herramientas de calidad a su ritmo.</p>
+          <div class="prod-price-block">
+            <div class="price-label" style="color:var(--grey)">Desde</div>
+            <div class="price-main" style="color:var(--black);">$70 USD</div>
+            <div class="price-per" style="color:var(--grey)">por mes · cancelá cuando quieras</div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="memb-cats">
+            <div class="memb-cat">
+              <img class="memb-cat-img" src="https://images.unsplash.com/photo-1534368959876-26bf04f2c947?w=600&q=90&fit=crop&crop=top" alt="Programa de Fuerza">
+              <div class="memb-cat-info">
+                <h5>💪 Fuerza</h5>
+                <p>Hipertrofia y fuerza máxima</p>
+              </div>
+            </div>
+            <div class="memb-cat">
+              <img class="memb-cat-img" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=90&fit=crop&crop=top" alt="Programa de Potencia">
+              <div class="memb-cat-info">
+                <h5>⚡ Potencia</h5>
+                <p>Explosividad y rendimiento</p>
+              </div>
+            </div>
+            <div class="memb-cat">
+              <img class="memb-cat-img" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=90&fit=crop&crop=top" alt="Programa Estética">
+              <div class="memb-cat-info">
+                <h5>✨ Estética</h5>
+                <p>Definición y composición</p>
+              </div>
+            </div>
+          </div>
+          <div class="feat-list">
+            <div class="feat-item"><div class="feat-check check-cyan">✓</div><span><strong>3 programas completos incluidos:</strong> Glúteos de Acero · Potencia Deportiva · Recomposición Corporal</span></div>
+            <div class="feat-item"><div class="feat-check check-cyan">✓</div><span><strong>Cada programa con variante de 3 y 5 días</strong> — elegís según tu disponibilidad</span></div>
+            <div class="feat-item"><div class="feat-check check-cyan">✓</div><span><strong>Guías de nutrición</strong> — alimentación práctica sin restricciones absurdas</span></div>
+            <div class="feat-item"><div class="feat-check check-cyan">✓</div><span><strong>Contenido fitness exclusivo</strong> — videos, tips y material educativo semanal</span></div>
+            <div class="feat-item"><div class="feat-check check-cyan">✓</div><span><strong>Acceso a la app</strong> con todos los programas organizados</span></div>
+            <div class="feat-item"><div class="feat-check check-cyan">✓</div><span><strong>Nuevos programas cada mes</strong> — la biblioteca crece constantemente</span></div>
+          </div>
+          <a href="https://wa.me/543446630998?text=Hola!%20Quiero%20info%20sobre%20la%20membresia%20mensual" class="prod-cta cta-dark" target="_blank">
+            QUIERO LA MEMBRESÍA →
+          </a>
+          <p class="prod-note">🔄 Sin permanencia · Cancelá cuando quieras · Acceso inmediato</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="how" id="como-funciona">
+  <div class="container">
+    <div class="section-tag">El proceso</div>
+    <h2>Empezar es <span style="color:var(--gold)">más fácil</span> de lo que creés</h2>
+    <p class="lead" style="color:rgba(255,255,255,.6)">En 4 pasos simples arrancás tu transformación.</p>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-circle">1</div>
+        <h4>Mandame un mensaje</h4>
+        <p>Por WhatsApp o Instagram. Contame tu objetivo y te cuento todo sobre el programa que más se adapta a vos.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">2</div>
+        <h4>Diagnóstico inicial</h4>
+        <p>Completás un formulario detallado o hacemos una videollamada para conocer tu punto de partida y definir el plan.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <h4>Recibís tu plan</h4>
+        <p>En las primeras 48 horas tenés tu plan de alimentación, tu rutina y acceso completo a la app. Listo para arrancar.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">4</div>
+        <h4>Transformación real</h4>
+        <p>Entrenás, seguís el plan y yo te acompaño cada semana ajustando lo que sea necesario hasta lograr el resultado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIADORES -->
+<section class="diff">
+  <div class="container">
+    <div class="section-tag light">¿Por qué yo?</div>
+    <h2>Lo que me diferencia del <span class="gold">resto</span></h2>
+    <p class="lead">Hay miles de coaches online. Estos son los motivos por los que mis clientes eligen BPteam y no vuelven atrás.</p>
+    <div class="diff-grid">
+      <!-- 100% PERSONALIZADO: coach mirando ejecutar ejercicio -->
+      <div class="diff-card">
+        <div class="diff-img-wrap">
+          <img class="diff-img" src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=700&q=90&fit=crop&crop=center" alt="Coach guiando al alumno">
+        </div>
+        <div class="diff-body">
+          <div class="diff-label dl-gold">Personalización</div>
+          <h3>100% Personalizado</h3>
+          <p>No uso plantillas copiadas. Cada plan de alimentación y entrenamiento es armado desde cero para tu cuerpo, tus gustos, tu tiempo y tu objetivo específico.</p>
+        </div>
+      </div>
+      <!-- ACOMPAÑAMIENTO: persona en app + WhatsApp -->
+      <div class="diff-card">
+        <div class="diff-img-wrap">
+          <img class="diff-img" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=90&fit=crop&crop=center" alt="Seguimiento por app y WhatsApp">
+        </div>
+        <div class="diff-body">
+          <div class="diff-label dl-cyan">Seguimiento</div>
+          <h3>Acompañamiento Real</h3>
+          <p>No desaparezco después de mandarte el plan. Reviso tu progreso cada semana, ajusto lo que sea necesario y estoy disponible para tus dudas durante todo el proceso.</p>
+        </div>
+      </div>
+      <!-- SIN RESTRICCIONES: variedad de comidas saludables + una permitida -->
+      <div class="diff-card">
+        <div class="diff-img-wrap">
+          <img class="diff-img" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=90&fit=crop&crop=center" alt="Variedad de comidas saludables y permitidas">
+        </div>
+        <div class="diff-body">
+          <div class="diff-label dl-orange">Flexibilidad</div>
+          <h3>Sin Restricciones Extremas</h3>
+          <p>El plan se adapta a tu vida real. Podés salir a comer, tenés horarios variables o no te gusta cierta comida — el programa funciona igual, sin excusas ni sufrimiento.</p>
+        </div>
+      </div>
+      <!-- MÉTRICAS: laptop/computadora con gráficos de avance -->
+      <div class="diff-card">
+        <div class="diff-img-wrap">
+          <img class="diff-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=90&fit=crop&crop=center" alt="Dashboard de progreso con gráficos">
+        </div>
+        <div class="diff-body">
+          <div class="diff-label dl-gold">Métricas</div>
+          <h3>Resultados Medibles</h3>
+          <p>Hacemos seguimiento de métricas reales: peso, medidas, fotos de progreso y rendimiento en el entrenamiento. No trabajamos por sensaciones, trabajamos con datos.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-img-wrap">
+          <img class="diff-img" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=700&q=90&fit=crop&crop=center" alt="Revisión de estudios científicos">
+        </div>
+        <div class="diff-body">
+          <div class="diff-label dl-cyan">Ciencia</div>
+          <h3>Método Basado en Evidencia</h3>
+          <p>Nada de milagros ni dietas mágicas. Los planes están basados en ciencia del entrenamiento y nutrición actualizada. Lo que funciona, lo que se sostiene.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-img-wrap">
+          <img class="diff-img" src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=700&q=90&fit=crop&crop=top" alt="Hábitos para siempre">
+        </div>
+        <div class="diff-body">
+          <div class="diff-label dl-orange">Largo plazo</div>
+          <h3>Hábitos para Siempre</h3>
+          <p>El objetivo no es que llegués a la meta y listo. Es que aprendas a entrenar y comer bien para mantener esos resultados el resto de tu vida.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BARRA CONTACTO + PAGO -->
+    <div class="contact-bar">
+      <div class="contact-bar-text">
+        <h3>¿Listo/a para empezar? Hablemos ahora.</h3>
+        <p>Respondemos en menos de 24hs · Cupos limitados por mes</p>
+      </div>
+      <div class="contact-bar-btns">
+        <a class="cb-btn cb-wa" href="https://wa.me/543446630998?text=Hola!%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20info" target="_blank">
+          💬 WhatsApp
+        </a>
+        <a class="cb-btn cb-ig" href="https://www.instagram.com/prof.paredesbrian?igsh=MTVnMmtzaWgydmdrOQ%3D%3D&utm_source=qr" target="_blank">
+          📸 Instagram
+        </a>
+        <a class="cb-btn cb-wa" href="https://wa.me/543446630998?text=Hola%20Brian%2C%20quiero%20consultar%20sobre%20los%20programas" target="_blank">
+          ?? Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-tag">Resultados reales</div>
+    <h2>Lo que dicen quienes <span class="gold">ya lo vivieron</span></h2>
+    <p class="lead">Personas reales, resultados reales. Sin photoshop ni promesas vacías.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Llevaba 2 años yendo al gimnasio sin ver cambios. En 10 semanas con Brian bajé 8 kg y gané músculo que nunca había logrado. El plan de alimentación fue un cambio de vida total."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Marcos R., 28 años</div>
+            <div class="testi-result">▲ −8 kg en 10 semanas · Programa 3 meses</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Nunca creí que podía comer rico y bajar de peso al mismo tiempo. Me demostró que estaba equivocada. El acompañamiento semanal fue clave para no tirar la toalla cuando tuve semanas difíciles."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Sofía L., 31 años</div>
+            <div class="testi-result">▲ −6 kg · Tonificación completa · 3 meses</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Empecé con la membresía para ver de qué se trataba y terminé inscribiéndome al programa 1 a 1. La calidad del contenido no tiene comparación. Los programas de fuerza son de otro nivel."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">F</div>
+          <div>
+            <div class="testi-name">Facundo T., 25 años</div>
+            <div class="testi-result">▲ +7 kg de músculo · Fuerza máxima</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Mamá de dos hijos, con poco tiempo y muchas excusas. El programa se adaptó a mi realidad completamente. Hoy me siento mejor que a los 25. El apoyo constante hace toda la diferencia."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">C</div>
+          <div>
+            <div class="testi-name">Carolina V., 34 años</div>
+            <div class="testi-result">▲ Transformación completa · Programa 3 meses</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"La membresía mensual es increíble. Tengo acceso a programas armados profesionalmente para cada objetivo. Uso el de potencia hace 2 meses y rompí todos mis récords personales."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">G</div>
+          <div>
+            <div class="testi-name">Gastón M., 27 años</div>
+            <div class="testi-result">▲ Membresía Potencia · 2 meses activo</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Estaba escéptica de las asesorías online pero la experiencia superó todas mis expectativas. Brian está siempre disponible y el plan nunca se sintió imposible. 100% lo recomiendo."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">L</div>
+          <div>
+            <div class="testi-name">Luciana P., 29 años</div>
+            <div class="testi-result">▲ −5 kg · Hábitos sostenibles · 3 meses</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="about">
+  <div class="container">
+    <div class="section-tag">Quién soy</div>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="foto_brian.jpg" alt="Brian — BPteam Asesoría" style="width:100%;height:100%;object-fit:cover;object-position:center top;" loading="lazy">
+        <div class="gold-border"></div>
+      </div>
+      <div class="about-content">
+        <h2>No soy solo un coach.<br>Soy tu <span style="color:var(--gold)">compañero de proceso.</span></h2>
+        <p class="about-lead">
+          Hola, soy Brian, creador de <strong>BPteam Asesoría</strong>. Pasé años estudiando el entrenamiento y la nutrición no solo de forma teórica, sino aplicándola en personas reales con vidas reales. Sé lo que funciona, lo que no, y por qué la mayoría de los planes fallan antes del mes.
+        </p>
+        <div class="about-creds">
+          <div class="cred">Formación en entrenamiento personalizado y nutrición deportiva</div>
+          <div class="cred">Más de 200 personas acompañadas en su proceso de transformación</div>
+          <div class="cred">Especializado en programas de fuerza, potencia y cambio estético</div>
+          <div class="cred">Método propio desarrollado y refinado en años de práctica real</div>
+          <div class="cred">Atención 100% online, accesible desde cualquier parte</div>
+        </div>
+        <div class="about-numbers">
+          <div class="an"><span class="n">+200</span><span class="l">Clientes</span></div>
+          <div class="an"><span class="n">4+ años</span><span class="l">Experiencia</span></div>
+          <div class="an"><span class="n">98%</span><span class="l">Satisfacción</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="precios">
+  <div class="container">
+    <div class="section-tag light">Inversión</div>
+    <h2>Elegí el programa <span class="gold">que más te conviene</span></h2>
+    <p class="lead">Dos opciones. Sin letra chica. Sin sorpresas. Todo lo que incluye cada plan está detallado abajo.</p>
+    <div class="pricing-grid">
+
+      <div class="price-card featured-price">
+        <div class="price-card-head">
+          <div class="price-rec">⭐ RECOMENDADO</div>
+          <h3>Programa 3 Meses<br>1 a 1</h3>
+          <p class="desc">Atención personalizada completa. El programa más elegido por quienes quieren resultados reales y acompañamiento total.</p>
+          <div class="price-amount">
+            <div class="price-from">Inversión total</div>
+            <div class="price-num">$300 USD</div>
+            <div class="price-period">pago �nico � o 3 cuotas de $100 USD</div>
+          </div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-includes">
+            <div class="pi-item"><span class="pi-check">✓</span>Plan de alimentación personalizado</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Rutina de entrenamiento progresiva en app</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Videollamada de diagnóstico inicial</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Seguimiento y ajustes semanales</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Contacto directo por WhatsApp (L-V)</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Ajustes ilimitados del plan</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Acceso a contenido exclusivo</div>
+            <div class="pi-item"><span class="pi-check">✓</span>3 meses de acompañamiento total</div>
+          </div>
+          <a href="https://wa.me/543446630998?text=Hola!%20Quiero%20reservar%20mi%20lugar%20en%20el%20programa%20de%203%20meses" class="price-cta cta-gold-full" target="_blank">
+            RESERVAR MI LUGAR →
+          </a>
+          <div class="price-guarantee">
+            <span class="gi">🔒</span>
+            <p><strong>Pago seguro.</strong> Podés pagar en cuotas. El proceso empieza en menos de 48hs desde la confirmación.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card-head gold-head">
+          <h3>Membresía Mensual</h3>
+          <p class="desc">Acceso a toda la biblioteca de programas y contenido. Sin compromiso, sin permanencia. Cancelás cuando quieras.</p>
+          <div class="price-amount">
+            <div class="price-from" style="color:rgba(0,0,0,.5)">Desde</div>
+            <div class="price-num" style="color:var(--black)">$70 USD</div>
+            <div class="price-period" style="color:rgba(0,0,0,.5)">por mes · cancelá cuando quieras</div>
+          </div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-includes">
+            <div class="pi-item"><span class="pi-check">✓</span><strong>Programa Glúteos de Acero</strong> — 3 y 5 días/semana</div>
+            <div class="pi-item"><span class="pi-check">✓</span><strong>Programa Potencia Deportiva</strong> — 3 y 5 días/semana</div>
+            <div class="pi-item"><span class="pi-check">✓</span><strong>Programa Recomposición Corporal</strong> — 3 y 5 días/semana</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Guías de nutrición y recetas</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Acceso completo a la app</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Nuevos programas cada mes</div>
+            <div class="pi-item"><span class="pi-check">✓</span>Contenido educativo exclusivo</div>
+            <div class="pi-item" style="color:var(--muted)"><span style="color:var(--muted)">✗</span>Seguimiento 1 a 1 (disponible en programa 3 meses)</div>
+          </div>
+          <a href="https://wa.me/543446630998?text=Hola!%20Quiero%20info%20sobre%20la%20membresia%20mensual" class="price-cta cta-black-full" target="_blank">
+            QUIERO LA MEMBRESÍA →
+          </a>
+          <p class="price-note">Sin permanencia mínima. Cancelás en cualquier momento.</p>
+          <div class="price-guarantee">
+            <span class="gi">💡</span>
+            <p><strong>¿No sabés cuál elegir?</strong> Escribime y te ayudo a decidir cuál es el mejor para tu objetivo.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMAS ARMADOS -->
+<section class="programas" id="programas">
+  <div class="container">
+    <div class="section-tag">Programas de entrenamiento</div>
+    <h2>Planes diseñados con <span style="color:var(--blue)">base en la ciencia</span></h2>
+    <p class="lead">Cada programa está estructurado según la evidencia más reciente. Elegís tu objetivo y tu disponibilidad — vos ponés el esfuerzo, el método ya está resuelto.</p>
+    <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(29,78,216,.1);border:1px solid rgba(29,78,216,.25);border-radius:8px;padding:10px 18px;margin-top:20px;">
+      <span style="font-size:18px;">🔒</span>
+      <span style="font-size:13px;color:#93b4ff;">Todos estos programas están incluidos en la <strong style="color:#fff;">Membresía Mensual — $70 USD</strong>. Acceso inmediato al contratar.</span>
+      <a href="https://wa.me/543446630998?text=Hola!%20Quiero%20acceder%20a%20la%20membresia%20para%20ver%20los%20programas" target="_blank" style="background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:7px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;">OBTENER ACCESO</a>
+    </div>
+
+    <div class="prog-tabs-wrap">
+
+      <!-- ===================== PROGRAMA 1: GLÚTEOS ===================== -->
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-cover">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=90&fit=crop&crop=center" alt="Entrenamiento glúteos">
+            <div class="prog-cover-overlay"></div>
+          </div>
+          <div class="prog-meta">
+            <span class="prog-badge">Hipertrofia</span>
+            <div class="prog-title">Glúteos de Acero</div>
+            <p class="prog-desc">Programa basado en la combinación de movimientos de rango completo (sentadillas, peso muerto) con pico de tensión máxima (hip thrust). El enfoque que la evidencia 2025 confirma como más efectivo para hipertrofia del glúteo mayor.</p>
+            <div class="prog-stats">
+              <div class="prog-stat"><strong>4 semanas</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Gimnasio</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Todos los niveles</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="freq-toggle">
+          <button class="freq-btn active" onclick="switchFreq(this,'glut','3d')">3 días / semana</button>
+          <button class="freq-btn" onclick="switchFreq(this,'glut','5d')">5 días / semana</button>
+        </div>
+        <div class="prog-body">
+          <!-- 3 DÍAS -->
+          <div class="prog-schedule active" id="glut-3d">
+            <div class="day-card">
+              <div class="day-label">Día 1 — Lunes</div>
+              <div class="day-name">Fuerza + Hip Thrust</div>
+              <ul class="day-exercises">
+                <li><strong>Sentadilla trasera</strong> — 4×6-8 reps</li>
+                <li><strong>Hip thrust con barra</strong> — 4×8-10 reps</li>
+                <li><strong>Peso muerto</strong> — 3×5 reps</li>
+                <li><strong>Extensión de cadera máquina</strong> — 2×12-15 reps</li>
+                <li><strong>Cable kickback</strong> — 2×12 por lado</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 2 — Miércoles</div>
+              <div class="day-name">Volumen e Hipertrofia</div>
+              <ul class="day-exercises">
+                <li><strong>Sentadilla búlgara</strong> — 4×8-10 por pierna</li>
+                <li><strong>Hip thrust con mancuernas</strong> — 3×10-12 reps</li>
+                <li><strong>Zancadas caminando</strong> — 3×10 por pierna</li>
+                <li><strong>Abducción de cadera máquina</strong> — 3×12-15 reps</li>
+                <li><strong>Cable pull-through</strong> — 2×15 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 3 — Viernes</div>
+              <div class="day-name">Fuerza-Resistencia</div>
+              <ul class="day-exercises">
+                <li><strong>Sentadilla con pausa (2 seg)</strong> — 3×8 reps</li>
+                <li><strong>Hip thrust unilateral</strong> — 3×8-10 por pierna</li>
+                <li><strong>Stiff-leg deadlift</strong> — 3×8-10 reps</li>
+                <li><strong>Leg press</strong> — 2×12-15 reps</li>
+                <li><strong>Patada trasera en máquina</strong> — 2×15 por lado</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Días 4-7</div>
+              <div class="day-name">Descanso</div>
+              <div class="day-rest">Recuperación activa opcional — stretching o caminata</div>
+            </div>
+          </div>
+          <!-- 5 DÍAS -->
+          <div class="prog-schedule" id="glut-5d">
+            <div class="day-card">
+              <div class="day-label">Día 1 — Lunes</div>
+              <div class="day-name">Tren inferior A — Sentadilla</div>
+              <ul class="day-exercises">
+                <li><strong>Sentadilla trasera</strong> — 4×6-8 reps</li>
+                <li><strong>Leg press</strong> — 3×8-10 reps</li>
+                <li><strong>Extensión de cuádriceps</strong> — 3×10-12 reps</li>
+                <li><strong>Curl de isquiotibiales sentado</strong> — 3×10-12 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 2 — Martes</div>
+              <div class="day-name">Tren Superior</div>
+              <ul class="day-exercises">
+                <li><strong>Press de banca</strong> — 3×8-10 reps</li>
+                <li><strong>Remo con barra</strong> — 3×8-10 reps</li>
+                <li><strong>Press de hombros</strong> — 3×10-12 reps</li>
+                <li><strong>Jalón al pecho</strong> — 3×10-12 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 3 — Miércoles</div>
+              <div class="day-name">Tren inferior B — Hip Thrust</div>
+              <ul class="day-exercises">
+                <li><strong>Hip thrust con barra</strong> — 4×8-10 reps</li>
+                <li><strong>Peso muerto</strong> — 3×5-6 reps</li>
+                <li><strong>Sentadilla búlgara</strong> — 3×8-10 por pierna</li>
+                <li><strong>Abducción de cadera</strong> — 3×12-15 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 4 — Jueves</div>
+              <div class="day-name">Tren Superior</div>
+              <ul class="day-exercises">
+                <li><strong>Press inclinado mancuernas</strong> — 3×10-12 reps</li>
+                <li><strong>Remo en polea</strong> — 3×10-12 reps</li>
+                <li><strong>Elevaciones laterales</strong> — 3×12-15 reps</li>
+                <li><strong>Face pulls</strong> — 3×15 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 5 — Viernes</div>
+              <div class="day-name">Tren inferior C — Aislamiento</div>
+              <ul class="day-exercises">
+                <li><strong>Zancadas caminando</strong> — 3×12 por pierna</li>
+                <li><strong>Hip thrust mancuernas</strong> — 3×10-12 reps</li>
+                <li><strong>Leg press</strong> — 3×12-15 reps</li>
+                <li><strong>Cable pull-through</strong> — 3×12-15 reps</li>
+                <li><strong>Cable kickback</strong> — 2×15 por lado</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prog-notes">
+            <div class="prog-notes-title">Progresión del mes</div>
+            <ul>
+              <li>Semana 1 — Técnica con peso moderado, establecer línea base</li>
+              <li>Semana 2 — Subir 2.5-5% de carga si completaste todas las reps</li>
+              <li>Semana 3 — Agregar 1-2 reps por serie o incluir pausa de 2 seg en el pico</li>
+              <li>Semana 4 — Drop sets en las últimas 2 series de los ejercicios principales</li>
+            </ul>
+          </div>
+          <div class="prog-cta-row">
+            <p>Incluido en la membresía mensual. <strong>Acceso inmediato al contratar — $70 USD/mes.</strong></p>
+            <a href="https://wa.me/543446630998?text=Hola%20Brian%2C%20quiero%20acceder%20a%20la%20membresia%20para%20ver%20los%20programas" class="btn" target="_blank" rel="noopener">OBTENER ACCESO</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== PROGRAMA 2: POTENCIA DEPORTIVA ===================== -->
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-cover">
+            <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&q=90&fit=crop&crop=center" alt="Potencia deportiva">
+            <div class="prog-cover-overlay"></div>
+          </div>
+          <div class="prog-meta">
+            <span class="prog-badge">Potencia</span>
+            <div class="prog-title">Potencia para Deportes de Equipo</div>
+            <p class="prog-desc">Para jugadores de fútbol, básquet y vóley. Combina levantamientos olímpicos y pliometría para mejorar salto vertical, velocidad de sprint y cambio de dirección. Basado en meta-análisis 2026 sobre entrenamiento pliométrico en deportes de equipo.</p>
+            <div class="prog-stats">
+              <div class="prog-stat"><strong>4 semanas</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Gimnasio</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Nivel intermedio</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="freq-toggle">
+          <button class="freq-btn active" onclick="switchFreq(this,'pot','3d')">3 días / semana</button>
+          <button class="freq-btn" onclick="switchFreq(this,'pot','5d')">5 días / semana</button>
+        </div>
+        <div class="prog-body">
+          <!-- 3 DÍAS -->
+          <div class="prog-schedule active" id="pot-3d">
+            <div class="day-card">
+              <div class="day-label">Día 1 — Lunes</div>
+              <div class="day-name">Potencia Explosiva + Pliometría</div>
+              <ul class="day-exercises">
+                <li><strong>Power clean o Hang clean</strong> — 5×2-3 reps (85%)</li>
+                <li><strong>Sentadilla con salto</strong> — 4×5 reps</li>
+                <li><strong>Saltos a caja (Box jump)</strong> — 4×3-4 reps</li>
+                <li><strong>Sentadilla trasera</strong> — 3×5 reps (85%)</li>
+                <li><strong>Lateral bounds</strong> — 3×6 por lado</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 2 — Miércoles</div>
+              <div class="day-name">Potencia Direccional</div>
+              <ul class="day-exercises">
+                <li><strong>Power snatch o Clean high pull</strong> — 5×2-3 reps (80%)</li>
+                <li><strong>Saltos de longitud (Broad jump)</strong> — 4×3 reps</li>
+                <li><strong>Zancadas con salto</strong> — 4×5 por pierna</li>
+                <li><strong>Sentadilla frontal</strong> — 3×5 reps</li>
+                <li><strong>Pase de pelota médica (pared)</strong> — 3×8 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 3 — Viernes</div>
+              <div class="day-name">Integración + Patrones de movimiento</div>
+              <ul class="day-exercises">
+                <li><strong>Clean & press unilateral</strong> — 4×4-5 por brazo</li>
+                <li><strong>Salto vertical máximo</strong> — 4×2 reps</li>
+                <li><strong>Box jump rápidos (reactivos)</strong> — 3×5 reps</li>
+                <li><strong>Peso muerto</strong> — 3×3 reps (90%)</li>
+                <li><strong>Hop unilateral + aterrizaje</strong> — 2×3 por pierna</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Días 4-7</div>
+              <div class="day-name">Descanso obligatorio</div>
+              <div class="day-rest">El SNC necesita recuperación completa — no días consecutivos de potencia</div>
+            </div>
+          </div>
+          <!-- 5 DÍAS -->
+          <div class="prog-schedule" id="pot-5d">
+            <div class="day-card">
+              <div class="day-label">Día 1 — Lunes</div>
+              <div class="day-name">Tren inferior — Power + Plio</div>
+              <ul class="day-exercises">
+                <li><strong>Power clean</strong> — 5×2-3 reps (85%)</li>
+                <li><strong>Sentadilla con salto</strong> — 4×5 reps</li>
+                <li><strong>Box jump máxima altura</strong> — 4×3 reps</li>
+                <li><strong>Sentadilla trasera</strong> — 3×5 reps (85%)</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 2 — Martes</div>
+              <div class="day-name">Tren superior — Potencia</div>
+              <ul class="day-exercises">
+                <li><strong>Press de banca</strong> — 4×5 reps (85%)</li>
+                <li><strong>Pase med ball pecho (explosivo)</strong> — 4×5 reps</li>
+                <li><strong>Remo en polea (concéntrico rápido)</strong> — 3×5 reps</li>
+                <li><strong>Flexiones explosivas</strong> — 3×máx reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 3 — Miércoles</div>
+              <div class="day-name">Tren inferior — Dirección</div>
+              <ul class="day-exercises">
+                <li><strong>Power snatch o Clean high pull</strong> — 5×2-3 reps (80%)</li>
+                <li><strong>Broad jumps</strong> — 4×3 reps</li>
+                <li><strong>Zancadas con salto</strong> — 4×5 por pierna</li>
+                <li><strong>Sentadilla frontal</strong> — 3×5 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 4 — Jueves</div>
+              <div class="day-name">Tren superior — Tracción</div>
+              <ul class="day-exercises">
+                <li><strong>Peso muerto</strong> — 4×3 reps (90%)</li>
+                <li><strong>Jalón explosivo</strong> — 3×5-6 reps</li>
+                <li><strong>Slam de pelota médica</strong> — 3×5 reps</li>
+                <li><strong>Remo con barra</strong> — 3×5 reps (85%)</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 5 — Viernes</div>
+              <div class="day-name">Cuerpo completo — Integración</div>
+              <ul class="day-exercises">
+                <li><strong>Clean & press unilateral</strong> — 4×4 por brazo</li>
+                <li><strong>Salto vertical máximo</strong> — 4×2 reps</li>
+                <li><strong>Hop unilateral + stick</strong> — 3×3 por pierna</li>
+                <li><strong>Kettlebell swing</strong> — 3×8 reps (drive explosivo)</li>
+                <li><strong>Med ball slam rotacional</strong> — 2×6 por lado</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prog-notes">
+            <div class="prog-notes-title">Progresión del mes</div>
+            <ul>
+              <li>Semana 1 — Técnica submáxima, perfeccionar mecánica de aterrizaje</li>
+              <li>Semana 2 — Subir 2.5-5% en levantamientos olímpicos, mantener consistencia de salto</li>
+              <li>Semana 3 — Introducir variaciones laterales específicas del deporte</li>
+              <li>Semana 4 — Reducir volumen, subir intensidad (90%+), testear salto vertical</li>
+            </ul>
+          </div>
+          <div class="prog-cta-row">
+            <p>Incluido en la membresía mensual. <strong>Acceso inmediato al contratar — $70 USD/mes.</strong></p>
+            <a href="https://wa.me/543446630998?text=Hola%20Brian%2C%20quiero%20acceder%20a%20la%20membresia%20para%20ver%20los%20programas" class="btn" target="_blank" rel="noopener">OBTENER ACCESO</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== PROGRAMA 3: RECOMPOSICIÓN ===================== -->
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-cover">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=90&fit=crop&crop=center" alt="Recomposición corporal">
+            <div class="prog-cover-overlay"></div>
+          </div>
+          <div class="prog-meta">
+            <span class="prog-badge">Recomposición</span>
+            <div class="prog-title">Bajar Grasa + Ganar Músculo</div>
+            <p class="prog-desc">Recomposición corporal simultánea: perder tejido graso y ganar masa muscular al mismo tiempo. Posible con la frecuencia de entrenamiento correcta, alta ingesta de proteína y déficit calórico moderado. Programa Push/Pull/Legs con cardio integrado.</p>
+            <div class="prog-stats">
+              <div class="prog-stat"><strong>4 semanas</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Gimnasio</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Todos los niveles</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="freq-toggle">
+          <button class="freq-btn active" onclick="switchFreq(this,'rec','3d')">3 días / semana</button>
+          <button class="freq-btn" onclick="switchFreq(this,'rec','5d')">5 días / semana</button>
+        </div>
+        <div class="prog-body">
+          <!-- 3 DÍAS -->
+          <div class="prog-schedule active" id="rec-3d">
+            <div class="day-card">
+              <div class="day-label">Día 1 — Lunes</div>
+              <div class="day-name">Empuje (Push) + Cardio</div>
+              <ul class="day-exercises">
+                <li><strong>Press de banca</strong> — 3×8-10 reps (75%)</li>
+                <li><strong>Sentadilla trasera</strong> — 3×8-10 reps</li>
+                <li><strong>Press inclinado mancuernas</strong> — 3×10-12 reps</li>
+                <li><strong>Leg press</strong> — 3×10-12 reps</li>
+                <li><strong>Tríceps en polea</strong> — 2×12-15 reps</li>
+                <li><em>+ 20 min cardio LISS (caminata rápida / bici)</em></li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 2 — Miércoles</div>
+              <div class="day-name">Tracción (Pull) + Cardio</div>
+              <ul class="day-exercises">
+                <li><strong>Remo con barra</strong> — 3×8-10 reps (75%)</li>
+                <li><strong>Peso muerto</strong> — 3×6-8 reps (80%)</li>
+                <li><strong>Jalón al pecho</strong> — 3×10-12 reps</li>
+                <li><strong>Remo en polea</strong> — 3×10-12 reps</li>
+                <li><strong>Curl de bíceps</strong> — 2×10-12 reps</li>
+                <li><em>+ 20 min cardio LISS</em></li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 3 — Viernes</div>
+              <div class="day-name">Piernas + Core + Cardio</div>
+              <ul class="day-exercises">
+                <li><strong>Sentadilla búlgara</strong> — 3×8-10 por pierna</li>
+                <li><strong>Hip thrust con barra</strong> — 3×10-12 reps</li>
+                <li><strong>Zancadas caminando</strong> — 3×10 por pierna</li>
+                <li><strong>Abducción / Aducción máquina</strong> — 2×15 cada una</li>
+                <li><strong>Plancha</strong> — 3×45-60 seg</li>
+                <li><em>+ 30 min cardio LISS</em></li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Días 4-7</div>
+              <div class="day-name">Descanso / Actividad leve</div>
+              <div class="day-rest">Yoga, stretching o caminata — recuperación activa</div>
+            </div>
+          </div>
+          <!-- 5 DÍAS -->
+          <div class="prog-schedule" id="rec-5d">
+            <div class="day-card">
+              <div class="day-label">Día 1 — Lunes</div>
+              <div class="day-name">Push A</div>
+              <ul class="day-exercises">
+                <li><strong>Press de banca</strong> — 4×6-8 reps (80%)</li>
+                <li><strong>Press inclinado mancuernas</strong> — 3×8-10 reps</li>
+                <li><strong>Aperturas en máquina</strong> — 3×10-12 reps</li>
+                <li><strong>Elevaciones laterales</strong> — 3×12-15 reps</li>
+                <li><strong>Extensión tríceps cuerda</strong> — 2×12-15 reps</li>
+                <li><em>+ 15 min cardio LISS</em></li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 2 — Martes</div>
+              <div class="day-name">Pull A</div>
+              <ul class="day-exercises">
+                <li><strong>Remo con barra</strong> — 4×6-8 reps (80%)</li>
+                <li><strong>Jalón al pecho</strong> — 3×8-10 reps</li>
+                <li><strong>Remo en polea</strong> — 3×10-12 reps</li>
+                <li><strong>Curl con barra</strong> — 2×8-10 reps</li>
+                <li><strong>Face pulls</strong> — 2×15 reps</li>
+                <li><em>+ 15 min cardio LISS</em></li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 3 — Miércoles</div>
+              <div class="day-name">Piernas</div>
+              <ul class="day-exercises">
+                <li><strong>Sentadilla trasera</strong> — 4×6-8 reps (80%)</li>
+                <li><strong>Peso muerto rumano</strong> — 3×8-10 reps</li>
+                <li><strong>Leg press</strong> — 3×10-12 reps</li>
+                <li><strong>Curl de isquiotibiales</strong> — 3×10-12 reps</li>
+                <li><strong>Extensión de cuádriceps</strong> — 2×12-15 reps</li>
+                <li><em>+ 20 min cardio mixto</em></li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 4 — Jueves</div>
+              <div class="day-name">Push B</div>
+              <ul class="day-exercises">
+                <li><strong>Press mancuernas plano</strong> — 3×8-10 reps</li>
+                <li><strong>Press de hombros mancuernas</strong> — 3×8-10 reps</li>
+                <li><strong>Aperturas en polea</strong> — 3×10-12 reps</li>
+                <li><strong>Pec deck inverso</strong> — 3×12-15 reps</li>
+                <li><strong>Extensión overhead cuerda</strong> — 2×12-15 reps</li>
+                <li><em>+ 15 min cardio LISS</em></li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 5 — Viernes</div>
+              <div class="day-name">Pull B</div>
+              <ul class="day-exercises">
+                <li><strong>Peso muerto</strong> — 4×5-6 reps (85%)</li>
+                <li><strong>Remo en banco inclinado</strong> — 3×8-10 reps</li>
+                <li><strong>Remo mancuerna unilateral</strong> — 3×10-12 por lado</li>
+                <li><strong>Jalón en máquina</strong> — 3×10-12 reps</li>
+                <li><strong>Curl mancuernas</strong> — 2×10-12 reps</li>
+                <li><em>+ 15 min cardio LISS</em></li>
+              </ul>
+            </div>
+          </div>
+          <div class="prog-notes">
+            <div class="prog-notes-title">Progresión del mes</div>
+            <ul>
+              <li>Semana 1 — Línea base al 70% 1RM, perfeccionar técnica en compuestos</li>
+              <li>Semana 2 — Subir 2.5-5% en ejercicios principales o agregar 1-2 reps por serie</li>
+              <li>Semana 3 — Reducir descanso 15 seg o agregar 1 serie a 2-3 ejercicios</li>
+              <li>Semana 4 — Deload: reducir volumen 40%, mantener intensidad y testear nuevos 1RM</li>
+            </ul>
+          </div>
+          <div class="prog-cta-row">
+            <p>Incluido en la membresía mensual. <strong>Acceso inmediato al contratar — $70 USD/mes.</strong></p>
+            <a href="https://wa.me/543446630998?text=Hola%20Brian%2C%20quiero%20acceder%20a%20la%20membresia%20para%20ver%20los%20programas" class="btn" target="_blank" rel="noopener">OBTENER ACCESO</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== PROGRAMA 4: PRIMERA DOMINADA ===================== -->
+      <!-- ===================== EBOOK RECETAS ===================== -->
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-cover">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=90&fit=crop&crop=center" alt="100 Recetas Fitness">
+            <div class="prog-cover-overlay"></div>
+          </div>
+          <div class="prog-meta">
+            <span class="prog-badge">Nutrición</span>
+            <div class="prog-title">Ebook: 100 Recetas Fitness</div>
+            <p class="prog-desc">Las recetas más utilizadas para transformar tu cuerpo sin sacrificar el sabor. Desayunos, almuerzos, meriendas y cenas con macros detallados y preparación paso a paso. Incluido en la membresía mensual.</p>
+            <div class="prog-stats">
+              <div class="prog-stat"><strong>100 recetas</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>4 categorías</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Macros incluidos</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="prog-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">
+            <div class="day-card"><div class="day-label">🌅 Desayunos</div><div class="day-name">25 recetas</div><ul class="day-exercises"><li>Bowls de avena proteicos</li><li>Pancakes y waffles fitness</li><li>Smoothies y batidos</li><li>Huevos en todas las versiones</li><li>Overnight oats y más</li></ul></div>
+            <div class="day-card"><div class="day-label">☀️ Almuerzos</div><div class="day-name">30 recetas</div><ul class="day-exercises"><li>Bowls de arroz y proteína</li><li>Ensaladas completas</li><li>Pastas integrales</li><li>Wraps y opciones rápidas</li><li>Salmón, pollo y carnes magras</li></ul></div>
+            <div class="day-card"><div class="day-label">🍎 Meriendas</div><div class="day-name">20 recetas</div><ul class="day-exercises"><li>Energy balls y barritas</li><li>Smoothies post-entreno</li><li>Mousse de chocolate proteico</li><li>Opciones saladas y dulces</li><li>Galletas de avena</li></ul></div>
+            <div class="day-card"><div class="day-label">🌙 Cenas</div><div class="day-name">25 recetas</div><ul class="day-exercises"><li>Pescados al horno</li><li>Pollo en todas las variantes</li><li>Sopas y cremas proteicas</li><li>Opciones veganas</li><li>Cenas rápidas de 10 min</li></ul></div>
+          </div>
+          <div class="prog-cta-row">
+            <p>Incluido en la membresía mensual. <strong>Acceso inmediato al contratar — $70 USD/mes.</strong></p>
+            <a href="https://wa.me/543446630998?text=Hola%20Brian%2C%20quiero%20acceder%20a%20la%20membresia%20para%20ver%20los%20programas%20y%20el%20ebook" class="btn" target="_blank" rel="noopener">OBTENER ACCESO</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== PROGRAMA 4: PRIMERA DOMINADA ===================== -->
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-cover">
+            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&q=90&fit=crop&crop=top" alt="Mujer haciendo dominadas">
+            <div class="prog-cover-overlay"></div>
+          </div>
+          <div class="prog-meta">
+            <span class="prog-badge">Fuerza relativa</span>
+            <div class="prog-title">Guía: Tu Primera Dominada</div>
+            <p class="prog-desc">La dominada es uno de los indicadores más honestos de fuerza relativa. Este programa progresivo de 4 semanas te lleva desde cero hasta completar tu primera repetición completa — sin asistencia, con técnica perfecta.</p>
+            <div class="prog-stats">
+              <div class="prog-stat"><strong>4 semanas</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Gimnasio</strong></div>
+              <div class="prog-stat">·</div>
+              <div class="prog-stat"><strong>Principiantes</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="freq-toggle">
+          <button class="freq-btn active" onclick="switchFreq(this,'dom','3d')">3 días / semana</button>
+          <button class="freq-btn" onclick="switchFreq(this,'dom','5d')">5 días / semana</button>
+        </div>
+        <div class="prog-body">
+          <!-- 3 DÍAS -->
+          <div class="prog-schedule active" id="dom-3d">
+            <div class="day-card">
+              <div class="day-label">Día 1 — Lunes</div>
+              <div class="day-name">Semana 1-2 · Construir la base</div>
+              <ul class="day-exercises">
+                <li><strong>Jalón al pecho agarre supino</strong> — 4×8-10 reps</li>
+                <li><strong>Remo en polea sentado</strong> — 3×10-12 reps</li>
+                <li><strong>Dominada con banda elástica</strong> — 3×5-6 reps asistidas</li>
+                <li><strong>Dead hang (colgarse sin moverse)</strong> — 3×20-30 seg</li>
+                <li><strong>Remo con mancuerna unilateral</strong> — 3×10 por lado</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 2 — Miércoles</div>
+              <div class="day-name">Semana 1-2 · Fuerza de tracción</div>
+              <ul class="day-exercises">
+                <li><strong>Jalón al pecho agarre prono</strong> — 4×8 reps (carga progresiva)</li>
+                <li><strong>Dominada excéntrica (negativa)</strong> — 4×3-4 reps (bajar en 5 seg)</li>
+                <li><strong>Remo en máquina</strong> — 3×12 reps</li>
+                <li><strong>Face pulls</strong> — 3×15 reps</li>
+                <li><strong>Curl de bíceps</strong> — 2×10-12 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 3 — Viernes</div>
+              <div class="day-name">Semana 3-4 · Intentos reales</div>
+              <ul class="day-exercises">
+                <li><strong>Dominada asistida con banda (banda más fina)</strong> — 4×4-5 reps</li>
+                <li><strong>Dominada negativa</strong> — 4×4 reps (bajar en 6-8 seg)</li>
+                <li><strong>Jalón al pecho carga máxima</strong> — 3×5 reps</li>
+                <li><strong>Intento de dominada libre</strong> — 3 intentos máximos</li>
+                <li><strong>Dead hang activo (retraer escápulas)</strong> — 3×30 seg</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Días 4-7</div>
+              <div class="day-name">Descanso</div>
+              <div class="day-rest">Los músculos de la espalda necesitan 48-72 hs de recuperación</div>
+            </div>
+          </div>
+          <!-- 5 DÍAS -->
+          <div class="prog-schedule" id="dom-5d">
+            <div class="day-card">
+              <div class="day-label">Día 1 — Lunes</div>
+              <div class="day-name">Tracción vertical + base</div>
+              <ul class="day-exercises">
+                <li><strong>Jalón al pecho supino</strong> — 4×8-10 reps</li>
+                <li><strong>Dominada con banda</strong> — 3×5-6 reps</li>
+                <li><strong>Dead hang</strong> — 3×20-30 seg</li>
+                <li><strong>Curl de bíceps barra</strong> — 3×10 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 2 — Martes</div>
+              <div class="day-name">Empuje (descanso tracción)</div>
+              <ul class="day-exercises">
+                <li><strong>Press de banca</strong> — 3×8-10 reps</li>
+                <li><strong>Press de hombros</strong> — 3×10 reps</li>
+                <li><strong>Fondos en paralelas</strong> — 3×8-10 reps</li>
+                <li><strong>Tríceps en polea</strong> — 2×12 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 3 — Miércoles</div>
+              <div class="day-name">Tracción horizontal + negativas</div>
+              <ul class="day-exercises">
+                <li><strong>Dominada negativa</strong> — 4×3-4 reps (5 seg de bajada)</li>
+                <li><strong>Remo con barra</strong> — 4×8 reps</li>
+                <li><strong>Remo en polea</strong> — 3×12 reps</li>
+                <li><strong>Face pulls</strong> — 3×15 reps</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 4 — Jueves</div>
+              <div class="day-name">Piernas (recuperación espalda)</div>
+              <ul class="day-exercises">
+                <li><strong>Sentadilla</strong> — 3×8-10 reps</li>
+                <li><strong>Peso muerto rumano</strong> — 3×10 reps</li>
+                <li><strong>Leg press</strong> — 3×12 reps</li>
+                <li><strong>Dead hang activo</strong> — 2×30 seg</li>
+              </ul>
+            </div>
+            <div class="day-card">
+              <div class="day-label">Día 5 — Viernes</div>
+              <div class="day-name">Intentos + Jalón máximo</div>
+              <ul class="day-exercises">
+                <li><strong>Intento de dominada libre</strong> — 3 intentos máximos</li>
+                <li><strong>Dominada asistida banda fina</strong> — 4×4-5 reps</li>
+                <li><strong>Jalón al pecho carga máxima</strong> — 3×5 reps</li>
+                <li><strong>Remo mancuerna unilateral</strong> — 3×10 por lado</li>
+                <li><strong>Curl martillo</strong> — 2×10-12 reps</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prog-notes">
+            <div class="prog-notes-title">Progresión del mes</div>
+            <ul>
+              <li>Semana 1 — Jalón con carga moderada, dominada asistida con banda gruesa, acostumbrarse al dead hang</li>
+              <li>Semana 2 — Aumentar carga en jalón, introducir negativas (excéntrico 5 seg), reducir asistencia de banda</li>
+              <li>Semana 3 — Negativas de 6-8 seg, banda más fina, primer intento de dominada libre al final de cada sesión</li>
+              <li>Semana 4 — Reducir volumen asistido, maximizar intentos libres, testear repetición completa</li>
+            </ul>
+          </div>
+          <div class="prog-cta-row">
+            <p>Incluido en la membresía mensual. <strong>Acceso inmediato al contratar — $70 USD/mes.</strong></p>
+            <a href="https://wa.me/543446630998?text=Hola%20Brian%2C%20quiero%20acceder%20a%20la%20membresia%20para%20ver%20los%20programas" class="btn" target="_blank" rel="noopener">OBTENER ACCESO</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NUTRICIÓN -->
+<section class="nutricion" id="nutricion">
+  <div class="container">
+    <div class="nutri-intro">
+      <div class="section-tag">Nutrición</div>
+      <h2>Aprendé a comer mejor <span style="color:var(--blue)">sin restricciones</span></h2>
+      <p class="lead">No hay alimentos prohibidos. Hay proporciones, momentos y elecciones inteligentes. Esto es lo que vas a aprender a hacer.</p>
+    </div>
+
+    <!-- Hero split -->
+    <div class="nutri-hero">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700&q=90&fit=crop&crop=center" alt="Plato saludable equilibrado" class="nutri-hero-img" loading="lazy">
+      <div class="nutri-hero-text">
+        <h3>El plato que funciona no es el que "parece sano" — es el que podés sostener todos los días</h3>
+        <p>La clave no está en comer lechuga y pechuga. Está en armar platos que te nutran, te sacien y te gusten. Cuando la alimentación deja de ser un castigo, el cuerpo cambia solo.</p>
+      </div>
+    </div>
+
+    <!-- 3 pilares -->
+    <div class="nutri-pillars">
+      <div class="nutri-pillar">
+        <img src="https://images.unsplash.com/photo-1607532941433-304659e8198a?w=500&q=85&fit=crop&crop=center" alt="Proteínas" class="nutri-pillar-img" loading="lazy">
+        <div class="nutri-pillar-body">
+          <div class="nutri-pillar-label">Proteínas</div>
+          <div class="nutri-pillar-title">La base de tu transformación</div>
+          <p class="nutri-pillar-text">Pollo, carne, huevos, pescado, legumbres. La proteína construye músculo, te da saciedad y acelera el metabolismo. Aprendés cuánto necesitás según tu objetivo y cómo distribuirla en el día.</p>
+        </div>
+      </div>
+      <div class="nutri-pillar">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&q=85&fit=crop&crop=center" alt="Carbohidratos" class="nutri-pillar-img" loading="lazy">
+        <div class="nutri-pillar-body">
+          <div class="nutri-pillar-label">Carbohidratos</div>
+          <div class="nutri-pillar-title">Tu energía, no tu enemigo</div>
+          <p class="nutri-pillar-text">Arroz, avena, papa, frutas, pan. Los carbohidratos no engordan — el exceso sí. Aprendés cuáles elegir, en qué momento y en qué cantidad según tu nivel de actividad.</p>
+        </div>
+      </div>
+      <div class="nutri-pillar">
+        <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500&q=85&fit=crop&crop=center" alt="Grasas saludables" class="nutri-pillar-img" loading="lazy">
+        <div class="nutri-pillar-body">
+          <div class="nutri-pillar-label">Grasas saludables</div>
+          <div class="nutri-pillar-title">Necesarias, no opcionales</div>
+          <p class="nutri-pillar-text">Palta, aceite de oliva, frutos secos, huevo. Las grasas buenas regulan hormonas, mejoran la concentración y protegen el corazón. Aprendés a incluirlas sin miedo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Platos de ejemplo -->
+    <div class="nutri-plates">
+      <div class="nutri-plates-title">Ejemplos de platos que funcionan</div>
+      <div class="plates-grid">
+
+        <div class="plate-card">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=85&fit=crop&crop=center" alt="Almuerzo equilibrado" class="plate-img" loading="lazy">
+          <div class="plate-info">
+            <div class="plate-name">Almuerzo completo</div>
+            <div class="plate-macro">
+              <span class="macro-tag macro-p">Proteína</span>
+              <span class="macro-tag macro-c">Carbos</span>
+              <span class="macro-tag macro-f">Grasas</span>
+            </div>
+            <p class="plate-desc">Pollo grillado + arroz integral + ensalada + palta. Saciante, nutritivo y fácil de preparar.</p>
+          </div>
+        </div>
+
+        <div class="plate-card">
+          <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?w=400&q=85&fit=crop&crop=center" alt="Desayuno proteico" class="plate-img" loading="lazy">
+          <div class="plate-info">
+            <div class="plate-name">Desayuno proteico</div>
+            <div class="plate-macro">
+              <span class="macro-tag macro-p">Proteína</span>
+              <span class="macro-tag macro-c">Carbos</span>
+            </div>
+            <p class="plate-desc">Huevos revueltos + tostada integral + fruta. Arrancás el día con energía real y sin hambre a las 10 am.</p>
+          </div>
+        </div>
+
+        <div class="plate-card">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=85&fit=crop&crop=center" alt="Cena liviana" class="plate-img" loading="lazy">
+          <div class="plate-info">
+            <div class="plate-name">Cena liviana</div>
+            <div class="plate-macro">
+              <span class="macro-tag macro-p">Proteína</span>
+              <span class="macro-tag macro-f">Grasas</span>
+            </div>
+            <p class="plate-desc">Salmón al horno + vegetales salteados. Alta proteína, baja en carbos, perfecta para recuperación nocturna.</p>
+          </div>
+        </div>
+
+        <div class="plate-card">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&q=85&fit=crop&crop=center" alt="Snack inteligente" class="plate-img" loading="lazy">
+          <div class="plate-info">
+            <div class="plate-name">Snack inteligente</div>
+            <div class="plate-macro">
+              <span class="macro-tag macro-p">Proteína</span>
+              <span class="macro-tag macro-f">Grasas</span>
+            </div>
+            <p class="plate-desc">Yogur griego + frutos secos + berries. Sacian, no pican el hambre y no te hacen perder el progreso.</p>
+          </div>
+        </div>
+
+        <div class="plate-card">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=85&fit=crop&crop=center" alt="La salida al restaurante" class="plate-img" loading="lazy">
+          <div class="plate-info">
+            <div class="plate-name">La salida al restaurante</div>
+            <div class="plate-macro">
+              <span class="macro-tag macro-p">Proteína</span>
+              <span class="macro-tag macro-c">Carbos</span>
+              <span class="macro-tag macro-f">Grasas</span>
+            </div>
+            <p class="plate-desc">Comer afuera no arruina el proceso. Te enseñamos a elegir bien sin obsesionarte y disfrutar sin culpa.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA box -->
+    <div class="nutri-cta-box">
+      <div>
+        <h3>¿Querés un plan de alimentación hecho para vos, tu horario y tus gustos?</h3>
+        <p>Sin restricciones absurdas. Sin contar cada caloría. Con variedad y resultados reales.</p>
+      </div>
+      <a href="https://wa.me/543446630998?text=Hola%20Brian%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20plan%20de%20alimentaci%C3%B3n" class="btn" target="_blank" rel="noopener">QUIERO MI PLAN</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="section-tag">Contenido educativo</div>
+    <h2>Lo que necesitás <span style="color:var(--blue)">saber para transformarte</span></h2>
+    <p class="lead">Sin mitos, sin restricciones absurdas. Solo información real que podés aplicar hoy.</p>
+
+    <div class="blog-grid">
+
+      <!-- POST 1 -->
+      <article class="blog-card">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=90&fit=crop&crop=center" alt="Entrenamiento de fuerza" class="blog-img" loading="lazy">
+        <div class="blog-body">
+          <span class="blog-tag">Entrenamiento</span>
+          <h3 class="blog-title">La importancia del entrenamiento de fuerza: mucho más que levantar peso</h3>
+          <p class="blog-excerpt">Entrenar la fuerza no es solo para atletas ni para quienes quieren músculos grandes. Es la herramienta más efectiva para mejorar tu composición corporal, aumentar tu metabolismo basal, fortalecer huesos y articulaciones, y mejorar tu calidad de vida a largo plazo. Cada kilogramo de músculo que ganás quema más calorías en reposo, mejora tu postura y te protege de lesiones. La fuerza no es una opción — es la base de cualquier transformación física real.</p>
+          <a href="#contacto" class="blog-read">Quiero empezar a entrenar</a>
+        </div>
+      </article>
+
+      <!-- POST 2 -->
+      <article class="blog-card">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=90&fit=crop&crop=center" alt="Obesidad y sedentarismo" class="blog-img" loading="lazy">
+        <div class="blog-body">
+          <span class="blog-tag">Salud</span>
+          <h3 class="blog-title">Obesidad y sedentarismo: la epidemia silenciosa que el entrenamiento puede revertir</h3>
+          <p class="blog-excerpt">El sedentarismo es hoy uno de los mayores factores de riesgo para la salud. La falta de movimiento, sumada a una alimentación sin orden, dispara el porcentaje de grasa, deteriora la salud metabólica y afecta el estado mental. La buena noticia: el entrenamiento es la intervención más poderosa que existe para revertir este proceso. No necesitás horas en el gimnasio — necesitás consistencia, método y acompañamiento. El cuerpo responde más rápido de lo que creés cuando le das las herramientas correctas.</p>
+          <a href="#contacto" class="blog-read">Quiero cambiar mi situación</a>
+        </div>
+      </article>
+
+      <!-- POST 3 -->
+      <article class="blog-card">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&q=90&fit=crop&crop=center" alt="Equilibrio y constancia" class="blog-img" loading="lazy">
+        <div class="blog-body">
+          <span class="blog-tag">Mentalidad</span>
+          <h3 class="blog-title">No tiene que ser perfecto — tiene que ser constante</h3>
+          <p class="blog-excerpt">El mayor error que comete la gente es buscar la perfección. La dieta "100% limpia", el entrenamiento "perfecto", el plan "sin fallos". Esa mentalidad genera ansiedad, culpa y abandono. La realidad es que un plan equilibrado — donde hay lugar para salir a comer, para un postre, para un día sin entrenar — es el que funciona a largo plazo. La transformación no viene de la rigidez, viene de la constancia. Podés disfrutar de todo con orden. Eso es exactamente lo que trabajamos juntos.</p>
+          <a href="#contacto" class="blog-read">Quiero ese equilibrio</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-tag light">Preguntas frecuentes</div>
+    <h2>Todo lo que necesitás <span class="gold">saber antes de empezar</span></h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">¿Necesito ir a un gimnasio?</div>
+        <div class="faq-a">No necesariamente. El plan de entrenamiento se adapta a lo que tenés disponible: gym completo, gym en casa o solo tu peso corporal. Lo importante es el esfuerzo, no el lugar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cuánto tiempo por día necesito?</div>
+        <div class="faq-a">Las rutinas están pensadas para ser eficientes. Con 45-60 minutos, 3-4 veces por semana es más que suficiente. Si tenés menos tiempo, lo adaptamos a tu disponibilidad real.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo funciona la app?</div>
+        <div class="faq-a">Recibís acceso a la app desde el primer día. Ahí encontrás tus rutinas con videos explicativos, el seguimiento de tu progreso, tus métricas y toda la comunicación con el programa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Puedo empezar si soy principiante total?</div>
+        <div class="faq-a">Absolutamente. Atiendo personas de todos los niveles, desde principiantes completos hasta personas con experiencia que buscan romper una meseta. El plan empieza desde donde estás vos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cada cuánto me contactás?</div>
+        <div class="faq-a">En el programa 1 a 1 hacemos revisión semanal obligatoria + estoy disponible por WhatsApp para consultas de lunes a viernes. Tenés soporte constante durante los 3 meses.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Qué diferencia hay entre el programa y la membresía?</div>
+        <div class="faq-a">El programa 1 a 1 es totalmente personalizado para vos, con seguimiento semanal y atención directa. La membresía da acceso a programas pre-armados de calidad que podés seguir de forma autónoma.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo se paga?</div>
+        <div class="faq-a">Aceptamos transferencia bancaria, Mercado Pago y PayPal. El programa de 3 meses puede pagarse en cuota única o en 3 pagos mensuales. La membresía se renueva mensualmente.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Qué pasa si viajo o tengo imprevistos?</div>
+        <div class="faq-a">El programa se adapta. Si viajás, ajustamos la rutina a lo que tenés disponible. Si tenés una semana difícil, lo hablamos y continuamos sin culpa. La vida pasa — el plan también se ajusta.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta">
+  <div class="container">
+    <h2>El mejor momento para<br>empezar fue ayer.<br><span style="color:var(--gold)">El segundo mejor es hoy.</span></h2>
+    <p>No esperes motivación perfecta. No esperes el momento ideal. El cambio empieza con una decisión. Yo me encargo del resto.</p>
+    <div class="countdown-box">
+      ⏳ Próximos cupos disponibles cierran en: <span id="countdown">23:59:47</span>
+    </div>
+    <div class="final-btns">
+      <a href="https://wa.me/543446630998?text=Hola!%20Quiero%20empezar%20mi%20transformacion%20con%20BPteam" class="btn-primary" target="_blank">
+        EMPEZAR MI TRANSFORMACIÓN →
+      </a>
+      <a href="https://wa.me/543446630998?text=Hola!%20Tengo%20una%20consulta%20sobre%20los%20programas" class="btn-secondary" target="_blank">
+        Tengo una pregunta primero
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">BP<span>team</span> Asesoría</div>
+  <div style="font-size:12px;">© 2026 BPteam Asesoría. Todos los derechos reservados.</div>
+  <div class="links">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">WhatsApp</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="wa-btn" href="https://wa.me/543446630998?text=Hola!%20Vi%20tu%20pagina%20y%20quiero%20mas%20info" target="_blank" title="Escribime por WhatsApp">
+  💬
+</a>
+
+<!-- COUNTDOWN SCRIPT -->
+<script>
+(function(){
+  const stored = localStorage.getItem('bpteam_deadline');
+  let deadline;
+  if(stored && parseInt(stored) > Date.now()){
+    deadline = parseInt(stored);
+  } else {
+    deadline = Date.now() + (24*60*60*1000);
+    localStorage.setItem('bpteam_deadline', deadline);
+  }
+  function update(){
+    const diff = deadline - Date.now();
+    if(diff <= 0){
+      deadline = Date.now() + (24*60*60*1000);
+      localStorage.setItem('bpteam_deadline', deadline);
+      return;
+    }
+    const h = Math.floor(diff/3600000).toString().padStart(2,'0');
+    const m = Math.floor((diff%3600000)/60000).toString().padStart(2,'0');
+    const s = Math.floor((diff%60000)/1000).toString().padStart(2,'0');
+    const el = document.getElementById('countdown');
+    if(el) el.textContent = h+':'+m+':'+s;
+  }
+  update();
+  setInterval(update,1000);
+})();
+
+function switchFreq(btn, prog, freq) {
+  const card = btn.closest('.prog-card');
+  card.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  card.querySelectorAll('.prog-schedule').forEach(s => s.classList.remove('active'));
+  card.querySelector('#' + prog + '-' + freq).classList.add('active');
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
