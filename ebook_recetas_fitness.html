@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Recetas Fitness — BPteam Asesoría</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#111827;}
+
+/* PORTADA */
+.cover{
+  min-height:100vh;background:linear-gradient(135deg,#0a0e1a 60%,#1d4ed8);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:60px 40px;page-break-after:always;
+}
+.cover-tag{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:4px;margin-bottom:32px;}
+.cover h1{font-size:64px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-2px;}
+.cover h1 span{color:#60a5fa;}
+.cover-sub{font-size:18px;color:rgba(255,255,255,.6);margin-bottom:48px;max-width:500px;line-height:1.6;}
+.cover-divider{width:60px;height:3px;background:#1d4ed8;border-radius:2px;margin:0 auto 48px;}
+.cover-meta{font-size:13px;color:rgba(255,255,255,.4);}
+.cover-meta strong{color:rgba(255,255,255,.7);}
+
+/* ÍNDICE */
+.index-page{padding:80px 60px;page-break-after:always;max-width:800px;margin:0 auto;}
+.index-page h2{font-size:32px;font-weight:800;margin-bottom:40px;color:#0a0e1a;}
+.index-section{margin-bottom:32px;}
+.index-section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#1d4ed8;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #e5e7eb;}
+.index-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;}
+.index-list li{font-size:13px;color:#374151;padding:3px 0;display:flex;justify-content:space-between;}
+.index-list li span{color:#9ca3af;}
+
+/* SECCIONES */
+.section-header{
+  background:linear-gradient(135deg,#0a0e1a,#1e3a8a);
+  padding:60px;page-break-before:always;page-break-after:always;
+  display:flex;flex-direction:column;justify-content:center;min-height:300px;
+}
+.section-header .cat-icon{font-size:56px;margin-bottom:16px;}
+.section-header h2{font-size:40px;font-weight:900;color:#fff;margin-bottom:8px;}
+.section-header p{font-size:16px;color:rgba(255,255,255,.5);max-width:500px;line-height:1.6;}
+
+/* RECETAS */
+.recipes-page{padding:60px;max-width:900px;margin:0 auto;}
+.recipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.recipe-card{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;break-inside:avoid;}
+.recipe-num{background:#1d4ed8;color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;}
+.recipe-body{padding:18px 20px;}
+.recipe-name{font-size:15px;font-weight:800;color:#0a0e1a;margin-bottom:4px;}
+.recipe-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#1d4ed8;margin-bottom:10px;}
+.recipe-macros{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.macro{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;}
+.macro-p{background:#dcfce7;color:#166534;}
+.macro-c{background:#fef9c3;color:#854d0e;}
+.macro-f{background:#fee2e2;color:#991b1b;}
+.macro-k{background:#f3f4f6;color:#374151;}
+.recipe-section{margin-bottom:10px;}
+.recipe-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;margin-bottom:4px;}
+.recipe-ingredients{font-size:12px;color:#374151;line-height:1.7;}
+.recipe-prep{font-size:12px;color:#374151;line-height:1.7;}
+.recipe-tip{background:#eff6ff;border-left:3px solid #1d4ed8;padding:8px 12px;margin-top:10px;border-radius:0 6px 6px 0;}
+.recipe-tip p{font-size:11px;color:#1e40af;line-height:1.5;}
+
+/* FOOTER */
+.ebook-footer{text-align:center;padding:60px;border-top:1px solid #e5e7eb;margin-top:40px;}
+.ebook-footer h3{font-size:24px;font-weight:800;color:#0a0e1a;margin-bottom:8px;}
+.ebook-footer p{font-size:14px;color:#6b7280;margin-bottom:20px;}
+.ebook-footer .contact{font-size:13px;color:#1d4ed8;font-weight:600;}
+
+@media print{
+  .cover,.section-header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .recipe-card{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="cover-tag">BPteam Asesoría · Nutrición</div>
+  <h1>100 Recetas<br><span>Fitness</span></h1>
+  <div class="cover-divider"></div>
+  <p class="cover-sub">Las recetas más utilizadas para transformar tu cuerpo sin sacrificar el sabor. Desayunos, almuerzos, meriendas y cenas.</p>
+  <div class="cover-meta">Por <strong>Brian Paredes</strong> · @prof.paredesbrian · BPteam Asesoría</div>
+</div>
+
+<!-- ÍNDICE -->
+<div class="index-page">
+  <h2>Índice</h2>
+  <div class="index-section">
+    <div class="index-section-title">🌅 Desayunos — Recetas 1 a 25</div>
+    <ul class="index-list">
+      <li>1. Bowl de avena proteico<span>Pág 1</span></li>
+      <li>2. Pancakes de avena y banana<span>Pág 1</span></li>
+      <li>3. Tostadas con palta y huevo<span>Pág 1</span></li>
+      <li>4. Yogur griego con granola<span>Pág 1</span></li>
+      <li>5. Smoothie proteico de frutilla<span>Pág 2</span></li>
+      <li>6. Huevos revueltos con espinaca<span>Pág 2</span></li>
+      <li>7. Wrap de huevo y pavo<span>Pág 2</span></li>
+      <li>8. Muffins proteicos de arándanos<span>Pág 2</span></li>
+      <li>9. Batido de banana y mantequilla de maní<span>Pág 3</span></li>
+      <li>10. Tostada francesa proteica<span>Pág 3</span></li>
+      <li>11. Bowl de frutas con semillas<span>Pág 3</span></li>
+      <li>12. Omelete de claras con queso<span>Pág 3</span></li>
+      <li>13. Overnight oats con cacao<span>Pág 4</span></li>
+      <li>14. Crepes de avena<span>Pág 4</span></li>
+      <li>15. Smoothie verde detox<span>Pág 4</span></li>
+      <li>16. Huevos pochados con tostada integral<span>Pág 4</span></li>
+      <li>17. Porridge de quinoa con miel<span>Pág 5</span></li>
+      <li>18. Pudín de chía con mango<span>Pág 5</span></li>
+      <li>19. Arepa de avena con ricota<span>Pág 5</span></li>
+      <li>20. Batido de proteína con cacao<span>Pág 5</span></li>
+      <li>21. Tostada con queso cottage y tomate<span>Pág 6</span></li>
+      <li>22. Bowl açaí proteico<span>Pág 6</span></li>
+      <li>23. Waffles de avena y claras<span>Pág 6</span></li>
+      <li>24. Revuelto de tofu con vegetales<span>Pág 6</span></li>
+      <li>25. Banana bread proteico<span>Pág 7</span></li>
+    </ul>
+  </div>
+  <div class="index-section">
+    <div class="index-section-title">☀️ Almuerzos — Recetas 26 a 55</div>
+    <ul class="index-list">
+      <li>26. Bowl de arroz con pollo y palta<span>Pág 8</span></li>
+      <li>27. Ensalada de atún con garbanzos<span>Pág 8</span></li>
+      <li>28. Salmón al horno con batata<span>Pág 8</span></li>
+      <li>29. Pollo grillado con arroz integral<span>Pág 8</span></li>
+      <li>30. Wrap de pollo con vegetales<span>Pág 9</span></li>
+      <li>31. Pasta integral con atún<span>Pág 9</span></li>
+      <li>32. Bowl de quinoa con lentejas<span>Pág 9</span></li>
+      <li>33. Hamburguesa de carne magra<span>Pág 9</span></li>
+      <li>34. Ensalada de pollo con nueces<span>Pág 10</span></li>
+      <li>35. Carne al horno con vegetales<span>Pág 10</span></li>
+      <li>36. Bowl de sushi casero<span>Pág 10</span></li>
+      <li>37. Milanesa de pollo al horno<span>Pág 10</span></li>
+      <li>38. Ensalada de lentejas caliente<span>Pág 11</span></li>
+      <li>39. Pollo al curry con arroz<span>Pág 11</span></li>
+      <li>40. Tortilla de papa y espinaca<span>Pág 11</span></li>
+      <li>41. Bowl de carne picada con arroz<span>Pág 11</span></li>
+      <li>42. Salmón con espárragos<span>Pág 12</span></li>
+      <li>43. Pollo teriyaki con brócoli<span>Pág 12</span></li>
+      <li>44. Ensalada mediterránea<span>Pág 12</span></li>
+      <li>45. Tapa de asado magra con puré<span>Pág 12</span></li>
+      <li>46. Bowl de arroz con huevo y edamame<span>Pág 13</span></li>
+      <li>47. Pechuga rellena de espinaca<span>Pág 13</span></li>
+      <li>48. Ensalada de pollo y mango<span>Pág 13</span></li>
+      <li>49. Fideos de calabacín con carne<span>Pág 13</span></li>
+      <li>50. Ceviche de pescado blanco<span>Pág 14</span></li>
+      <li>51. Pollo a la plancha con puré de batata<span>Pág 14</span></li>
+      <li>52. Ensalada de garbanzos con vegetales<span>Pág 14</span></li>
+      <li>53. Arroz con mariscos<span>Pág 14</span></li>
+      <li>54. Bowl proteico de cerdo magro<span>Pág 15</span></li>
+      <li>55. Tarta de verduras sin masa<span>Pág 15</span></li>
+    </ul>
+  </div>
+  <div class="index-section">
+    <div class="index-section-title">🍎 Meriendas — Recetas 56 a 75</div>
+    <ul class="index-list">
+      <li>56. Yogur griego con miel y nueces<span>Pág 16</span></li>
+      <li>57. Manzana con mantequilla de maní<span>Pág 16</span></li>
+      <li>58. Hummus con bastones de zanahoria<span>Pág 16</span></li>
+      <li>59. Batido de frutas con proteína<span>Pág 16</span></li>
+      <li>60. Tostada con queso y tomate<span>Pág 17</span></li>
+      <li>61. Barrita de avena y miel casera<span>Pág 17</span></li>
+      <li>62. Mix de frutos secos<span>Pág 17</span></li>
+      <li>63. Pudín de chía con leche de coco<span>Pág 17</span></li>
+      <li>64. Palitos de apio con ricota<span>Pág 18</span></li>
+      <li>65. Smoothie de mango y cúrcuma<span>Pág 18</span></li>
+      <li>66. Galletas de avena y banana<span>Pág 18</span></li>
+      <li>67. Chips de kale al horno<span>Pág 18</span></li>
+      <li>68. Requesón con frutas rojas<span>Pág 19</span></li>
+      <li>69. Energy balls de dátil y cacao<span>Pág 19</span></li>
+      <li>70. Licuado de espinaca y piña<span>Pág 19</span></li>
+      <li>71. Tostada con palta y semillas<span>Pág 19</span></li>
+      <li>72. Bowl de cottage con durazno<span>Pág 20</span></li>
+      <li>73. Palomitas de maíz con aceite de oliva<span>Pág 20</span></li>
+      <li>74. Batido post-entrenamiento<span>Pág 20</span></li>
+      <li>75. Mousse de chocolate proteico<span>Pág 20</span></li>
+    </ul>
+  </div>
+  <div class="index-section">
+    <div class="index-section-title">🌙 Cenas — Recetas 76 a 100</div>
+    <ul class="index-list">
+      <li>76. Salmón al horno con limón<span>Pág 21</span></li>
+      <li>77. Pollo al horno con vegetales<span>Pág 21</span></li>
+      <li>78. Omelette de claras con jamón<span>Pág 21</span></li>
+      <li>79. Ensalada de atún con huevo duro<span>Pág 21</span></li>
+      <li>80. Sopa de lentejas y espinaca<span>Pág 22</span></li>
+      <li>81. Calabacín relleno de carne<span>Pág 22</span></li>
+      <li>82. Pollo al limón con brócoli<span>Pág 22</span></li>
+      <li>83. Revuelto de claras con espárragos<span>Pág 22</span></li>
+      <li>84. Merluza al papillote<span>Pág 23</span></li>
+      <li>85. Bowl de quinoa nocturno<span>Pág 23</span></li>
+      <li>86. Hamburguesa de atún<span>Pág 23</span></li>
+      <li>87. Crema de vegetales<span>Pág 23</span></li>
+      <li>88. Pollo con salsa de tomate casera<span>Pág 24</span></li>
+      <li>89. Ensalada tibia de garbanzos<span>Pág 24</span></li>
+      <li>90. Filete de merluza con palta<span>Pág 24</span></li>
+      <li>91. Tortilla de claras y champiñones<span>Pág 24</span></li>
+      <li>92. Pollo en salsa de mostaza<span>Pág 25</span></li>
+      <li>93. Budín de calabaza sin harina<span>Pág 25</span></li>
+      <li>94. Ensalada de espinaca y pollo tibio<span>Pág 25</span></li>
+      <li>95. Cazuela de pollo y vegetales<span>Pág 25</span></li>
+      <li>96. Sopa proteica de pollo<span>Pág 26</span></li>
+      <li>97. Pescado con costra de semillas<span>Pág 26</span></li>
+      <li>98. Bowl nocturno de cottage y nueces<span>Pág 26</span></li>
+      <li>99. Brochetas de pollo al horno<span>Pág 26</span></li>
+      <li>100. Salteado de vegetales con huevo<span>Pág 27</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ====== DESAYUNOS ====== -->
+<div class="section-header">
+  <div class="cat-icon">🌅</div>
+  <h2>Desayunos</h2>
+  <p>25 recetas para arrancar el día con energía, proteína y sabor. Sin saltear el desayuno, sin pasar hambre a las 10 am.</p>
+</div>
+
+<div class="recipes-page">
+<div class="recipe-grid">
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 01</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Bowl de Avena Proteico</div>
+    <div class="recipe-tag">Desayuno · 5 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">30g Proteína</span><span class="macro macro-c">45g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈370 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">80g avena en hojuelas · 1 scoop proteína de vainilla · 200ml leche descremada · 1 banana · 1 cdita canela · Frutos rojos para decorar</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cocinar la avena con la leche 3 min en microondas. Agregar proteína en polvo y mezclar. Cortar banana en rodajas encima. Decorar con frutos rojos y canela.</div></div>
+    <div class="recipe-tip"><p>💡 Preparalo la noche anterior (overnight oats) y ahorrás tiempo por la mañana.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 02</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Pancakes de Avena y Banana</div>
+    <div class="recipe-tag">Desayuno · 10 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">22g Proteína</span><span class="macro macro-c">52g Carbos</span><span class="macro macro-f">6g Grasas</span><span class="macro macro-k">≈350 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">1 banana madura · 2 huevos · 60g avena molida · 1 cdita esencia de vainilla · Pizca de sal · Miel para servir</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Pisar la banana con un tenedor. Mezclar con los huevos, la avena y la vainilla hasta obtener una mezcla homogénea. Cocinar en sartén antiadherente con spray de aceite, 2 min por lado a fuego medio. Servir con miel o frutas.</div></div>
+    <div class="recipe-tip"><p>💡 La banana más madura = más dulce natural, sin necesidad de azúcar.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 03</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Tostadas con Palta y Huevo</div>
+    <div class="recipe-tag">Desayuno · 8 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">18g Proteína</span><span class="macro macro-c">30g Carbos</span><span class="macro macro-f">18g Grasas</span><span class="macro macro-k">≈345 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">2 rebanadas pan integral · 1/2 palta · 2 huevos · Sal, pimienta, jugo de limón · Opcional: semillas de sésamo o cebolla morada</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Tostar el pan. Aplastar la palta con limón, sal y pimienta. Cocinar los huevos a gusto (pochados o fritos con spray). Untar la palta en las tostadas y colocar el huevo encima. Finalizar con semillas.</div></div>
+    <div class="recipe-tip"><p>💡 Grasa saludable + proteína completa = saciedad por horas.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 04</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Yogur Griego con Granola</div>
+    <div class="recipe-tag">Desayuno · 2 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">20g Proteína</span><span class="macro macro-c">38g Carbos</span><span class="macro macro-f">7g Grasas</span><span class="macro macro-k">≈295 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g yogur griego natural · 40g granola baja en azúcar · 1 cdita miel · Frutos rojos frescos · Opcional: 1 scoop proteína mezclado</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Colocar el yogur en un bowl. Agregar la granola, la miel y los frutos rojos. Si se desea más proteína, mezclar 1 scoop de proteína con el yogur antes de armar el bowl.</div></div>
+    <div class="recipe-tip"><p>💡 El yogur griego tiene el doble de proteína que el yogur común.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 05</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Smoothie Proteico de Frutilla</div>
+    <div class="recipe-tag">Desayuno · 3 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">32g Proteína</span><span class="macro macro-c">35g Carbos</span><span class="macro macro-f">4g Grasas</span><span class="macro macro-k">≈300 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">150g frutillas congeladas · 1 scoop proteína de frutilla o vainilla · 200ml leche de almendras · 100g yogur griego · 1 cdita miel · Hielo al gusto</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Licuar todos los ingredientes hasta obtener una mezcla cremosa y sin grumos. Servir inmediatamente. Si queda muy espeso, agregar un poco más de leche.</div></div>
+    <div class="recipe-tip"><p>💡 Ideal post-entrenamiento por la mañana — absorción rápida.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 06</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Huevos Revueltos con Espinaca</div>
+    <div class="recipe-tag">Desayuno · 8 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">24g Proteína</span><span class="macro macro-c">8g Carbos</span><span class="macro macro-f">14g Grasas</span><span class="macro macro-k">≈255 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">3 huevos enteros · 1 puñado espinaca baby · 30g queso crema light · Sal, pimienta, ajo en polvo · Spray de aceite de oliva</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Batir los huevos con sal y pimienta. Saltear la espinaca 1 min en sartén con spray. Agregar los huevos batidos y revolver a fuego bajo hasta cocinar cremoso. Agregar el queso crema al final y mezclar.</div></div>
+    <div class="recipe-tip"><p>💡 Cocinarlo a fuego bajo y sin apuro = textura cremosa perfecta.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 07</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Wrap de Huevo y Pavo</div>
+    <div class="recipe-tag">Desayuno · 10 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">28g Proteína</span><span class="macro macro-c">32g Carbos</span><span class="macro macro-f">10g Grasas</span><span class="macro macro-k">≈330 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">1 tortilla integral · 2 huevos revueltos · 60g pavo en fetas · Hojas de lechuga · 1/4 tomate · Mostaza o queso untable light</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Calentar la tortilla en sartén seca. Untar con queso o mostaza. Colocar las fetas de pavo, los huevos revueltos, la lechuga y el tomate. Enrollar y consumir inmediatamente o envolver para llevar.</div></div>
+    <div class="recipe-tip"><p>💡 Perfecto para llevar al trabajo. Se puede preparar la noche anterior.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 08</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Muffins Proteicos de Arándanos</div>
+    <div class="recipe-tag">Desayuno · 25 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">14g Proteína</span><span class="macro macro-c">28g Carbos</span><span class="macro macro-f">5g Grasas</span><span class="macro macro-k">≈215 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes (6 muffins)</div><div class="recipe-ingredients">100g avena molida · 2 scoops proteína · 2 huevos · 150g yogur griego · 100g arándanos · 1 cdita polvo de hornear · 2 cdas miel</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Mezclar todos los ingredientes secos. Agregar yogur, huevos y miel. Incorporar los arándanos con cuidado. Distribuir en molde para muffins. Hornear 20 min a 180°C.</div></div>
+    <div class="recipe-tip"><p>💡 Preparar el domingo para tener desayunos listos toda la semana.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 09</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Batido de Banana y Mantequilla de Maní</div>
+    <div class="recipe-tag">Desayuno · 3 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">35g Proteína</span><span class="macro macro-c">42g Carbos</span><span class="macro macro-f">12g Grasas</span><span class="macro macro-k">≈415 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">1 banana · 1 scoop proteína de chocolate · 250ml leche · 1 cda mantequilla de maní natural · Hielo · Opcional: cacao en polvo</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Licuar todos los ingredientes. Servir inmediatamente. Si se quiere más espeso, usar leche fría o banana congelada.</div></div>
+    <div class="recipe-tip"><p>💡 Ideal para días de mucho entrenamiento — carga alta de energía.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 10</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Overnight Oats con Cacao</div>
+    <div class="recipe-tag">Desayuno · 5 min prep</div>
+    <div class="recipe-macros"><span class="macro macro-p">25g Proteína</span><span class="macro macro-c">50g Carbos</span><span class="macro macro-f">7g Grasas</span><span class="macro macro-k">≈365 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">80g avena · 1 scoop proteína de chocolate · 200ml leche · 1 cda cacao en polvo sin azúcar · 1 cdita miel · Banana o frutos rojos para decorar</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Mezclar todos los ingredientes en un frasco o bowl. Tapar y refrigerar toda la noche. Por la mañana agregar las frutas y consumir frío.</div></div>
+    <div class="recipe-tip"><p>💡 Se conserva hasta 3 días en la heladera. Preparar varios a la vez.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 11</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Omelete de Claras con Queso</div>
+    <div class="recipe-tag">Desayuno · 8 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">26g Proteína</span><span class="macro macro-c">3g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈185 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">5 claras de huevo · 1 huevo entero · 30g queso mozzarella light · Sal, orégano · Tomate cherry para acompañar · Spray aceite</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Batir las claras con el huevo entero, sal y orégano. Verter en sartén caliente con spray. Cuando esté casi cuajado, agregar el queso sobre la mitad y doblar. Cocinar 1 min más.</div></div>
+    <div class="recipe-tip"><p>💡 Usar el huevo entero mejora la textura y agrega grasas esenciales.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 12</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Pudín de Chía con Mango</div>
+    <div class="recipe-tag">Desayuno · 5 min prep</div>
+    <div class="recipe-macros"><span class="macro macro-p">12g Proteína</span><span class="macro macro-c">38g Carbos</span><span class="macro macro-f">10g Grasas</span><span class="macro macro-k">≈290 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">3 cdas semillas de chía · 200ml leche de coco light · 1 cdita miel · 100g mango en cubos · Ralladura de limón</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Mezclar chía con la leche y la miel en un frasco. Refrigerar mínimo 4 horas o toda la noche. Al servir, agregar el mango en cubos y la ralladura de limón.</div></div>
+    <div class="recipe-tip"><p>💡 La chía absorbe el líquido y crea una textura tipo pudding naturalmente.</p></div>
+  </div>
+</div>
+
+</div><!-- recipe-grid -->
+
+<div class="recipe-grid" style="margin-top:28px;">
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 13</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Crepes de Avena</div>
+    <div class="recipe-tag">Desayuno · 15 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">20g Proteína</span><span class="macro macro-c">44g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈330 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes (4 crepes)</div><div class="recipe-ingredients">80g avena molida · 2 huevos · 150ml leche · Pizca de sal · Vainilla · Relleno: yogur + frutas</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Licuar avena, huevos, leche, sal y vainilla. Dejar reposar 5 min. Cocinar en sartén antiadherente a fuego medio, 1 min por lado. Rellenar con yogur griego y frutas.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 14</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Porridge de Quinoa con Miel</div>
+    <div class="recipe-tag">Desayuno · 20 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">16g Proteína</span><span class="macro macro-c">52g Carbos</span><span class="macro macro-f">5g Grasas</span><span class="macro macro-k">≈320 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">70g quinoa · 200ml leche · 1 cdita miel · 1/2 manzana rallada · Canela · Nueces para decorar</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cocinar la quinoa con la leche a fuego bajo 15 min revolviendo hasta obtener consistencia cremosa. Agregar la manzana, la miel y la canela. Decorar con nueces.</div></div>
+    <div class="recipe-tip"><p>💡 La quinoa es proteína completa — contiene los 9 aminoácidos esenciales.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 15</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Smoothie Verde Detox</div>
+    <div class="recipe-tag">Desayuno · 3 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">8g Proteína</span><span class="macro macro-c">32g Carbos</span><span class="macro macro-f">3g Grasas</span><span class="macro macro-k">≈185 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">1 puñado espinaca · 1/2 banana · 1/2 manzana verde · 200ml agua de coco · Jugo de 1/2 limón · 1 cm jengibre fresco</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Licuar todos los ingredientes. Servir inmediatamente sobre hielo.</div></div>
+    <div class="recipe-tip"><p>💡 Sumar 1 scoop de proteína para convertirlo en desayuno completo.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 16</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Waffles de Avena y Claras</div>
+    <div class="recipe-tag">Desayuno · 15 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">28g Proteína</span><span class="macro macro-c">48g Carbos</span><span class="macro macro-f">4g Grasas</span><span class="macro macro-k">≈345 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes (2 waffles)</div><div class="recipe-ingredients">80g avena molida · 4 claras · 1 scoop proteína vainilla · 50ml leche · 1 cdita polvo de hornear · Vainilla</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Mezclar todos los ingredientes. Verter en wafflera precalentada con spray. Cocinar 4-5 min. Servir con fruta o miel.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 17</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Banana Bread Proteico</div>
+    <div class="recipe-tag">Desayuno · 45 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">18g Proteína</span><span class="macro macro-c">42g Carbos</span><span class="macro macro-f">6g Grasas</span><span class="macro macro-k">≈295 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes (8 porciones)</div><div class="recipe-ingredients">3 bananas maduras · 2 huevos · 100g avena molida · 2 scoops proteína · 1 cdita polvo hornear · 2 cdas miel · Nueces opcionales</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Pisar las bananas. Mezclar con el resto de los ingredientes. Verter en molde de budín. Hornear 40 min a 175°C. Verificar cocción con palillo.</div></div>
+    <div class="recipe-tip"><p>💡 Se conserva 4-5 días a temperatura ambiente. Cortar en rodajas y congelar.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 18</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Bowl Açaí Proteico</div>
+    <div class="recipe-tag">Desayuno · 5 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">22g Proteína</span><span class="macro macro-c">40g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈320 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">100g açaí congelado · 1 scoop proteína · 100ml leche de almendras · Toppings: granola, banana, coco rallado, miel</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Licuar el açaí con la leche y la proteína hasta obtener consistencia cremosa. Verter en bowl. Decorar con toppings.</div></div>
+    <div class="recipe-tip"><p>💡 El açaí es rico en antioxidantes — ideal para recuperación post-entrenamiento.</p></div>
+  </div>
+</div>
+
+</div></div>
+
+<!-- ====== ALMUERZOS ====== -->
+<div class="section-header">
+  <div class="cat-icon">☀️</div>
+  <h2>Almuerzos</h2>
+  <p>30 recetas completas y saciantes para la comida del mediodía. Proteína, carbohidratos y grasas en el balance correcto.</p>
+</div>
+
+<div class="recipes-page">
+<div class="recipe-grid">
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 26</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Bowl de Arroz con Pollo y Palta</div>
+    <div class="recipe-tag">Almuerzo · 20 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">42g Proteína</span><span class="macro macro-c">55g Carbos</span><span class="macro macro-f">14g Grasas</span><span class="macro macro-k">≈515 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">150g pechuga de pollo · 150g arroz integral cocido · 1/2 palta · Tomate cherry · Maíz · Limón · Sal, pimienta, paprika</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Condimentar el pollo con sal, pimienta y paprika. Cocinar a la plancha 6-7 min por lado. Cortar en tiras. Armar el bowl con arroz de base, el pollo encima, la palta en rodajas, tomate cherry y maíz. Rociar con limón.</div></div>
+    <div class="recipe-tip"><p>💡 El almuerzo perfecto para días de entrenamiento — carga energética completa.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 27</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Ensalada de Atún con Garbanzos</div>
+    <div class="recipe-tag">Almuerzo · 5 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">38g Proteína</span><span class="macro macro-c">40g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈390 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">2 latas atún al natural · 200g garbanzos cocidos · 1 tomate · 1/2 pepino · Cebolla morada · Limón · Aceite de oliva · Perejil</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Escurrir el atún. Mezclar con los garbanzos, el tomate y el pepino en cubos, la cebolla morada fina. Aliñar con limón, aceite de oliva, sal y perejil.</div></div>
+    <div class="recipe-tip"><p>💡 Sin cocción — ideal para llevar al trabajo en un tupper.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 28</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Salmón al Horno con Batata</div>
+    <div class="recipe-tag">Almuerzo · 30 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">44g Proteína</span><span class="macro macro-c">38g Carbos</span><span class="macro macro-f">16g Grasas</span><span class="macro macro-k">≈485 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g filete de salmón · 200g batata · Limón · Ajo · Romero · Aceite de oliva · Sal, pimienta</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cortar la batata en cubos y cocinar al horno 20 min a 200°C. Condimentar el salmón con limón, ajo y romero. Cocinar al horno 15 min. Servir juntos.</div></div>
+    <div class="recipe-tip"><p>💡 El salmón aporta Omega-3 — fundamental para recuperación y reducción de inflamación.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 29</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Pollo Teriyaki con Brócoli</div>
+    <div class="recipe-tag">Almuerzo · 20 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">46g Proteína</span><span class="macro macro-c">42g Carbos</span><span class="macro macro-f">6g Grasas</span><span class="macro macro-k">≈410 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g pechuga pollo · 200g brócoli · 150g arroz · 2 cdas salsa de soja · 1 cda miel · 1 cdita jengibre · Sésamo</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Marinar el pollo con soja, miel y jengibre 10 min. Cocinar en sartén 5-6 min por lado. Saltear el brócoli con ajo. Servir sobre arroz y espolvorear sésamo.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 30</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Bowl de Quinoa con Lentejas</div>
+    <div class="recipe-tag">Almuerzo · 25 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">24g Proteína</span><span class="macro macro-c">58g Carbos</span><span class="macro macro-f">6g Grasas</span><span class="macro macro-k">≈385 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">80g quinoa · 100g lentejas cocidas · Zanahoria · Espinaca · Cebolla · Comino · Limón · Aceite de oliva</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cocinar la quinoa según instrucciones. Saltear zanahoria y cebolla con comino. Agregar las lentejas y la espinaca. Mezclar con la quinoa. Aliñar con limón y aceite.</div></div>
+    <div class="recipe-tip"><p>💡 Opción vegana con proteína completa — quinoa + lentejas = todos los aminoácidos.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 31</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Wrap de Pollo con Vegetales</div>
+    <div class="recipe-tag">Almuerzo · 15 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">38g Proteína</span><span class="macro macro-c">36g Carbos</span><span class="macro macro-f">10g Grasas</span><span class="macro macro-k">≈390 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">1 tortilla integral grande · 150g pollo grillado · Lechuga · Tomate · Pepino · 1/4 palta · Yogur griego con ajo como salsa</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Calentar la tortilla. Untar con la salsa de yogur con ajo. Colocar el pollo en tiras, los vegetales y la palta. Enrollar firmemente.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 32</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Pasta Integral con Atún</div>
+    <div class="recipe-tag">Almuerzo · 15 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">36g Proteína</span><span class="macro macro-c">65g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈480 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">100g pasta integral · 2 latas atún · Tomates cherry · Ajo · Albahaca · Aceite de oliva · Sal · Parmesano light</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cocinar la pasta al dente. Saltear ajo en aceite, agregar los tomates cherry partidos. Incorporar el atún escurrido. Mezclar con la pasta. Agregar albahaca fresca y parmesano.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 33</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Milanesa de Pollo al Horno</div>
+    <div class="recipe-tag">Almuerzo · 30 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">48g Proteína</span><span class="macro macro-c">28g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈380 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">2 pechugas fileteadas finas · 2 huevos · Pan rallado integral · Ajo en polvo · Orégano · Sal · Spray aceite</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Pasar el pollo por huevo batido condimentado, luego por pan rallado con orégano y ajo. Colocar en bandeja con papel manteca y spray. Hornear 20-25 min a 200°C dando vuelta a mitad de cocción.</div></div>
+    <div class="recipe-tip"><p>💡 Al horno = 60% menos grasa que frita. Mismo sabor, mejor resultado.</p></div>
+  </div>
+</div>
+
+</div></div>
+
+<!-- ====== MERIENDAS ====== -->
+<div class="section-header">
+  <div class="cat-icon">🍎</div>
+  <h2>Meriendas</h2>
+  <p>20 opciones rápidas para el medio día o después del entrenamiento. Sin romper el progreso y con sabor real.</p>
+</div>
+
+<div class="recipes-page">
+<div class="recipe-grid">
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 56</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Yogur Griego con Miel y Nueces</div>
+    <div class="recipe-tag">Merienda · 2 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">18g Proteína</span><span class="macro macro-c">20g Carbos</span><span class="macro macro-f">9g Grasas</span><span class="macro macro-k">≈235 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g yogur griego natural · 1 cdita miel · 15g nueces picadas · Opcional: canela</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Colocar el yogur en un bowl. Agregar la miel, las nueces y la canela. Listo para consumir.</div></div>
+    <div class="recipe-tip"><p>💡 Merienda perfecta post-entrenamiento o antes de dormir — caseína natural.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 57</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Manzana con Mantequilla de Maní</div>
+    <div class="recipe-tag">Merienda · 2 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">8g Proteína</span><span class="macro macro-c">28g Carbos</span><span class="macro macro-f">10g Grasas</span><span class="macro macro-k">≈230 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">1 manzana mediana · 1.5 cdas mantequilla de maní natural (sin azúcar añadida)</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cortar la manzana en gajos. Untar o dipear en la mantequilla de maní.</div></div>
+    <div class="recipe-tip"><p>💡 Fibra + grasas saludables = saciedad duradera sin pico de insulina.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 58</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Energy Balls de Dátil y Cacao</div>
+    <div class="recipe-tag">Merienda · 15 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">6g Proteína</span><span class="macro macro-c">30g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈215 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes (10 bolitas)</div><div class="recipe-ingredients">100g dátiles sin carozo · 60g avena · 2 cdas cacao puro · 2 cdas maní · 1 cda agua · Coco rallado para cubrir</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Procesar todos los ingredientes hasta obtener una masa compacta. Formar bolitas. Cubrir con coco rallado. Refrigerar 30 min antes de consumir.</div></div>
+    <div class="recipe-tip"><p>💡 Se conservan 2 semanas en la heladera. Preparar por lote.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 59</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Batido Post-Entrenamiento</div>
+    <div class="recipe-tag">Merienda · 3 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">40g Proteína</span><span class="macro macro-c">35g Carbos</span><span class="macro macro-f">3g Grasas</span><span class="macro macro-k">≈330 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">1.5 scoops proteína whey · 250ml agua o leche descremada · 1 banana · Hielo</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Licuar todos los ingredientes. Consumir dentro de los 30-45 min post-entrenamiento.</div></div>
+    <div class="recipe-tip"><p>💡 La ventana anabólica post-entreno = máxima absorción de nutrientes para recuperación muscular.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 60</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Hummus con Bastones de Zanahoria</div>
+    <div class="recipe-tag">Merienda · 5 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">10g Proteína</span><span class="macro macro-c">28g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈225 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">Hummus: 200g garbanzos · 1 cda tahini · Limón · Ajo · Aceite de oliva · Sal · Paprika. Acompañar con zanahoria, apio, pepino</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Procesar los garbanzos con el tahini, el limón, el ajo y el aceite hasta cremoso. Condimentar con sal y paprika. Servir con los bastones de vegetales.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 61</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Mousse de Chocolate Proteico</div>
+    <div class="recipe-tag">Merienda · 5 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">25g Proteína</span><span class="macro macro-c">18g Carbos</span><span class="macro macro-f">4g Grasas</span><span class="macro macro-k">≈210 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g yogur griego · 1 scoop proteína de chocolate · 1 cda cacao puro · 1 cdita miel · Opcional: frutos rojos</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Mezclar todos los ingredientes hasta obtener textura de mousse. Refrigerar 15 min antes de consumir. Decorar con frutos rojos.</div></div>
+    <div class="recipe-tip"><p>💡 El dulce que no rompe el progreso. Ideal para las noches con ansiedad.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 62</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Galletas de Avena y Banana</div>
+    <div class="recipe-tag">Merienda · 20 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">8g Proteína</span><span class="macro macro-c">35g Carbos</span><span class="macro macro-f">4g Grasas</span><span class="macro macro-k">≈210 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes (12 galletas)</div><div class="recipe-ingredients">2 bananas maduras · 160g avena · Opcional: chips de chocolate negro, pasas, canela</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Pisar las bananas. Mezclar con la avena y los extras deseados. Formar galletas en bandeja con papel. Hornear 12-15 min a 180°C.</div></div>
+    <div class="recipe-tip"><p>💡 Solo 2 ingredientes base. Sin azúcar, sin harina, sin manteca.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 63</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Barrita de Avena y Miel Casera</div>
+    <div class="recipe-tag">Merienda · 30 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">10g Proteína</span><span class="macro macro-c">40g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈275 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes (8 barritas)</div><div class="recipe-ingredients">200g avena · 3 cdas miel · 2 cdas maní · 50g frutas secas · 30g semillas mix · 1 cda aceite de coco</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Mezclar todos los ingredientes. Distribuir en molde rectangular prensando bien. Hornear 20 min a 170°C. Dejar enfriar completamente antes de cortar.</div></div>
+  </div>
+</div>
+
+</div></div>
+
+<!-- ====== CENAS ====== -->
+<div class="section-header">
+  <div class="cat-icon">🌙</div>
+  <h2>Cenas</h2>
+  <p>25 cenas ligeras, altas en proteína y bajas en carbohidratos. Para cerrar el día sin sentir culpa y sin pasar hambre.</p>
+</div>
+
+<div class="recipes-page">
+<div class="recipe-grid">
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 76</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Salmón al Horno con Limón</div>
+    <div class="recipe-tag">Cena · 20 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">44g Proteína</span><span class="macro macro-c">4g Carbos</span><span class="macro macro-f">16g Grasas</span><span class="macro macro-k">≈340 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g filete de salmón · Limón · Ajo · Eneldo o romero · Aceite de oliva · Sal, pimienta · Espárragos para acompañar</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Condimentar el salmón con ajo, limón, eneldo, sal y un hilo de aceite. Envolver en papel aluminio. Hornear 15-18 min a 190°C. Acompañar con espárragos al vapor.</div></div>
+    <div class="recipe-tip"><p>💡 Alta proteína + Omega-3 = cena ideal para recuperación nocturna.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 77</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Pollo al Horno con Vegetales</div>
+    <div class="recipe-tag">Cena · 35 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">46g Proteína</span><span class="macro macro-c">18g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈330 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g pechuga de pollo · Zucchini · Morrón · Cebolla · Tomates cherry · Ajo · Orégano · Aceite de oliva · Sal</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cortar los vegetales en trozos grandes. Condimentar el pollo y los vegetales con ajo, orégano, aceite, sal. Colocar todo en bandeja. Hornear 30 min a 200°C.</div></div>
+    <div class="recipe-tip"><p>💡 Una sola fuente de horno — fácil, nutritivo y sin lavar varios utensilios.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 78</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Omelette de Claras con Jamón</div>
+    <div class="recipe-tag">Cena · 8 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">32g Proteína</span><span class="macro macro-c">4g Carbos</span><span class="macro macro-f">6g Grasas</span><span class="macro macro-k">≈200 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">5 claras · 1 huevo · 60g jamón cocido light · Queso mozzarella light · Espinaca · Sal, pimienta, orégano</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Batir claras con el huevo entero. Cocinar en sartén con spray. Cuando esté casi cuajado, colocar el jamón, el queso y la espinaca sobre la mitad. Doblar y cocinar 1 min más.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 79</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Sopa de Lentejas y Espinaca</div>
+    <div class="recipe-tag">Cena · 30 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">18g Proteína</span><span class="macro macro-c">42g Carbos</span><span class="macro macro-f">4g Grasas</span><span class="macro macro-k">≈280 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">150g lentejas · 2 puñados espinaca · 1 tomate · 1 zanahoria · Cebolla · Ajo · Comino · Caldo de verduras · Sal</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Saltear cebolla y ajo. Agregar zanahoria y tomate. Incorporar las lentejas y el caldo. Cocinar 20 min. Agregar la espinaca los últimos 3 min. Condimentar con comino.</div></div>
+    <div class="recipe-tip"><p>💡 Cena reconfortante y económica. Perfecta para los días de descanso.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 80</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Calabacín Relleno de Carne</div>
+    <div class="recipe-tag">Cena · 35 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">34g Proteína</span><span class="macro macro-c">14g Carbos</span><span class="macro macro-f">10g Grasas</span><span class="macro macro-k">≈290 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">2 calabacines grandes · 200g carne picada magra · Tomate · Cebolla · Mozzarella light · Orégano · Sal · Ajo</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cortar los calabacines al medio y vaciar el interior. Saltear la carne con cebolla, ajo y tomate. Rellenar los calabacines. Cubrir con mozzarella. Hornear 25 min a 190°C.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 81</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Bowl Nocturno de Cottage y Nueces</div>
+    <div class="recipe-tag">Cena · 2 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">22g Proteína</span><span class="macro macro-c">10g Carbos</span><span class="macro macro-f">12g Grasas</span><span class="macro macro-k">≈235 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g queso cottage · 20g nueces · 1 cdita miel · Canela</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Colocar el cottage en un bowl. Agregar las nueces picadas, la miel y la canela.</div></div>
+    <div class="recipe-tip"><p>💡 El cottage contiene caseína — proteína de liberación lenta perfecta para antes de dormir.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 82</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Crema de Vegetales</div>
+    <div class="recipe-tag">Cena · 25 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">8g Proteína</span><span class="macro macro-c">24g Carbos</span><span class="macro macro-f">5g Grasas</span><span class="macro macro-k">≈175 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">1 zapallo · 2 zanahorias · 1 cebolla · 2 dientes ajo · Caldo de verduras · Cúrcuma · Jengibre · Aceite de oliva</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Cocinar todos los vegetales en el caldo 20 min. Licuar con la cúrcuma y el jengibre. Servir con un hilo de aceite de oliva y semillas de girasol.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 83</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Merluza al Papillote</div>
+    <div class="recipe-tag">Cena · 20 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">38g Proteína</span><span class="macro macro-c">6g Carbos</span><span class="macro macro-f">5g Grasas</span><span class="macro macro-k">≈225 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g filete de merluza · Limón · Tomate · Morrón · Cebolla · Perejil · Aceite de oliva · Sal</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Colocar el pescado sobre papel aluminio. Agregar los vegetales en rodajas, el limón, el perejil y un hilo de aceite. Cerrar el papillote herméticamente. Hornear 15-18 min a 200°C.</div></div>
+    <div class="recipe-tip"><p>💡 El papillote cocina al vapor propio — sabor intenso sin materia grasa extra.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 84</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Ensalada Tibia de Garbanzos</div>
+    <div class="recipe-tag">Cena · 10 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">16g Proteína</span><span class="macro macro-c">38g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈290 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g garbanzos cocidos · Espinaca · Tomates cherry · Cebolla morada · Limón · Aceite de oliva · Comino · Paprika ahumada</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Saltear los garbanzos con el comino y la paprika 3 min. Mezclar con la espinaca (se marchita levemente con el calor), los tomates y la cebolla. Aliñar con limón y aceite.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 85</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Brochetas de Pollo al Horno</div>
+    <div class="recipe-tag">Cena · 25 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">42g Proteína</span><span class="macro macro-c">10g Carbos</span><span class="macro macro-f">7g Grasas</span><span class="macro macro-k">≈275 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g pechuga en cubos · Morrón · Cebolla · Tomates cherry · Ajo · Limón · Pimentón dulce · Sal · Aceite de oliva</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Marinar el pollo 15 min con ajo, limón, pimentón y aceite. Armar las brochetas alternando pollo y vegetales. Hornear 20 min a 200°C o cocinar en plancha.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 86</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Salteado de Vegetales con Huevo</div>
+    <div class="recipe-tag">Cena · 10 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">20g Proteína</span><span class="macro macro-c">18g Carbos</span><span class="macro macro-f">10g Grasas</span><span class="macro macro-k">≈240 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">3 huevos · Brócoli · Morrón · Zanahoria · Cebolla · Salsa de soja · Ajo · Jengibre · Aceite de sésamo</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Saltear los vegetales a fuego alto 3-4 min. Hacer espacio en el centro y scramble los huevos. Mezclar todo con salsa de soja, ajo y jengibre. Finalizar con aceite de sésamo.</div></div>
+    <div class="recipe-tip"><p>💡 Usar fuego muy alto y no revolver constantemente = vegetales crujientes, no blandos.</p></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 87</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Pollo en Salsa de Mostaza</div>
+    <div class="recipe-tag">Cena · 20 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">44g Proteína</span><span class="macro macro-c">6g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈275 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">200g pechuga · 1 cda mostaza Dijon · 100g yogur griego · Ajo · Romero · Sal · Spray aceite</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Mezclar yogur con mostaza, ajo y romero. Marinar el pollo 10 min. Cocinar en sartén 6-7 min por lado a fuego medio. La salsa de yogur queda adherida y dorada.</div></div>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <div class="recipe-num">Receta 88</div>
+  <div class="recipe-body">
+    <div class="recipe-name">Cazuela de Pollo y Vegetales</div>
+    <div class="recipe-tag">Cena · 40 min</div>
+    <div class="recipe-macros"><span class="macro macro-p">40g Proteína</span><span class="macro macro-c">22g Carbos</span><span class="macro macro-f">8g Grasas</span><span class="macro macro-k">≈325 kcal</span></div>
+    <div class="recipe-section"><div class="recipe-section-title">Ingredientes</div><div class="recipe-ingredients">2 muslos de pollo sin piel · Papa · Zanahoria · Cebolla · Tomate · Ajo · Caldo de pollo · Pimentón · Laurel</div></div>
+    <div class="recipe-section"><div class="recipe-section-title">Preparación</div><div class="recipe-prep">Dorar el pollo en olla. Agregar la cebolla y el ajo. Sumar los vegetales cortados, el tomate y el caldo. Condimentar. Cocinar tapado 30 min a fuego bajo.</div></div>
+    <div class="recipe-tip"><p>💡 Ideal para preparar en cantidad — se conserva 3 días en la heladera.</p></div>
+  </div>
+</div>
+
+</div></div>
+
+<!-- FOOTER -->
+<div class="ebook-footer">
+  <h3>¿Querés un plan de alimentación personalizado?</h3>
+  <p>Estas recetas son el punto de partida. Un plan hecho para vos, tu objetivo y tu rutina es lo que hace la diferencia real.</p>
+  <div class="contact">📱 @prof.paredesbrian &nbsp;·&nbsp; 💬 WhatsApp: +54 3446 630998</div>
+  <p style="margin-top:20px;font-size:12px;color:#9ca3af;">BPteam Asesoría · Transformación física online · © 2026</p>
+</div>
+
+</body>
+</html>
