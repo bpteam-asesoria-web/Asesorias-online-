@@ -227,7 +227,7 @@ h2 .orange{color:var(--blue-hi);}
 }
 .case-img-placeholder .ph-icon{font-size:28px;}
 .case-single{display:block;position:relative;}
-.case-img-full{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;}
+.case-img-full{width:100%;aspect-ratio:4/3;object-fit:contain;object-position:center;display:block;background:#0a0a0a;}
 
 /* ===== ATLETAS ===== */
 .atletas{background:var(--ink);padding:96px 48px;}
@@ -366,8 +366,57 @@ h2 .orange{color:var(--blue-hi);}
 .memb-cat h5{font-size:12px;font-weight:700;color:#fff;margin-bottom:1px;}
 .memb-cat p{font-size:10px;color:rgba(255,255,255,.45);}
 
+/* ===== ENTRENAMIENTO ONLINE ===== */
+.online-training{background:var(--surface);}
+.ot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
+.ot-card{
+  background:#fff;border:1px solid var(--border);border-radius:14px;
+  padding:32px 26px;transition:box-shadow .2s,transform .2s;
+}
+.ot-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px);}
+.ot-num{
+  width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;
+  margin-bottom:18px;
+}
+.ot-card h4{font-size:17px;font-weight:800;letter-spacing:-.3px;margin-bottom:10px;color:var(--ink);}
+.ot-card p{font-size:13px;color:var(--text);line-height:1.6;margin-bottom:16px;}
+.ot-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.ot-tag{
+  font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;
+  background:rgba(29,78,216,.08);color:var(--blue);
+}
+.ot-video-presentacion{
+  width:100%;max-width:720px;display:block;margin:36px auto 0;
+  border-radius:14px;background:#000;box-shadow:0 12px 40px rgba(0,0,0,.12);
+}
+@media(max-width:900px){.ot-grid{grid-template-columns:1fr;}}
+
 /* ===== EXPERIENCIAS ===== */
 .experiencias{background:var(--ink-2);}
+.viajes-review{
+  margin-top:64px;background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:40px 32px;
+}
+.viajes-review h3{color:#fff;font-size:22px;font-weight:800;letter-spacing:-.3px;margin-bottom:8px;}
+.viajes-review .lead{margin-bottom:28px;}
+.viajes-slider{position:relative;display:flex;align-items:center;gap:12px;}
+.viajes-track{position:relative;flex:1;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#000;}
+.viajes-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .5s;}
+.viajes-img.is-active{opacity:1;}
+.viajes-arrow{
+  width:44px;height:44px;border-radius:50%;border:none;flex-shrink:0;
+  background:rgba(255,255,255,.1);color:#fff;font-size:22px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;
+}
+.viajes-arrow:hover{background:var(--blue);transform:scale(1.06);}
+.viajes-dots{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.viajes-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);border:none;cursor:pointer;padding:0;transition:all .2s;}
+.viajes-dot.is-active{background:var(--blue);width:20px;border-radius:4px;}
+@media(max-width:640px){
+  .viajes-review{padding:28px 18px;}
+  .viajes-arrow{width:36px;height:36px;font-size:18px;}
+}
 .experiencias .section-tag{display:block;margin-bottom:12px;}
 .experiencias h2{color:#fff;}
 .experiencias .lead{color:rgba(255,255,255,.45);}
@@ -813,82 +862,6 @@ footer .links a:hover{color:rgba(255,255,255,.7);}
 </section>
 
 <!-- CASOS DE ÉXITO -->
-<section class="cases" id="resultados">
-  <div class="container">
-    <div class="cases-intro">
-      <div class="section-tag">Resultados reales</div>
-      <h2>Transformaciones que <span style="color:var(--gold)">hablan solas</span></h2>
-      <p class="lead">Personas reales, con vidas reales. Sin filtros ni Photoshop.<br>Solo trabajo, método y acompañamiento constante.</p>
-    </div>
-    <div class="cases-slider">
-    <button class="cases-arrow cases-arrow-prev" aria-label="Caso anterior">‹</button>
-    <div class="cases-grid" id="casesGrid">
-
-      <!-- CASO 1 — LEÓN -->
-      <div class="case-card">
-        <div class="case-imgs case-single">
-          <img src="alumno_1_leon.jpg" alt="Transformación León — antes y después" class="case-img-full">
-          <span class="case-label before">Antes</span>
-          <span class="case-label after">Después</span>
-        </div>
-        <div class="case-info">
-          <div class="case-name">León — Atleta Avanzado</div>
-          <div class="case-result">
-            <span class="case-badge">+10 kg músculo</span>
-            <span class="case-badge">Programa 3 meses</span>
-          </div>
-          <p class="case-desc">"Atleta con años de experiencia que no lograba ganar masa muscular. Con orden en la dieta, el entrenamiento y el descanso adecuado, logró +10 kg de masa muscular real."</p>
-          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
-        </div>
-      </div>
-
-      <!-- CASO 2 — SANTIAGO -->
-      <div class="case-card">
-        <div class="case-imgs">
-          <img src="alumno_2_santiago_antes.jpg" alt="Santiago antes" class="case-img">
-          <img src="alumno_2_santiago_despues.jpg" alt="Santiago después" class="case-img">
-          <div class="case-divider"></div>
-          <span class="case-label before">Antes</span>
-          <span class="case-label after">Después</span>
-        </div>
-        <div class="case-info">
-          <div class="case-name">Santiago — Gastronómico</div>
-          <div class="case-result">
-            <span class="case-badge">Recomposición corporal</span>
-            <span class="case-badge">3 sesiones/semana</span>
-          </div>
-          <p class="case-desc">"Con extensas jornadas de trabajo y poco tiempo libre, logramos una recomposición corporal completa con 3 sesiones semanales y orden en la alimentación."</p>
-          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
-        </div>
-      </div>
-
-      <!-- CASO 3 — BRIAN -->
-      <div class="case-card">
-        <div class="case-imgs">
-          <img src="brian_foto_1.jpeg" alt="Brian antes" class="case-img">
-          <img src="brian_foto_2.jpeg" alt="Brian después" class="case-img">
-          <div class="case-divider"></div>
-          <span class="case-label before">Antes</span>
-          <span class="case-label after">Después</span>
-        </div>
-        <div class="case-info">
-          <div class="case-name">Brian — Recomposición Corporal</div>
-          <div class="case-result">
-            <span class="case-badge">Recomposición corporal</span>
-            <span class="case-badge">Programa 3 meses</span>
-          </div>
-          <p class="case-desc">"Recomposición corporal completa: bajé grasa y gané músculo al mismo tiempo. El método de Brian hace la diferencia."</p>
-          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
-        </div>
-      </div>
-
-    </div>
-    <button class="cases-arrow cases-arrow-next" aria-label="Caso siguiente">›</button>
-    </div>
-    <div class="cases-dots" id="casesDots"></div>
-  </div>
-</section>
-
 <!-- ATLETAS DE ALTO RENDIMIENTO -->
 <section class="atletas" id="atletas">
   <div class="container">
@@ -970,68 +943,111 @@ footer .links a:hover{color:rgba(255,255,255,.7);}
   </div>
 </section>
 
-<!-- PROBLEMAS -->
-<section class="problems">
+<section class="cases" id="resultados">
   <div class="container">
-    <div class="section-tag light">¿Te identificás?</div>
-    <h2>¿Por qué no estás viendo <span class="gold">resultados</span>?</h2>
-    <p class="lead">No es falta de esfuerzo. Es falta de dirección. Estos son los problemas más comunes que veo en mis clientes antes de empezar.</p>
-    <div class="prob-grid">
-      <div class="prob-card">
-        <div class="prob-img-wrap">
-          <img class="prob-img" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&q=95&fit=crop&crop=center" alt="Entrenando sin plan">
-        </div>
-        <div class="prob-text">
-          <h3>Entrenás sin un plan real</h3>
-          <p>Vas al gimnasio, hacés algo, sudás... pero sin una progresión estructurada, el cuerpo no tiene razón para cambiar. El esfuerzo existe, el método falta.</p>
-        </div>
-      </div>
-      <div class="prob-card">
-        <div class="prob-img-wrap">
-          <img class="prob-img" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&q=95&fit=crop&crop=center" alt="Comida saludable">
-        </div>
-        <div class="prob-text">
-          <h3>No sabés qué comer</h3>
-          <p>Un día dietás, el otro "te portás mal". Las dietas genéricas de internet no se adaptan a tu vida, tus gustos ni tu cuerpo. Terminás abandonando en semanas.</p>
-        </div>
-      </div>
-      <div class="prob-card">
-        <div class="prob-img-wrap">
-          <img class="prob-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=95&fit=crop&crop=top" alt="Progreso fitness">
-        </div>
-        <div class="prob-text">
-          <h3>Empezás y volvés a cero</h3>
-          <p>Empezás con toda la motivación, los primeros días van bien... y después la vida pasa. Sin alguien que te sostenga, volvés al punto de partida.</p>
-        </div>
-      </div>
-      <div class="prob-card">
-        <div class="prob-img-wrap">
-          <img class="prob-img" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&q=95&fit=crop&crop=center" alt="Gastás sin resultados">
-        </div>
-        <div class="prob-text">
-          <h3>Gastás plata sin resultados</h3>
-          <p>Planes de nutrición, suplementos milagrosos, membresías de gimnasio que no usás. Mucha inversión, cero transformación real.</p>
-        </div>
-      </div>
-      <div class="prob-card">
-        <div class="prob-img-wrap">
-          <img class="prob-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=95&fit=crop&crop=center" alt="Perdido sin dirección">
-        </div>
-        <div class="prob-text">
-          <h3>Te sentís perdido/a</h3>
-          <p>Hay demasiada información contradictoria. Cada influencer dice algo distinto. No sabés qué creerle a quién y terminás sin hacer nada o haciéndolo todo mal.</p>
-        </div>
-      </div>
-      <div class="prob-card">
-        <div class="prob-img-wrap">
-          <img class="prob-img" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=95&fit=crop&crop=center" alt="Sin tiempo para entrenar">
-        </div>
-        <div class="prob-text">
-          <h3>"No tengo tiempo"</h3>
-          <p>Trabajo, compromisos, familia. La vida no para y el fitness queda siempre para después. Sin un plan que se adapte a tu rutina, nunca va a ser el momento.</p>
-        </div>
-      </div>
+    <div class="cases-intro">
+      <div class="section-tag">Resultados reales</div>
+      <h2>Transformaciones que <span style="color:var(--gold)">hablan solas</span></h2>
+      <p class="lead">Personas reales, con vidas reales. Sin filtros ni Photoshop.<br>Solo trabajo, método y acompañamiento constante.</p>
     </div>
+    <div class="cases-slider">
+    <button class="cases-arrow cases-arrow-prev" aria-label="Caso anterior">‹</button>
+    <div class="cases-grid" id="casesGrid">
+
+      <!-- CASO 1 — LEÓN -->
+      <div class="case-card">
+        <div class="case-imgs case-single">
+          <img src="alumno_1_leon.jpg" alt="Transformación León — antes y después" class="case-img-full">
+          <span class="case-label before">Antes</span>
+          <span class="case-label after">Después</span>
+        </div>
+        <div class="case-info">
+          <div class="case-name">León — Atleta Avanzado</div>
+          <div class="case-result">
+            <span class="case-badge">+10 kg músculo</span>
+            <span class="case-badge">Programa 3 meses</span>
+          </div>
+          <p class="case-desc">"Atleta con años de experiencia que no lograba ganar masa muscular. Con orden en la dieta, el entrenamiento y el descanso adecuado, logró +10 kg de masa muscular real."</p>
+          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
+        </div>
+      </div>
+
+      <!-- CASO 2 — SANTIAGO -->
+      <div class="case-card">
+        <div class="case-imgs">
+          <img src="alumno_2_santiago_antes.jpg" alt="Santiago antes" class="case-img">
+          <img src="alumno_2_santiago_despues.jpg" alt="Santiago después" class="case-img">
+          <div class="case-divider"></div>
+          <span class="case-label before">Antes</span>
+          <span class="case-label after">Después</span>
+        </div>
+        <div class="case-info">
+          <div class="case-name">Santiago — Gastronómico</div>
+          <div class="case-result">
+            <span class="case-badge">Recomposición corporal</span>
+            <span class="case-badge">3 sesiones/semana</span>
+          </div>
+          <p class="case-desc">"Con extensas jornadas de trabajo y poco tiempo libre, logramos una recomposición corporal completa con 3 sesiones semanales y orden en la alimentación."</p>
+          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
+        </div>
+      </div>
+
+      <!-- CASO 3 — BRIAN -->
+      <div class="case-card">
+        <div class="case-imgs">
+          <img src="brian_foto_1.jpeg" alt="Brian antes" class="case-img">
+          <img src="brian_foto_2.jpeg" alt="Brian después" class="case-img">
+          <div class="case-divider"></div>
+          <span class="case-label before">Antes</span>
+          <span class="case-label after">Después</span>
+        </div>
+        <div class="case-info">
+          <div class="case-name">Brian — Recomposición Corporal</div>
+          <div class="case-result">
+            <span class="case-badge">Recomposición corporal</span>
+            <span class="case-badge">Programa 3 meses</span>
+          </div>
+          <p class="case-desc">"Recomposición corporal completa: bajé grasa y gané músculo al mismo tiempo. El método de Brian hace la diferencia."</p>
+          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
+        </div>
+      </div>
+
+      <!-- CASO 4 — AYELEN -->
+      <div class="case-card">
+        <div class="case-imgs case-single">
+          <img src="ayelen.jpeg" alt="Transformación Ayelen" class="case-img-full">
+        </div>
+        <div class="case-info">
+          <div class="case-name">Ayelen — Cambio de Vida</div>
+          <div class="case-result">
+            <span class="case-badge">Cambio de vida</span>
+            <span class="case-badge">Programa 3 meses</span>
+          </div>
+          <p class="case-desc">"Después de años de luchar con la obesidad, encontró el cambio para su vida."</p>
+          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
+        </div>
+      </div>
+
+      <!-- CASO 5 — MARTINA -->
+      <div class="case-card">
+        <div class="case-imgs case-single">
+          <img src="martina.jpeg" alt="Transformación Martina" class="case-img-full">
+        </div>
+        <div class="case-info">
+          <div class="case-name">Martina — Recomposición Corporal</div>
+          <div class="case-result">
+            <span class="case-badge">+5 kg músculo</span>
+            <span class="case-badge">Programa 3 meses</span>
+          </div>
+          <p class="case-desc">"Logró un aumento de +5 kg de masa muscular y bajar su porcentaje de grasa notablemente."</p>
+          <div class="case-weeks">Asesoría personalizada · <span>12 semanas</span></div>
+        </div>
+      </div>
+
+    </div>
+    <button class="cases-arrow cases-arrow-next" aria-label="Caso siguiente">›</button>
+    </div>
+    <div class="cases-dots" id="casesDots"></div>
   </div>
 </section>
 
@@ -1091,6 +1107,46 @@ footer .links a:hover{color:rgba(255,255,255,.7);}
           <div class="sc-item">Ajustes semanales según tu progreso</div>
           <div class="sc-item">Soporte hasta el último día del programa</div>
           <div class="sc-item">Sin contratos ni compromisos extra</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTRENAMIENTO ONLINE -->
+<section class="online-training" id="entrenamiento-online">
+  <div class="container">
+    <div class="section-tag">100% online</div>
+    <h2>Así trabajamos <span style="color:var(--blue)">de manera online</span></h2>
+    <p class="lead">Sin necesidad de estar en la misma ciudad. Todo el proceso — desde el diagnóstico hasta el seguimiento diario — pasa por acá.</p>
+    <video class="ot-video-presentacion" src="video_app_online.mp4" controls playsinline preload="metadata"></video>
+    <div class="ot-grid">
+      <div class="ot-card">
+        <div class="ot-num">1</div>
+        <h4>Entrevista inicial</h4>
+        <p>Arrancamos con una videollamada o un formulario detallado donde conozco tu rutina, tu historial de entrenamiento, tus horarios, tus gustos alimenticios y tu objetivo real. Nada de plantillas — el plan empieza por escucharte.</p>
+        <div class="ot-tags">
+          <span class="ot-tag">Videollamada</span>
+          <span class="ot-tag">Diagnóstico completo</span>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-num">2</div>
+        <h4>Plan 100% personalizado</h4>
+        <p>Con esa información armo tu plan de alimentación y tu rutina de entrenamiento a medida, en menos de 48hs. Nada genérico: se adapta a tu día a día, tu metabolismo y el equipamiento que tenés disponible.</p>
+        <div class="ot-tags">
+          <span class="ot-tag">Nutrición a medida</span>
+          <span class="ot-tag">Rutina progresiva</span>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-num">3</div>
+        <h4>Cómo funciona la app</h4>
+        <p>Toda tu rutina queda cargada en la app: ejercicios con video demostrativo, series, repeticiones y progresión semana a semana. Registrás tu entrenamiento, ves tu evolución y me escribís directo si algo no está saliendo como esperabas.</p>
+        <div class="ot-tags">
+          <span class="ot-tag">Videos de ejecución</span>
+          <span class="ot-tag">Seguimiento diario</span>
+          <span class="ot-tag">Chat directo</span>
         </div>
       </div>
     </div>
@@ -1263,6 +1319,31 @@ footer .links a:hover{color:rgba(255,255,255,.7);}
         </div>
       </div>
 
+    </div>
+
+    <!-- RESEÑA DE VIAJES -->
+    <div class="viajes-review">
+      <div class="section-tag light">Viajes Fitness & Trekking</div>
+      <h3>Así se vivieron nuestros últimos viajes</h3>
+      <p class="lead" style="color:rgba(255,255,255,.6)">Trekking, entrenamiento outdoor y gastronomía local — un repaso en fotos de las últimas experiencias del team.</p>
+      <div class="viajes-slider">
+        <button class="viajes-arrow viajes-arrow-prev" aria-label="Foto anterior">‹</button>
+        <div class="viajes-track" id="viajesTrack">
+          <img class="viajes-img" src="viaje1.jpeg" alt="Viaje BPteam 1">
+          <img class="viajes-img" src="viaje2.jpeg" alt="Viaje BPteam 2">
+          <img class="viajes-img" src="viaje3.jpeg" alt="Viaje BPteam 3">
+          <img class="viajes-img" src="viaje4.jpeg" alt="Viaje BPteam 4">
+          <img class="viajes-img" src="viaje5.jpeg" alt="Viaje BPteam 5">
+          <img class="viajes-img" src="viaje6.jpeg" alt="Viaje BPteam 6">
+          <img class="viajes-img" src="viaje7.jpeg" alt="Viaje BPteam 7">
+          <img class="viajes-img" src="viaje8.jpeg" alt="Viaje BPteam 8">
+          <img class="viajes-img" src="viaje9.jpeg" alt="Viaje BPteam 9">
+          <img class="viajes-img" src="viaje10.jpeg" alt="Viaje BPteam 10">
+          <img class="viajes-img" src="viaje11.jpeg" alt="Viaje BPteam 11">
+        </div>
+        <button class="viajes-arrow viajes-arrow-next" aria-label="Foto siguiente">›</button>
+      </div>
+      <div class="viajes-dots" id="viajesDots"></div>
     </div>
 
     <!-- BLOQUE INFERIOR -->
@@ -2412,6 +2493,71 @@ footer .links a:hover{color:rgba(255,255,255,.7);}
   </div>
 </section>
 
+<!-- PROBLEMAS -->
+<section class="problems">
+  <div class="container">
+    <div class="section-tag light">¿Te identificás?</div>
+    <h2>¿Por qué no estás viendo <span class="gold">resultados</span>?</h2>
+    <p class="lead">No es falta de esfuerzo. Es falta de dirección. Estos son los problemas más comunes que veo en mis clientes antes de empezar.</p>
+    <div class="prob-grid">
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&q=95&fit=crop&crop=center" alt="Entrenando sin plan">
+        </div>
+        <div class="prob-text">
+          <h3>Entrenás sin un plan real</h3>
+          <p>Vas al gimnasio, hacés algo, sudás... pero sin una progresión estructurada, el cuerpo no tiene razón para cambiar. El esfuerzo existe, el método falta.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&q=95&fit=crop&crop=center" alt="Comida saludable">
+        </div>
+        <div class="prob-text">
+          <h3>No sabés qué comer</h3>
+          <p>Un día dietás, el otro "te portás mal". Las dietas genéricas de internet no se adaptan a tu vida, tus gustos ni tu cuerpo. Terminás abandonando en semanas.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=95&fit=crop&crop=top" alt="Progreso fitness">
+        </div>
+        <div class="prob-text">
+          <h3>Empezás y volvés a cero</h3>
+          <p>Empezás con toda la motivación, los primeros días van bien... y después la vida pasa. Sin alguien que te sostenga, volvés al punto de partida.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&q=95&fit=crop&crop=center" alt="Gastás sin resultados">
+        </div>
+        <div class="prob-text">
+          <h3>Gastás plata sin resultados</h3>
+          <p>Planes de nutrición, suplementos milagrosos, membresías de gimnasio que no usás. Mucha inversión, cero transformación real.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=95&fit=crop&crop=center" alt="Perdido sin dirección">
+        </div>
+        <div class="prob-text">
+          <h3>Te sentís perdido/a</h3>
+          <p>Hay demasiada información contradictoria. Cada influencer dice algo distinto. No sabés qué creerle a quién y terminás sin hacer nada o haciéndolo todo mal.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-img-wrap">
+          <img class="prob-img" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=95&fit=crop&crop=center" alt="Sin tiempo para entrenar">
+        </div>
+        <div class="prob-text">
+          <h3>"No tengo tiempo"</h3>
+          <p>Trabajo, compromisos, familia. La vida no para y el fitness queda siempre para después. Sin un plan que se adapte a tu rutina, nunca va a ser el momento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA FINAL -->
 <section class="final-cta">
   <div class="container">
@@ -2477,6 +2623,45 @@ footer .links a:hover{color:rgba(255,255,255,.7);}
   if(nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
 
   goTo(0);
+})();
+</script>
+
+<!-- VIAJES CAROUSEL SCRIPT -->
+<script>
+(function(){
+  const track = document.getElementById('viajesTrack');
+  const dotsWrap = document.getElementById('viajesDots');
+  if(!track) return;
+  const imgs = Array.from(track.querySelectorAll('.viajes-img'));
+  const prevBtn = document.querySelector('.viajes-arrow-prev');
+  const nextBtn = document.querySelector('.viajes-arrow-next');
+  let current = 0;
+  let timer;
+
+  imgs.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'viajes-dot';
+    dot.setAttribute('aria-label', 'Ir a la foto ' + (i + 1));
+    dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll('.viajes-dot'));
+
+  function goTo(index){
+    current = (index + imgs.length) % imgs.length;
+    imgs.forEach((img, i) => img.classList.toggle('is-active', i === current));
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
+  }
+  function resetTimer(){
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 4000);
+  }
+
+  if(prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+  if(nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+
+  goTo(0);
+  resetTimer();
 })();
 </script>
 
